@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>My First Post | </title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="My First Post"/>
+<meta name="twitter:description" content=""/><meta name="Description" content=""><meta property="og:title" content="My First Post" />
+<meta property="og:description" content="let和var作用域// let声明块级作用域,仅在内部访问 // var 非函数体内声明全局作用域，外部亦可访问 if (true) { let y = 20; var z = 30; console.log(x &#43; y &#43; z); // -&gt; 60 } console.log(x &#43; z); // -&gt; 40 { // 使用在代码块外不可见的局部变量做一些工作  let message = &#34;Hello&#34;; // 只在此代码块内可见  alert(message); // Hello } alert(message); // Error: message is not defined 循环内
+for (let i = 0; i &lt; 3; i&#43;&#43;) { // 变量 i 仅在这个 for 循环的内部可见  alert(i); // 0，然后是 1，然后是 2 } alert(i); // Error, no such variable 每个作用域都可以“查看”包围它的作用域，异常情况是多个绑定具有相同的名称——在这种情况下，代码只能看到最里面的一个." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/my-first-post/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-13T16:54:42&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-13T16:54:42&#43;08:00" />
+
+<meta name="application-name" content="My New Hugo Site">
+<meta name="apple-mobile-web-app-title" content="My New Hugo Site"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/my-first-post/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/lib/prismjs/prism.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "My First Post",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/my-first-post\/"
+        },"genre": "posts","wordCount":  178 ,
+        "url": "http:\/\/example.org\/posts\/my-first-post\/","datePublished": "2021-05-13T16:54:42+08:00","dateModified": "2021-05-13T16:54:42+08:00","description": ""
+    }
+    </script></head>
+    <body data-header-desktop="" data-header-mobile=""><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header>
+    <div class="desktop header" id="header-desktop">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My New Hugo Site" class="header-logo logo-svg">My New Hugo Site</a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <h2 class="display-hidden">Основная навигация</h2>
+                    <ul class="menu-inner"><li>
+                            <a class="menu-item" href="/posts/"> Posts </a>
+                        </li><li>
+                            <a class="menu-item" href="/tags/"> Tags </a>
+                        </li><li>
+                            <a class="menu-item" href="/categories/"> Categories </a>
+                        </li></ul>
+                </nav><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+        </div>
+    </div><div class="mobile header" id="header-mobile">
+        <div class="header-container">
+            <div class="header-wrapper">
+                <div class="header-title">
+                    <a href="/" title="My New Hugo Site" class="header-logo">My New Hugo Site</a>
+                </div>
+                <div class="menu-toggle" id="menu-toggle-mobile">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="menu" id="menu-mobile"><nav>
+                    <h2 class="display-hidden">Основная навигация</h2>
+                    <ul><li>
+                            <a class="menu-item" href="/posts/" title="">Posts</a>
+                        </li><li>
+                            <a class="menu-item" href="/tags/" title="">Tags</a>
+                        </li><li>
+                            <a class="menu-item" href="/categories/" title="">Categories</a>
+                        </li></ul>
+                </nav>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <span class="svg-icon icon-moon"></span>
+                </a></div>
+        </div>
+    </div></header><main class="main">
+<div class="container content-article  theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+
+    
+    
+    <article>
+    
+
+        <header class="header-post">
+
+            
+
+            
+            <div class="post-title">
+
+                    <div class="post-all-meta">
+                        <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">Home </a></li><li>My First Post</li>
+    </ol>
+</nav>
+                        <h1 class="single-title flipInX">My First Post</h1><div class="post-meta summary-post-meta"><span class="post-meta-date meta-item">
+                                <span class="svg-icon icon-clock"></span><time class="timeago" datetime="2021-05-13">2021-05-13</time>
+                            </span><span class="post-meta-words meta-item">
+                                <span class="svg-icon icon-pencil"></span>178 words
+                            </span>
+                            <span class="post-meta-reading meta-item">
+                                <span class="svg-icon icon-stopwatch"></span>One minute
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                </header>
+
+        <div class="article-post toc-start">
+
+            <div class="content-block content-block-first content-block-position">
+
+                <div class="post single"><div class="details toc" id="toc-static"  data-kept="">
+                        <div class="details-summary toc-title">
+                            <span>Contents</span>
+                        </div>
+                        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#let和var作用域">let和var作用域</a></li>
+        <li><a href="#嵌套作用域">嵌套作用域</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                    </div><h3 id="let和var作用域" class="headerLink"><a href="#let%e5%92%8cvar%e4%bd%9c%e7%94%a8%e5%9f%9f" class="header-mark"></a>let和var作用域</h3><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// let声明块级作用域,仅在内部访问
+</span><span class="c1">// var 非函数体内声明全局作用域，外部亦可访问
+</span><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">z</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">z</span><span class="p">);</span>
+		<span class="c1">// -&gt; 60
+</span><span class="c1"></span><span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">z</span><span class="p">);</span>
+<span class="c1">// -&gt; 40
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="p">{</span>
+    <span class="c1">// 使用在代码块外不可见的局部变量做一些工作
+</span><span class="c1"></span>    <span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">&#34;Hello&#34;</span><span class="p">;</span> <span class="c1">// 只在此代码块内可见
+</span><span class="c1"></span>    <span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span> <span class="c1">// Hello
+</span><span class="c1"></span><span class="p">}</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span> <span class="c1">// Error: message is not defined
+</span></code></pre></div><p>循环内</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js">
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 变量 i 仅在这个 for 循环的内部可见
+</span><span class="c1"></span>  <span class="nx">alert</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 0，然后是 1，然后是 2
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="nx">alert</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// Error, no such variable
+</span></code></pre></div><p>每个作用域都可以“查看”包围它的作用域，异常情况是多个绑定具有相同的名称——在这种情况下，代码只能看到最里面的一个.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">halve</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kd">let</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">halve</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+<span class="c1">// -&gt; 50
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+<span class="c1">// -&gt; 10
+</span></code></pre></div><h3 id="嵌套作用域" class="headerLink"><a href="#%e5%b5%8c%e5%a5%97%e4%bd%9c%e7%94%a8%e5%9f%9f" class="header-mark"></a>嵌套作用域</h3><p>内部函数可以访问外部变量</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">sayHiBye</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="s2">&#34;Yoo&#34;</span>
+    <span class="kd">let</span> <span class="nx">lastName</span> <span class="o">=</span> <span class="s2">&#34;Hoo&#34;</span><span class="p">;</span>
+    <span class="c1">// 辅助嵌套函数使用如下
+</span><span class="c1"></span>    <span class="kd">function</span> <span class="nx">getFullName</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">firstName</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span> <span class="o">+</span> <span class="nx">lastName</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="nx">getFullName</span><span class="p">());</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Bye, &#34;</span> <span class="o">+</span> <span class="nx">getFullName</span><span class="p">());</span>
+<span class="p">}</span>
+<span class="nx">sayHiBye</span><span class="p">()</span>
+</code></pre></div><p>外部函数不能访问内部变量</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">sayHiBye</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="s2">&#34;Yoo&#34;</span>
+    <span class="kd">let</span> <span class="nx">lastName</span> <span class="o">=</span> <span class="s2">&#34;Hoo&#34;</span><span class="p">;</span>
+    <span class="c1">// 辅助嵌套函数使用如下
+</span><span class="c1"></span>    <span class="kd">function</span> <span class="nx">getFullName</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">Name</span> <span class="o">=</span> <span class="s2">&#34;Yoohoo&#34;</span>
+        <span class="k">return</span> <span class="nx">firstName</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span> <span class="o">+</span> <span class="nx">lastName</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Hello, &#34;</span> <span class="o">+</span> <span class="nx">getFullName</span><span class="p">());</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;Bye, &#34;</span> <span class="o">+</span> <span class="nx">getFullName</span><span class="p">());</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Name</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">sayHiBye</span><span class="p">()</span>
+</code></pre></div></div><footer>
+                        <div class="post">
+
+
+<div class="post-share"></div>
+</div>
+                </footer></div>
+        <div id="toc-final"></div>
+        </div>
+
+    
+    </article>
+    </div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=http://example.org/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2021</span></div>
+        </div>
+    </footer></div>
+
+        <aside id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </aside><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10}};</script><script src="/js/theme.min.js"></script></body>
+</html>

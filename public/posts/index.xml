@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - My New Hugo Site</title>
+        <link>http://example.org/posts/</link>
+        <description>All Posts | My New Hugo Site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 May 2021 16:54:42 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>My First Post</title>
+    <link>http://example.org/posts/my-first-post/</link>
+    <pubDate>Thu, 13 May 2021 16:54:42 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/posts/my-first-post/</guid>
+    <description><![CDATA[let和var作用域// let声明块级作用域,仅在内部访问 // var 非函数体内声明全局作用域，外部亦可访问 if (true) { let y = 20; var z = 30; console.log(x + y + z); // -&gt; 60 } console.log(x + z); // -&gt; 40 { // 使用在代码块外不可见的局部变量做一些工作  let message = &#34;Hello&#34;; // 只在此代码块内可见  alert(message); // Hello } alert(message); // Error: message is not defined 循环内
+for (let i = 0; i &lt; 3; i++) { // 变量 i 仅在这个 for 循环的内部可见  alert(i); // 0，然后是 1，然后是 2 } alert(i); // Error, no such variable 每个作用域都可以“查看”包围它的作用域，异常情况是多个绑定具有相同的名称——在这种情况下，代码只能看到最里面的一个.]]></description>
+</item></channel>
+</rss>
