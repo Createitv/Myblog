@@ -54,6 +54,9 @@ theme = "uBlogger"
   dateFormat = "2006-01-02"
   # website images for Open Graph and Twitter Cards
   images = ["/logo.png"]
+  hasCJKLanguage = "true"
+
+  summaryLength = 50
 
   # uBlogger NEW | 0.2.0 App icon config
   [params.app]
@@ -312,7 +315,7 @@ theme = "uBlogger"
       # whether to show the copy button of the code block
       copy = true
       # the maximum number of lines of displayed code by default
-      maxShownLines = 10
+      maxShownLines = 20
     # uBlogger NEW | 0.2.0 Mapbox GL JS config
     [params.page.mapbox]
       # access token of Mapbox GL JS
@@ -359,3 +362,87 @@ theme = "uBlogger"
       Skype = false
       Trello = false
       Mix = false
+    # Syntax Highlighting
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    # false is a necessary configuration
+    noClasses = false
+  # Goldmark is from Hugo 0.60 the default library used for Markdown
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # whether to use HTML tags directly in the document
+      unsafe = true
+  # Table Of Contents settings
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+
+# Sitemap config
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+# Options to make output .md files
+[outputFormats.MarkDown]
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+# Options to make hugo output files
+[outputs]
+  # uBlogger CHANGED | 0.2.0
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "MarkDown"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]
+
+# [en, zh-cn, fr, pl, ...] determines default content language
+defaultContentLanguage = "zh-cn"
+
+[languages]
+  [languages.zh-cn]
+    weight = 2
+    title = "且慢"
+    # language code, CN only here
+    languageCode = "zh-CN"
+    languageName = "简体中文"
+    # whether to include Chinese/Japanese/Korean
+    hasCJKLanguage = true
+    [[languages.zh-cn.menu.main]]
+      identifier = "posts"
+      pre = ""
+      post = ""
+      name = "文章"
+      url = "/posts/"
+      title = ""
+      weight = 1
+    [[languages.zh-cn.menu.main]]
+      identifier = "tags"
+      pre = ""
+      post = ""
+      name = "标签"
+      url = "/tags/"
+      title = ""
+      weight = 2
+    [[languages.zh-cn.menu.main]]
+      identifier = "categories"
+      pre = ""
+      post = ""
+      name = "分类"
+      url = "/categories/"
+      title = ""
+      weight = 3
+
+  
