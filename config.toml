@@ -1,17 +1,12 @@
-baseURL = "http://example.org/"
+baseURL = "http://www.longtermbook.com/"
 # [en, zh-cn, fr, ...] determines default content language
-defaultContentLanguage = "en"
+defaultContentLanguage = "zh-cn"
 # language code
-languageCode = "zh-cn"
-title = "My New Hugo Site"
+languageCode = "en"
+title = "且慢"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "uBlogger"
-
-[params]
-  # uBlogger theme version
-  version = "2.0.X"
-
 [menu]
   [[menu.main]]
     identifier = "posts"
@@ -41,9 +36,326 @@ theme = "uBlogger"
     title = ""
     weight = 3
 
-# Markup related configuration in Hugo
-[markup]
-  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
-  [markup.highlight]
-    # false is a necessary configuration
-    noClasses = false
+[params]
+  # uBlogger CHANGED | 0.2.0 uBlogger theme version
+  version = "2.0.X"
+  # site description
+  description = "This is My New Hugo Site"
+  # site keywords
+  keywords = ["Theme", "Hugo"]
+  # site default theme ("light", "dark", "auto")
+  defaultTheme = "auto"
+  # public git repo url only then enableGitInfo is true
+  gitRepo = ""
+  # uBlogger NEW | 0.1.1 which hash function used for SRI, when empty, no SRI is used
+  # ("sha256", "sha384", "sha512", "md5")
+  fingerprint = ""
+  # uBlogger NEW | 0.2.0 date format
+  dateFormat = "2006-01-02"
+  # website images for Open Graph and Twitter Cards
+  images = ["/logo.png"]
+
+  # uBlogger NEW | 0.2.0 App icon config
+  [params.app]
+    # optional site title override for the app when added to an iOS home screen or Android launcher
+    title = "萧綦"
+    # whether to omit favicon resource links
+    noFavicon = false
+    # modern SVG favicon to use in place of older style .png and .ico files
+    svgFavicon = ""
+    # Android browser theme color
+    themeColor = "#ffffff"
+    # Safari mask icon color
+    iconColor = "#5bbad5"
+    # Windows v8-10 tile color
+    tileColor = "#da532c"
+
+  # uBlogger NEW | 0.2.0 Search config
+  [params.search]
+    enable = true
+    # type of search engine ("lunr", "algolia")
+    type = "lunr"
+    # max index length of the chunked content
+    contentLength = 4000
+    # placeholder of the search bar
+    placeholder = ""
+    # uBlogger NEW | 0.2.1 max number of results length
+    maxResultLength = 10
+    # uBlogger NEW | 0.2.3 snippet length of the result
+    snippetLength = 30
+    # uBlogger NEW | 0.2.1 HTML tag name of the highlight part in results
+    highlightTag = "em"
+    # uBlogger NEW | 0.2.4 whether to use the absolute URL based on the baseURL in search index
+    absoluteURL = false
+    [params.search.algolia]
+      index = ""
+      appID = ""
+      searchKey = ""
+
+  # Header config
+  [params.header]
+    # desktop header mode ("fixed", "normal", "auto")
+    desktopMode = "fixed"
+    # mobile header mode ("fixed", "normal", "auto")
+    mobileMode = "auto"
+    # uBlogger NEW | 0.2.0 Header title config
+    [params.header.title]
+      # URL of the LOGO
+      logo = ""
+      # title name
+      name = "且慢"
+      # you can add extra information before the name (HTML format is supported), such as icons
+      pre = ""
+      # you can add extra information after the name (HTML format is supported), such as icons
+      post = ""
+
+  # Footer config
+  [params.footer]
+    enable = true
+    # uBlogger NEW | 0.2.0 Custom content (HTML format is supported)
+    custom = ''
+    # uBlogger NEW | 0.2.0 whether to show Hugo and theme info
+    hugo = true
+    # uBlogger NEW | 0.2.0 whether to show copyright info
+    copyright = true
+    # uBlogger NEW | 0.2.0 whether to show the author
+    author = true
+    # Site creation time
+    since = 2018
+    # ICP info only in China (HTML format is supported)
+    icp = ""
+    # license info (HTML format is supported)
+    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+  # uBlogger NEW | 0.2.0 Section (all posts) page config
+  [params.section]
+    # special amount of posts in each section page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "01-02"
+    # amount of RSS pages
+    rss = 10
+
+  # uBlogger NEW | 0.2.0 List (category or tag) page config
+  [params.list]
+    # special amount of posts in each list page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "01-02"
+    # amount of RSS pages
+    rss = 10
+
+  # Home page config
+  [params.home]
+    # uBlogger NEW | 0.2.0 amount of RSS pages
+    rss = 10
+    # Home page profile
+    [params.home.profile]
+      enable = true
+      # Gravatar Email for preferred avatar in home page
+      gravatarEmail = ""
+      # URL of avatar shown in home page
+      avatarURL = "avtor.jpeg"
+      # uBlogger CHANGED | 0.2.7 title shown in home page (HTML format is supported)
+      title = "且慢"
+      # subtitle shown in home page
+      subtitle = "Advice is easy to give but hard to take！"
+      # whether to show social links
+      social = true
+      # uBlogger NEW | 0.2.0 disclaimer (HTML format is supported)
+      disclaimer = ""
+    # Home page posts
+    [params.home.posts]
+      enable = true
+      # special amount of posts in each home posts page
+      paginate = 6
+      # uBlogger DELETED | 0.2.0 replaced with hiddenFromHomePage in params.page
+      # default behavior when you don't set "hiddenFromHomePage" in front matter
+      defaultHiddenFromHomePage = false
+
+  # Social config about the author
+  [params.social]
+    GitHub = "Createitv"
+    # Linkedin = ""
+    # Twitter = "xxxx"
+    # Instagram = "createitv"
+    # Facebook = "ji.ke.1447"
+    Telegram = "Createitv"
+    Medium = ""
+    Gitlab = ""
+    Youtubelegacy = ""
+    Youtubecustom = ""
+    Youtubechannel = ""
+    Tumblr = ""
+    Quora = ""
+    Keybase = ""
+    Pinterest = ""
+    Reddit = ""
+    Codepen = ""
+    FreeCodeCamp = ""
+    Bitbucket = ""
+    Stackoverflow = ""
+    Weibo = ""
+    Odnoklassniki = ""
+    VK = ""
+    Flickr = ""
+    Xing = ""
+    Snapchat = ""
+    Soundcloud = ""
+    Spotify = ""
+    Bandcamp = ""
+    Paypal = ""
+    Fivehundredpx = ""
+    Mix = ""
+    Goodreads = ""
+    Lastfm = ""
+    Foursquare = ""
+    Hackernews = ""
+    Kickstarter = ""
+    Patreon = ""
+    Steam = ""
+    Twitch = ""
+    Strava = ""
+    Skype = ""
+    Whatsapp = ""
+    Zhihu = ""
+    Douban = ""
+    Angellist = ""
+    Slidershare = ""
+    Jsfiddle = ""
+    Deviantart = ""
+    Behance = ""
+    Dribbble = ""
+    Wordpress = ""
+    Vine = ""
+    Googlescholar = ""
+    Researchgate = ""
+    Mastodon = ""
+    Thingiverse = ""
+    Devto = ""
+    Gitea = ""
+    XMPP = ""
+    Matrix = ""
+    Bilibili = ""
+    Email = "xfy150150@gmail.com"
+    RSS = true # uBlogger NEW | 0.2.0
+
+  # uBlogger CHANGED | 0.2.0 Page config
+  [params.page]
+    # uBlogger NEW | 1.0.0 main subject for articles, by default classic. more on themes}
+    theme = "classic"
+    # uBlogger NEW | 0.2.0 whether to hide a page from home page
+    hiddenFromHomePage = false
+    # uBlogger NEW | 0.2.0 whether to hide a page from search results
+    hiddenFromSearch = false
+    # uBlogger NEW | 1.2.0 Allows you to hide the preview image on the article page
+    hiddenFeaturedImage = false
+    # uBlogger NEW | 0.2.0 whether to enable twemoji
+    twemoji = false
+    # whether to enable lightgallery
+    lightgallery = false
+    # uBlogger NEW | 0.2.0 whether to enable the ruby extended syntax
+    ruby = true
+    # uBlogger NEW | 0.2.0 whether to enable the fraction extended syntax
+    fraction = true
+    # uBlogger NEW | 0.2.0 whether to enable the fontawesome extended syntax
+    fontawesome = true
+    # whether to show link to Raw Markdown content of the content
+    linkToMarkdown = true
+    # uBlogger NEW | 0.2.4 whether to show the full text content in RSS
+    rssFullText = false
+    # uBlogger NEW | 1.1.0 Post display settings on the page
+    [params.summary]
+      # uBlogger NEW | 1.1.0 Display previews on the page of posts
+      hiddenImage = false
+      # uBlogger NEW | 1.1.0 Allows you to hide the description
+      hiddenDescription = false
+      # uBlogger NEW | 1.1.0 Allows you to hide the title
+      hiddenTitle = false
+    # uBlogger NEW | 1.1.0 Tag display settings
+    [params.summary.tags]
+      # uBlogger NEW | 1.1.0 One of the options for displaying tags
+      theme = "image"
+      # uBlogger NEW | 1.1.0 Text color
+      color = "white"
+      # uBlogger NEW | 1.1.0 Backing color
+      background = "black"
+      # uBlogger NEW | 1.1.0 Tag transparency
+      transparency = 0.9
+    # uBlogger NEW | 1.2.0 Fasting time display
+    [params.timeAgo]
+      enable = "false"
+      lang = "en"
+    # uBlogger NEW | 0.2.0 Table of the contents config
+    [params.page.toc]
+      # whether to enable the table of the contents
+      enable = true
+      # uBlogger NEW | 0.2.9 whether to keep the static table of the contents in front of the post
+      keepStatic = true
+      # whether to make the table of the contents in the sidebar automatically collapsed
+      auto = true
+    # uBlogger CHANGED | 0.2.0 KaTeX mathematical formulas
+    [params.page.math]
+      enable = true
+      # default block delimiter is $$ ... $$ and \\[ ... \\]
+      blockLeftDelimiter = ""
+      blockRightDelimiter = ""
+      # default inline delimiter is $ ... $ and \\( ... \\)
+      inlineLeftDelimiter = ""
+      inlineRightDelimiter = ""
+      # KaTeX extension copy_tex
+      copyTex = true
+      # KaTeX extension mhchem
+      mhchem = true
+    # uBlogger NEW | 0.2.0 Code config
+    [params.page.code]
+      # whether to show the copy button of the code block
+      copy = true
+      # the maximum number of lines of displayed code by default
+      maxShownLines = 10
+    # uBlogger NEW | 0.2.0 Mapbox GL JS config
+    [params.page.mapbox]
+      # access token of Mapbox GL JS
+      accessToken = ""
+      # style for the light theme
+      lightStyle = "mapbox://styles/mapbox/light-v9"
+      # style for the dark theme
+      darkStyle = "mapbox://styles/mapbox/dark-v9"
+      # whether to add NavigationControl
+      navigation = true
+      # whether to add GeolocateControl
+      geolocate = true
+      # whether to add ScaleControl
+      scale = true
+      # whether to add FullscreenControl
+      fullscreen = true
+    # uBlogger CHANGED | 0.2.0 social share links in post page
+    [params.page.share]
+      enable = true
+      Twitter = false
+      Facebook = true
+      Linkedin = false
+      Whatsapp = true
+      Pinterest = false
+      Tumblr = false
+      HackerNews = false
+      Reddit = false
+      VK = false
+      Buffer = false
+      Xing = false
+      Line = true
+      Instapaper = false
+      Pocket = false
+      Digg = false
+      Stumbleupon = false
+      Flipboard = false
+      Weibo = false
+      Renren = false
+      Myspace = false
+      Blogger = false
+      Baidu = false
+      Odnoklassniki = false
+      Evernote = true
+      Skype = false
+      Trello = false
+      Mix = false

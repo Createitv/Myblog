@@ -4,11 +4,11 @@ subtitle: ""
 date: {{ .Date }}
 lastmod: {{ .Date }}
 draft: true
-author: ""
-description: ""
+author: "Createitv"
+description: "Createitv"
 
 page:
-    theme: "wide"
+    theme: "classic"
 
 upd: ""
 authorComment: ""
