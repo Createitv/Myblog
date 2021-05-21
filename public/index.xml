@@ -2,34 +2,43 @@
     <channel>
         <title>且慢</title>
         <link>http://www.longtermbook.com/</link>
-        <description>且慢</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 02 Apr 2021 19:26:53 &#43;0800</lastBuildDate>
+        <description>This is My New Hugo Site</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 16 May 2021 17:49:34 &#43;0800</lastBuildDate>
             <atom:link href="http://www.longtermbook.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>浏览器的基本组成</title>
+    <link>http://www.longtermbook.com/posts/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</link>
+    <pubDate>Sun, 16 May 2021 17:49:34 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</guid>
+    <description><![CDATA[浏览器特性 现代浏览器的特性主要包含如下几部分： 网络 浏览器通过网络模块下载各种资源，如：HTML文档、JavaScript代码、样式表、图片、]]></description>
+</item><item>
+    <title>IntermediatePython</title>
+    <link>http://www.longtermbook.com/posts/intermediatepython/</link>
+    <pubDate>Sat, 15 May 2021 22:22:05 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/intermediatepython/</guid>
+    <description><![CDATA[IntermediatePython *args和**kwargs 并不是必须写成*args 和**kwargs。 只有变量前面的 *(星号)才是必须的. 你也可以写成*var 和**va]]></description>
+</item><item>
+    <title>Cs50_html_and_css</title>
+    <link>http://www.longtermbook.com/posts/cs50_html_and_css/</link>
+    <pubDate>Fri, 14 May 2021 13:24:47 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/cs50_html_and_css/</guid>
+    <description><![CDATA[Lecture 0 Introduction Web Programming HTML (Hypertext Markup Language) Document Object Model (DOM) More HTML Elements Forms CSS (Cascading Style Sheets) Responsive Design Bootstrap Sass (Syntactically Awesome Style Sheets) Introduction In this course, we’re picking up where CS50 left off and diving into the design and creation of web applications. We’ll build our web-design skills by working on a number of projects]]></description>
+</item><item>
     <title>三月的总结</title>
     <link>http://www.longtermbook.com/posts/%E4%B8%89%E6%9C%88%E7%9A%84%E6%80%BB%E7%BB%93/</link>
     <pubDate>Fri, 02 Apr 2021 19:26:53 &#43;0800</pubDate>
     <author>Createitv</author>
     <guid>http://www.longtermbook.com/posts/%E4%B8%89%E6%9C%88%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
-    <description><![CDATA[求证的合群，不如自证的孤独
- 本月主题 ： python爬虫，
-读书记录 python编程之美  爬虫Request库作者所书，难度适中，封面美丽。
-学习  这个月学习主题多有涉及：vim编辑器、算法复杂度、队列、爬虫解析xpath，re，Bs4、代理爬虫。主要是涉及了爬虫爬虫比我想象中要难，尤其是各种验证码识别，反爬虫破解。已经做到可以爬取豆瓣电影Top250，拉勾网招聘爬虫，小有收获。python csv，json，sql数据库还不太熟悉。4月份打算放一放scrapy先耍耍Django，再回头。
-投资 耐心等待周期 ☞第一，不要去追求“银弹”，即所谓的低风险甚至无风险的高收益。因为，这种“银弹”会引诱人们动用杠杆或是一把梭，结果可能会有不错的收益，但也有可能出现一系列极其糟糕的结果，而后者在市场里出现的概率更为普遍。当重大损失发生后，而后市场又刚好出现好机会，那么此时的机会必然与自身擦肩而过。
-☞第二，面对市场低迷期，在确定标的长期可持续增长的情况下，持续买入。因为，你耐心地持有，周期的力量会让它的内在价值和价格趋于一致。
-☞第三，持续的学习，只有持续的学习，并习得独立思考判断的能力，才能在耐心等待过程中，识别出机会并抓住它。]]></description>
+    <description><![CDATA[求证的合群，不如自证的孤独 本月主题 ： python爬虫， 读书记录 python编程之美 爬虫Request库作者所书，难度适中，封面美丽。 学习 这个]]></description>
 </item><item>
     <title>二月的总结</title>
     <link>http://www.longtermbook.com/posts/%E4%BA%8C%E6%9C%88%E7%9A%84%E6%80%BB%E7%BB%93/</link>
     <pubDate>Mon, 01 Mar 2021 19:26:48 &#43;0800</pubDate>
     <author>Createitv</author>
     <guid>http://www.longtermbook.com/posts/%E4%BA%8C%E6%9C%88%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
-    <description><![CDATA[正月已过，重新启程。先做正确的事情，再把事情做对
- 本月主题 ： 区块链技术入门，密西根Python3 Programming， 如何销售
-读书记录 区块链革命  没想道会有Apple II之父沃兹尼亚克推荐，可见比特币和区块链技术已经成为了硅谷共识，不得不关注。这本书居区块链入门书籍中高阶部分，所以不像其他区块链通识书籍，阅读起来较为困难，导致豆瓣评分不高。上阵父子兵，没想到写书还有父子兵。Coursera还有两位作者一起创作的Mooc，也以本书为参考教材。本书涉及区块链设计原则较多，而非区块链底层原理。
-数字黄金  区块链小白书，豆瓣评分也明显偏高。涉及比特币原理：区块链技术、密码箱原理、分布式账本、挖矿、共识机制。
-学习   不得不说国外的Mooc是真TM贴心，云环境，网页编辑器，课本、视频、练习、作业、考核、评论。完全跨过操作系统限制、环境配置、网络，能够体会到背后的用心，这也是我喜欢靠自己自学的原因。课程质量高一圈，体贴程度也是高一圈。下一步玩玩爬虫，做个蜘蛛侠，也巩固下学习内容。
-销售  不得不吹一下Box定投践行群，第一期销售训练营也都是实打实的分享，基本上都在我主动边界以外的内容，不加群根本不知道还可以这样做销售，销售也只有一个理念，价值服务。
- 销售的不是产品，是你自己 过滤你的顾客 顾客买的不是产品，买的为什么  投资  开年以来交易日均值回归，📉跌幅尽在射程范围以内。从预计年化101%直接到20%，我的目标是年化15%足矣。此外张坤的易方达中小盘今年分红竟然有9%，赚钱只有一个姿势：躺]]></description>
+    <description><![CDATA[正月已过，重新启程。先做正确的事情，再把事情做对 本月主题 ： 区块链技术入门，密西根Python3 Programming， 如何销售 读书记录 区块链]]></description>
 </item></channel>
 </rss>

@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>python - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/python/</link>
+        <description>python - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 15 May 2021 22:22:05 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>IntermediatePython</title>
+    <link>http://www.longtermbook.com/posts/intermediatepython/</link>
+    <pubDate>Sat, 15 May 2021 22:22:05 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/intermediatepython/</guid>
+    <description><![CDATA[IntermediatePython *args和**kwargs 并不是必须写成*args 和**kwargs。 只有变量前面的 *(星号)才是必须的. 你也可以写成*var 和**va]]></description>
+</item></channel>
+</rss>

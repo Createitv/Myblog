@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>浏览器 - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
+        <description>浏览器 - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 16 May 2021 17:49:34 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="self" type="application/rss+xml" /><item>
+    <title>浏览器的基本组成</title>
+    <link>http://www.longtermbook.com/posts/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</link>
+    <pubDate>Sun, 16 May 2021 17:49:34 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</guid>
+    <description><![CDATA[浏览器特性 现代浏览器的特性主要包含如下几部分： 网络 浏览器通过网络模块下载各种资源，如：HTML文档、JavaScript代码、样式表、图片、]]></description>
+</item></channel>
+</rss>

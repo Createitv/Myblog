@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>IntermediatePython | 且慢</title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="IntermediatePython"/>
+<meta name="twitter:description" content="Createitv"/><meta name="Description" content="Createitv"><meta property="og:title" content="IntermediatePython" />
+<meta property="og:description" content="Createitv" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.longtermbook.com/posts/intermediatepython/" /><meta property="og:image" content="http://www.longtermbook.com/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-15T22:22:05&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-15T22:22:05&#43;08:00" /><meta property="og:site_name" content="且慢" />
+
+<meta name="application-name" content="萧綦">
+<meta name="apple-mobile-web-app-title" content="萧綦"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://www.longtermbook.com/posts/intermediatepython/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "IntermediatePython",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/www.longtermbook.com\/posts\/intermediatepython\/"
+        },"genre": "posts","wordCount":  6655 ,
+        "url": "http:\/\/www.longtermbook.com\/posts\/intermediatepython\/","datePublished": "2021-05-15T22:22:05+08:00","dateModified": "2021-05-15T22:22:05+08:00","description": "Createitv"
+    }
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "主页",
+            "item": "http:\/\/www.longtermbook.com\/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "python",
+            "item": "http://www.longtermbook.com/categories/python/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "IntermediatePython"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="且慢" class="header-logo logo-svg">且慢</a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul class="menu-inner"><li>
+                        <a class="menu-item" href="/posts/"> 文章 </a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/"> 标签 </a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/"> 分类 </a>
+                    </li></ul>
+            </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="且慢" class="header-logo">且慢</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><nav>
+                <ul><li>
+                        <a class="menu-item" href="/posts/" title="">文章</a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/" title="">标签</a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/" title="">分类</a>
+                    </li></ul>
+            </nav>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <span class="svg-icon icon-moon"></span>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+<div class="container content-article  theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">目录</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+
+    <div class="header-post">
+
+        
+
+        
+        <div class="post-title">
+
+                <div class="post-all-meta">
+                    <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">主页 </a></li><li><a href="/categories/python/">python </a></li><li>IntermediatePython</li>
+    </ol>
+</nav>
+                    <h1 class="single-title flipInX">IntermediatePython</h1><div class="post-meta">
+                        <div class="post-meta-line"><span class="post-category">
+                                <a href="/categories/python/"><i class="svg-icon icon-folder"></i>python</a>
+                            </span><span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-05-15">2021-05-15</time>
+                            </span><span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>约 6655 字
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>预计阅读 14 分钟
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+    <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#intermediatepython">IntermediatePython</a></li>
+    <li><a href="#args和kwargs"><code>*args</code>和<code>**kwargs</code></a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#args的用法"><code>*args</code>的用法</a></li>
+            <li><a href="#kwargs的用法"><code>**kwargs</code>的用法</a></li>
+            <li><a href="#使用args和kwargs来调用函数">使用<code>args</code>和<code>**kwargs</code>来调用函数</a></li>
+            <li><a href="#什么时候使用">什么时候使用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#调试debugging">调试Debugging</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#从命令行启动">从命令行启动</a></li>
+            <li><a href="#从脚本内部启动">从脚本内部启动</a>
+              <ul>
+                <li><a href="#命令列表">命令列表：</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#生成器generators">生成器Generators</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#可迭代对象iterable">可迭代对象(Iterable)</a></li>
+            <li><a href="#迭代器iterator">迭代器(Iterator)</a></li>
+            <li><a href="#迭代iteration">迭代(Iteration)</a></li>
+            <li><a href="#生成器generators-1">生成器(Generators)</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#高阶函数mapfilterreduce">高阶函数(Map，Filter，Reduce)</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#map函数">Map函数</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#set数据集合">Set数据集合</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#交集">交集</a></li>
+            <li><a href="#差集">差集</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#三元运算符">三元运算符</a></li>
+    <li><a href="#装饰器">装饰器</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#函数也是对象">函数也是对象</a></li>
+            <li><a href="#函数中定义函数">函数中定义函数</a></li>
+            <li><a href="#将函数作为参数传给另一个函数">将函数作为参数传给另一个函数</a></li>
+            <li><a href="#装饰器应用">装饰器应用</a></li>
+            <li><a href="#装饰起语法糖">装饰起语法糖</a></li>
+            <li><a href="#使用场景">使用场景</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#slots魔法">slots魔法</a></li>
+    <li><a href="#虚拟环境virtualenv">虚拟环境Virtualenv</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#什么是虚拟环境">什么是虚拟环境？</a></li>
+            <li><a href="#虚拟环境安装">虚拟环境安装</a></li>
+            <li><a href="#虚拟环境启动">虚拟环境启动</a></li>
+            <li><a href="#虚拟环境关闭">虚拟环境关闭</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#容器collections">容器(collections)</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#defaultdict">defaultdict</a></li>
+            <li><a href="#counter">counter</a></li>
+            <li><a href="#deque">deque</a></li>
+            <li><a href="#namedtuple">namedtuple</a></li>
+            <li><a href="#enumenum">enum.Enum</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#枚举enumerate">枚举Enumerate</a></li>
+    <li><a href="#对象自省">对象自省</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#dir">dir</a></li>
+            <li><a href="#type和id">type和id</a></li>
+            <li><a href="#inspect模块">inspect模块</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#推导式">推导式</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#list-comprehension">List Comprehension</a></li>
+            <li><a href="#dictionary-comprehension">Dictionary Comprehension</a></li>
+            <li><a href="#set-comprehension">Set Comprehension</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#异常">异常</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#处理多个异常">处理多个异常</a>
+              <ul>
+                <li><a href="#捕获所有异常">捕获所有异常</a></li>
+              </ul>
+            </li>
+            <li><a href="#finally-从句">finally 从句</a></li>
+            <li><a href="#try--else从句">try / else从句</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#lambda表达式">lambda表达式</a></li>
+    <li><a href="#一行式">一行式</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#简易web-server"><strong>简易Web Server</strong></a></li>
+            <li><a href="#漂亮的打印"><strong>漂亮的打印</strong></a></li>
+            <li><a href="#脚本性能分析"><strong>脚本性能分析</strong></a></li>
+            <li><a href="#csv转换为json">CSV转换为json</a></li>
+            <li><a href="#一行式的构造器">一行式的构造器</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#for-else">For-else</a></li>
+    <li><a href="#使用c扩展">使用C扩展</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#ctypes">Ctypes</a></li>
+            <li><a href="#swig">SWIG</a></li>
+            <li><a href="#pythonc-api">Python/C API</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#函数缓存">函数缓存</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#python32">python3.2+</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><h2 id="intermediatepython">IntermediatePython</h2>
+<h2 id="args和kwargs"><code>*args</code>和<code>**kwargs</code></h2>
+<p>并不是必须写成<code>*args</code> 和<code>**kwargs</code>。 只有变量前面的 <code>*</code>(星号)才是必须的. 你也可以写成<code>*var</code> 和<code>**vars</code>. 而写成<code>*args</code> 和<code>**kwargs</code>只是一个通俗的命名约定。</p>
+<h4 id="args的用法"><code>*args</code>的用法</h4>
+<p><code>args</code>和<code>**kwargs</code>用于函数<strong>不定数量</strong>的参数传递，在函数使用者不知道会传递多少个参数下可使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">test_var_args</span><span class="p">(</span><span class="n">f_arg</span><span class="p">,</span> <span class="o">*</span><span class="n">argv</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;first normal arg:&#34;</span><span class="p">,</span> <span class="n">f_arg</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">argv</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;another arg through *argv:&#34;</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span><span class="n">test_var_args</span><span class="p">(</span><span class="s1">&#39;yasoob&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="n">first</span> <span class="n">normal</span> <span class="n">arg</span><span class="p">:</span> <span class="n">yasoob</span>
+<span class="n">another</span> <span class="n">arg</span> <span class="n">through</span> <span class="o">*</span><span class="n">argv</span><span class="p">:</span> <span class="n">python</span>
+<span class="n">another</span> <span class="n">arg</span> <span class="n">through</span> <span class="o">*</span><span class="n">argv</span><span class="p">:</span> <span class="n">eggs</span>
+<span class="n">another</span> <span class="n">arg</span> <span class="n">through</span> <span class="o">*</span><span class="n">argv</span><span class="p">:</span> <span class="n">test</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="kwargs的用法"><code>**kwargs</code>的用法</h4>
+<p><code>**kwargs</code> 允许你将不定长度的<strong>键值对</strong>, 作为参数传递给一个函数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">greet_me</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+	<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+		<span class="k">print</span><span class="p">(</span><span class="s2">&#34;{0}=={1}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">greet_me</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;yasoob&#39;</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">==</span> <span class="n">yasoob</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="使用args和kwargs来调用函数">使用<code>args</code>和<code>**kwargs</code>来调用函数</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">test_args_kwargs</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">arg3</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;arg1:&#34;</span><span class="p">,</span> <span class="n">arg1</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;arg2:&#39;</span><span class="p">,</span> <span class="n">arg2</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;arg3:&#34;</span><span class="p">,</span> <span class="n">arg3</span><span class="p">)</span>
+<span class="c1"># 首先使用*args</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&#34;two&#34;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span><span class="n">test_args_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">arg1</span><span class="p">:</span> <span class="n">two</span>
+<span class="n">arg2</span><span class="p">:</span> <span class="mi">3</span>
+<span class="n">arg3</span><span class="p">:</span> <span class="mi">5</span>
+<span class="c1">#再使用**kwargs</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;arg3&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&#34;arg2&#34;</span><span class="p">:</span> <span class="s2">&#34;two&#34;</span><span class="p">,</span> <span class="s2">&#34;arg1&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">test_args_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">arg1</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">arg2</span><span class="p">:</span> <span class="n">two</span>
+<span class="n">arg3</span><span class="p">:</span> <span class="mi">3</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>标准参数、缺省参数、<code>*args</code>、<code>**kwargs</code>在使用时候的顺序</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">some_function</span><span class="p">(</span><span class="n">argument</span><span class="p">,</span> <span class="n">argument</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="什么时候使用">什么时候使用</h4>
+<p>根据需求而定：最常见在装饰起之中捕获修饰函数的不定参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">use_logging</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># Look this</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%s</span><span class="s2"> is running&#34;</span> <span class="o">%</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+<span class="nd">@use_logging</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;i am foo&#34;</span><span class="p">)</span>
+<span class="nd">@use_logging</span>
+<span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;i am bar&#34;</span><span class="p">)</span>
+<span class="n">bar</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="调试debugging">调试Debugging</h2>
+<blockquote>
+<p>利用好调试，能大大提高你捕捉代码Bug的。大部分新人忽略了Python debugger(<code>pdb</code>)的重要性。</p>
+</blockquote>
+<h4 id="从命令行启动">从命令行启动</h4>
+<p><code>$ python -m pdb my_script.py</code></p>
+<h4 id="从脚本内部启动">从脚本内部启动</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pdb</span>
+
+<span class="k">def</span> <span class="nf">make_bread</span><span class="p">():</span>
+    <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>  <span class="c1">#设置断点</span>
+    <span class="k">return</span> <span class="s2">&#34;I don&#39;t have time&#34;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">make_bread</span><span class="p">())</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="命令列表">命令列表：</h5>
+<ul>
+<li><code>c</code>: 继续执行</li>
+<li><code>w</code>: 显示当前正在执行的代码行的上下文信息</li>
+<li><code>a</code>: 打印当前函数的参数列表</li>
+<li><code>s</code>: 执行当前代码行，并停在第一个能停的地方（相当于单步进入）</li>
+<li><code>n</code>: 继续执行到当前函数的下一行，或者当前行直接返回（单步跳过）</li>
+</ul>
+<h2 id="生成器generators">生成器Generators</h2>
+<p>迭代器(iterators)是一个让程序员可以遍历一个容器（特别是列表）的对象。然而，一个迭代器在遍历并读取一个容器的数据元素时，并不会执行一个迭代。</p>
+<ul>
+<li>可迭代对象(Iterable)——形容词</li>
+<li>迭代器(Iterator)——名词</li>
+<li>迭代(Iteration)——动词</li>
+</ul>
+<h4 id="可迭代对象iterable">可迭代对象(Iterable)</h4>
+<p>Python中任意的对象，只要它定义了可以返回一个迭代器的<code>__iter__</code>方法，或者定义了可以支持下标索引的<code>__getitem__</code>方法(这些双下划线方法会在其他章节中全面解释)，那么它就是一个可迭代对象。</p>
+<h4 id="迭代器iterator">迭代器(Iterator)</h4>
+<p>任意对象，只要定义了<code>next</code>(Python2) 或者<code>__next__</code>方法，它就是一个迭代器。就这么简单。现在我们来理解迭代(iteration)</p>
+<h4 id="迭代iteration">迭代(Iteration)</h4>
+<p>从某个地方（比如一个列表）不断取出一个元素的过程。当我们使用一个循环来遍历某个东西时，这个过程本身就叫迭代。</p>
+<h4 id="生成器generators-1">生成器(Generators)</h4>
+<p>生成器也是一种迭代器，一次只能迭代一次，类似版本迭代更新。在<code>python</code>中并没有直接把所有数据写入内存中，而是在运行时生成值。可以通过遍历来访问他们，大多数时候通过函数来实现。而且并不返回一个值而是yield一个值。</p>
+<p>斐波那契数列生成器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># generator version(减少资源消耗)</span>
+<span class="k">def</span> <span class="nf">fibon</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">a</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fibon</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    
+<span class="c1">#faction version</span>
+<span class="k">def</span> <span class="nf">fibon</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="高阶函数mapfilterreduce">高阶函数(Map，Filter，Reduce)</h2>
+<h4 id="map函数">Map函数</h4>
+<p><code>Map</code>会将一个函数映射到一个输入列表的所有元素上</p>
+<p><code>map(function_to_apply, list_of_inputs)</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 对比举例</span>
+<span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">squared</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+    <span class="n">squared</span><span class="o">.</span><span class="n">appedn</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># 等同于</span>
+<span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">squared</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">items</span><span class="p">))</span>
+<span class="c1"># 在python2中map直接返回列表，但在python3中返回迭代器</span>
+<span class="c1"># 因此为了兼容python3, 需要list转换一下</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Filter函数</p>
+<p><code>filter</code>过滤列表中的元素，并且返回一个由所有符合要求的元素所构成的列表，<code>符合要求</code>即函数映射到该元素时返回值为True</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">number_list</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="n">less_than_zero</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span> <span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span> <span class="n">number_list</span><span class="p">)</span><span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">less_than_zero</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>filter</code>类似于一个<code>for</code>循环，但它是一个内置函数，并且更快。</p>
+<p>注意：<code>map</code>和<code>filter</code>相对不那么优雅,推导式的可读性更好。</p>
+<p>Reduce函数</p>
+<p><strong>reduce()</strong> 函数会对参数序列中元素进行累积</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">reduce</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">iterable</span><span class="p">[,</span> <span class="n">initializer</span><span class="p">])</span> <span class="c1">#语法from functools import reduceproduct = reduce( (lambda x, y: x * y), [1, 2, 3, 4] )# Output: 24</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="set数据集合">Set数据集合</h2>
+<p><code>set</code>(集合)是一个非常有用的数据结构。它与列表(<code>list</code>)的行为类似，区别在于<code>set</code>不能包含重复的值。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 查看重复元素some_list = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;b&#39;, &#39;d&#39;, &#39;m&#39;, &#39;n&#39;, &#39;n&#39;]duplicates = []for value in some_list:    if some_list.count(value) &gt; 1:        if value not in duplicates:            duplicates.append(value)print(duplicates)### 输出: [&#39;b&#39;, &#39;n&#39;]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>更简单更优雅的解决方案，那就是使用<code>集合(sets)</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">some_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">]</span><span class="n">duplicates</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">some_list</span> <span class="k">if</span> <span class="n">some_list</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">])</span><span class="k">print</span><span class="p">(</span><span class="n">duplicates</span><span class="p">)</span><span class="c1">### 输出: set([&#39;b&#39;, &#39;n&#39;])</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="交集">交集</h4>
+<p>对比两个集合的交集（两个集合中都有的数据）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">valid</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39; green&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">])</span><span class="n">input_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">])</span><span class="k">print</span><span class="p">(</span><span class="n">input_set</span><span class="o">.</span><span class="n">interserction</span><span class="p">(</span><span class="n">valid</span><span class="p">))</span><span class="c1">### 输出:set([&#39;red&#39;])</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="差集">差集</h4>
+<p>用差集(difference)找出无效的数据，相当于用一个集合减去另一个集合的数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">valid</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">])</span><span class="n">input_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;brown&#39;</span><span class="p">])</span><span class="k">print</span><span class="p">(</span><span class="n">input_set</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">valid</span><span class="p">))</span><span class="c1">### 输出:set([&#39;brown&#39;])</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>你也可以用<code>{}</code>符号来创建集合</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a_set</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">}</span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a_set</span><span class="p">))</span><span class="c1">### 输出: &lt;type &#39;set&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="三元运算符">三元运算符</h2>
+<p>三元运算符通常在Python里被称为条件表达式，这些表达式基于真(true)/假(false)的条件判断</p>
+<p><strong>伪代码</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#如果条件为真，返回真 否则返回假condition_is_true if condition else condition_is_false</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>举例</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">number</span> <span class="o">=</span> <span class="mi">3</span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;单数&#39;</span> <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;双数&#39;</span><span class="k">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span><span class="c1">### 输出:单数</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>另外一种超级晦涩的语法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#(返回假，返回真)[真或假](if_test_is_false, if_test_is_true)[test]fat = Truefitness = (&#34;skinny&#34;, &#34;fat&#34;)[fat]print(&#34;Ali is&#34;, fitness)#输出: Ali is fat</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="装饰器">装饰器</h2>
+<p>修改其他函数的功能的函数。他们有助于让我们的代码更简短，也更Pythonic（Python范儿），新手跨越必备。</p>
+<h4 id="函数也是对象">函数也是对象</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">hi</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&#34;yasoob&#34;</span><span class="p">):</span>    <span class="k">return</span> <span class="s2">&#34;hi &#34;</span> <span class="o">+</span> <span class="n">nameprint</span><span class="p">(</span><span class="n">hi</span><span class="p">())</span><span class="c1"># output: &#39;hi yasoob&#39;# 我们甚至可以将一个函数赋值给一个变量，比如greet = hi# 我们这里没有在使用小括号，因为我们并不是在调用hi函数# 而是在将它放在greet变量里头。我们尝试运行下这个print(greet())# output: &#39;hi yasoob&#39;# 如果我们删掉旧的hi函数，看看会发生什么！del hiprint(hi())#outputs: NameErrorprint(greet())#outputs: &#39;hi yasoob&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="函数中定义函数">函数中定义函数</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">def hi(name=&#34;yasoob&#34;):    print(&#34;now you are inside the hi() function&#34;)    def greet():        return &#34;now you are in the greet() function&#34;    def welcome():        return &#34;now you are in the welcome() function&#34;    print(greet())    print(welcome())    print(&#34;now you are back in the hi() function&#34;)hi()#output:now you are inside the hi() function#       now you are in the greet() function#       now you are in the welcome() function#       now you are back in the hi() function# 上面展示了无论何时你调用hi(), greet()和welcome()将会同时被调用。# 然后greet()和welcome()函数在hi()函数之外是不能访问的，比如：greet()#outputs: NameError: name &#39;greet&#39; is not defined
+</code></pre></td></tr></table>
+</div>
+</div><p>从函数中返回函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">hi</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&#34;yasoob&#34;</span><span class="p">):</span>    <span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>        <span class="k">return</span> <span class="s2">&#34;now you are in the greet() function&#34;</span>    <span class="k">def</span> <span class="nf">welcome</span><span class="p">():</span>        <span class="k">return</span> <span class="s2">&#34;now you are in the welcome() function&#34;</span>    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;yasoob&#34;</span><span class="p">:</span>        <span class="k">return</span> <span class="n">greet</span>    <span class="k">else</span><span class="p">:</span>        <span class="k">return</span> <span class="n">welcomea</span> <span class="o">=</span> <span class="n">hi</span><span class="p">()</span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="c1">#outputs: &lt;function greet at 0x7f2143c01500&gt;#上面清晰地展示了`a`现在指向到hi()函数中的greet()函数#现在试试这个print(a())#outputs: now you are in the greet() function</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="将函数作为参数传给另一个函数">将函数作为参数传给另一个函数</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">hi</span><span class="p">():</span>    <span class="k">return</span> <span class="s2">&#34;hi yasoob!&#34;</span><span class="k">def</span> <span class="nf">doSomethingBeforeHi</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;I am doing some boring work before executing hi()&#34;</span><span class="p">)</span>    <span class="k">print</span><span class="p">(</span><span class="n">func</span><span class="p">())</span><span class="n">doSomethingBeforeHi</span><span class="p">(</span><span class="n">hi</span><span class="p">)</span><span class="c1">#outputs:I am doing some boring work before executing hi()#        hi yasoob!</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="装饰器应用">装饰器应用</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">a_new_decorator</span><span class="p">(</span><span class="n">a_func</span><span class="p">):</span>    <span class="k">def</span> <span class="nf">wrapTheFunction</span><span class="p">():</span>        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;I am doing some boring work before executing a_func()&#34;</span><span class="p">)</span>        <span class="n">a_func</span><span class="p">()</span>        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;I am doing some boring work after executing a_func()&#34;</span><span class="p">)</span>    <span class="k">return</span> <span class="n">wrapTheFunctiondef</span> <span class="n">a_function_requiring_decoration</span><span class="p">():</span>    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;I am the function which needs some decoration to remove my foul smell&#34;</span><span class="p">)</span><span class="n">a_function_requiring_decoration</span><span class="p">()</span><span class="c1">#outputs: &#34;I am the function which needs some decoration to remove my foul smell&#34;a_function_requiring_decoration = a_new_decorator(a_function_requiring_decoration)#now a_function_requiring_decoration is wrapped by wrapTheFunction()a_function_requiring_decoration()#outputs:I am doing some boring work before executing a_func()#        I am the function which needs some decoration to remove my foul smell#        I am doing some boring work after executing a_func()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="装饰起语法糖">装饰起语法糖</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@a_new_decoratordef</span> <span class="n">a_function_requiring_decoration</span><span class="p">():</span>    <span class="s2">&#34;&#34;&#34;Hey you! Decorate me!&#34;&#34;&#34;</span>    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;I am the function which needs some decoration to &#34;</span>          <span class="s2">&#34;remove my foul smell&#34;</span><span class="p">)</span><span class="n">a_function_requiring_decoration</span><span class="p">()</span><span class="c1">#outputs: I am doing some boring work before executing a_func()#         I am the function which needs some decoration to remove my foul smell#         I am doing some boring work after executing a_func()#the @a_new_decorator is just a short way of saying:a_function_requiring_decoration = a_new_decorator(a_function_requiring_decoration)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="使用场景">使用场景</h4>
+<p>装饰器能有助于检查某个人是否被授权去使用一个web应用的端点(endpoint)。它们被大量使用于Flask和Django web框架中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wrapsdef</span> <span class="n">requires_auth</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>    <span class="nd">@wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>    <span class="k">def</span> <span class="nf">decorated</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>        <span class="n">auth</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">authorization</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">auth</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">check_auth</span><span class="p">(</span><span class="n">auth</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">auth</span><span class="o">.</span><span class="n">password</span><span class="p">):</span>            <span class="n">authenticate</span><span class="p">()</span>        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>    <span class="k">return</span> <span class="n">decorated</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="slots魔法">slots魔法</h2>
+<p>在Python中，每个类都有实例属性。默认情况下Python用一个字典来保存一个对象的实例属性。这非常有用，因为它允许我们在运行时去设置任意的新属性。</p>
+<p>然而，对于有着已知属性的小类来说，它可能是个瓶颈。这个字典浪费了很多内存。Python不能在对象创建时直接分配一个固定量的内存来保存所有的属性。因此如果你创建许多对象（我指的是成千上万个），它会消耗掉很多内存。 不过还是有一个方法来规避这个问题。这个方法需要使用<code>__slots__</code>来告诉Python不要使用字典，而且只给一个固定集合的属性分配空间。</p>
+<ul>
+<li>不使用<code>__slots__</code>:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">identifier</span><span class="p">):</span>      <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>      <span class="bp">self</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">identifier</span>      <span class="bp">self</span><span class="o">.</span><span class="n">set_up</span><span class="p">()</span>  
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>使用<code>__slots__</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>  <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;identifier&#39;</span><span class="p">]</span>  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">identifier</span><span class="p">):</span>      <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>      <span class="bp">self</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">identifier</span>      <span class="bp">self</span><span class="o">.</span><span class="n">set_up</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>第二段代码会为你的内存减轻负担。通过这个技巧，有些人已经看到内存占用率几乎40%~50%的减少。</p>
+<h2 id="虚拟环境virtualenv">虚拟环境Virtualenv</h2>
+<h4 id="什么是虚拟环境">什么是虚拟环境？</h4>
+<p><code>Virtualenv</code> 是一个工具，它能够帮我们创建一个独立(隔离)的Python环境。想象你有一个应用程序，依赖于版本为2的第三方模块，但另一个程序依赖的版本是3，请问你如何使用和开发这些应用程序？</p>
+<p>如果你把一切都安装到了<code>/usr/lib/python2.7/site-packages</code>（或者其它平台的标准位置），那很容易出现某个模块被升级而你却不知道的情况。</p>
+<p>在另一种情况下，想象你有一个已经开发完成的程序，但是你不想更新它所依赖的第三方模块版本；但你已经开始另一个程序，需要这些第三方模块的版本。</p>
+<h4 id="虚拟环境安装">虚拟环境安装</h4>
+<p><code>pip install virtualenv</code></p>
+<h4 id="虚拟环境启动">虚拟环境启动</h4>
+<p><code>$ virtualenv myproject</code>
+<code>$ source myproject/bin/activate</code></p>
+<p>执行第一个命令在<code>myproject</code>文件夹创建一个隔离的virtualenv环境，第二个命令激活这个隔离的环境(<code>virtualenv</code>)。</p>
+<p>如果你想让你的<code>virtualenv</code>使用系统全局模块，请使用<code>--system-site-packages</code></p>
+<h4 id="虚拟环境关闭">虚拟环境关闭</h4>
+<p><code>$ deactivate</code></p>
+<p>小工具</p>
+<p><code>smartcd</code>你可以使用<code>smartcd</code>来帮助你管理你的环境，当你切换目录时，它可以帮助你激活（activate）和退出（deactivate）你的<code>virtualenv</code></p>
+<h2 id="容器collections">容器(collections)</h2>
+<h4 id="defaultdict">defaultdict</h4>
+<p><code>defaultdict</code>与<code>dict</code>类型不同，你不需要检查<strong>key</strong>是否存在，所以能这样做</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdictcolours</span> <span class="o">=</span> <span class="p">(</span>    <span class="p">(</span><span class="s1">&#39;Yasoob&#39;</span><span class="p">,</span> <span class="s1">&#39;Yellow&#39;</span><span class="p">),</span>    <span class="p">(</span><span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">),</span>    <span class="p">(</span><span class="s1">&#39;Arham&#39;</span><span class="p">,</span> <span class="s1">&#39;Green&#39;</span><span class="p">),</span>    <span class="p">(</span><span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;Black&#39;</span><span class="p">),</span>    <span class="p">(</span><span class="s1">&#39;Yasoob&#39;</span><span class="p">,</span> <span class="s1">&#39;Red&#39;</span><span class="p">),</span>    <span class="p">(</span><span class="s1">&#39;Ahmed&#39;</span><span class="p">,</span> <span class="s1">&#39;Silver&#39;</span><span class="p">),)</span><span class="n">favourite_colours</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">colour</span> <span class="ow">in</span> <span class="n">colours</span><span class="p">:</span>    <span class="n">favourite_colours</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">colour</span><span class="p">)</span><span class="k">print</span><span class="p">(</span><span class="n">favourite_colours</span><span class="p">)</span><span class="c1"># defaultdict(&lt;type &#39;list&#39;&gt;,#    {&#39;Arham&#39;: [&#39;Green&#39;],#     &#39;Yasoob&#39;: [&#39;Yellow&#39;, &#39;Red&#39;],#     &#39;Ahmed&#39;: [&#39;Silver&#39;],#     &#39;Ali&#39;: [&#39;Blue&#39;, &#39;Black&#39;]# })</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>当你在一个字典中对一个键进行嵌套赋值时，如果这个键不存在，会触发<code>keyError</code>异常。 <code>defaultdict</code>允许我们用一个聪明的方式绕过这个问题。 首先我分享一个使用<code>dict</code>触发<code>KeyError</code>的例子，然后提供一个使用<code>defaultdict</code>的解决方案</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">some_dict</span> <span class="o">=</span> <span class="p">{}</span><span class="n">some_dict</span><span class="p">[</span><span class="s1">&#39;colours&#39;</span><span class="p">][</span><span class="s1">&#39;favourite&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;yellow&#34;</span><span class="c1">## 异常输出：KeyError: &#39;colours&#39;import collectionstree = lambda: collections.defaultdict(tree)some_dict = tree()some_dict[&#39;colours&#39;][&#39;favourite&#39;] = &#34;yellow&#34;## 运行正常</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="counter">counter</h4>
+<p><code>counter</code>是一个计数器，帮助我们对数据进行计数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Countercolours</span> <span class="o">=</span> <span class="p">(</span>    <span class="p">(</span><span class="s1">&#39;Yasoob&#39;</span><span class="p">,</span> <span class="s1">&#39;Yellow&#39;</span><span class="p">),</span>    <span class="p">(</span><span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">),</span>    <span class="p">(</span><span class="s1">&#39;Arham&#39;</span><span class="p">,</span> <span class="s1">&#39;Green&#39;</span><span class="p">),</span>    <span class="p">(</span><span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;Black&#39;</span><span class="p">),</span>    <span class="p">(</span><span class="s1">&#39;Yasoob&#39;</span><span class="p">,</span> <span class="s1">&#39;Red&#39;</span><span class="p">),</span>    <span class="p">(</span><span class="s1">&#39;Ahmed&#39;</span><span class="p">,</span> <span class="s1">&#39;Silver&#39;</span><span class="p">),)</span><span class="n">favs</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">colour</span> <span class="ow">in</span> <span class="n">colours</span><span class="p">)</span><span class="k">print</span><span class="p">(</span><span class="n">favs</span><span class="p">)</span><span class="c1">## 输出:## Counter({##     &#39;Yasoob&#39;: 2,##     &#39;Ali&#39;: 2,##     &#39;Arham&#39;: 1,##     &#39;Ahmed&#39;: 1##  })</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们也可以在利用它统计一个文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>    <span class="n">line_count</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="k">print</span><span class="p">(</span><span class="n">line_count</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="deque">deque</h4>
+<p><code>deque</code>提供了一个双端队列，你可以从头和尾两端添加或者删除元素。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">dequed</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span><span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span><span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span><span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">)</span><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="c1"># output:3print(d[0])# output:&#39;1&#39;print(d[-1])# output:&#39;3&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>从两端取出(pop)数据：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">d</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="c1">## 输出: 5d.popleft()## 输出: 0d.pop()## 输出: 4print(d)## 输出: deque([1, 2, 3])</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="namedtuple">namedtuple</h4>
+<h4 id="enumenum">enum.Enum</h4>
+<h2 id="枚举enumerate">枚举Enumerate</h2>
+<p>枚举(<code>enumerate</code>)是Python内置函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;grapes&#39;</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">]</span><span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>    <span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span><span class="c1"># 输出:(1, &#39;apple&#39;)(2, &#39;banana&#39;)(3, &#39;grapes&#39;)(4, &#39;pear&#39;)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="对象自省">对象自省</h2>
+<p>自省(introspection)，在计算机编程领域里，是指在运行时来判断一个对象的类型的能力。它是Python的强项之一。Python中所有一切都是一个对象，而且我们可以仔细勘察那些对象。Python还包含了许多内置函数和模块来帮助我们。</p>
+<h4 id="dir">dir</h4>
+<p>返回一个列表，列出了一个对象所拥有的属性和方法。自省给了我们一个列表对象的所有方法的名字。当你没法回忆起一个方法的名字，这会非常有帮助。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span><span class="nb">dir</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span><span class="c1"># Output: [&#39;__add__&#39;, &#39;__class__&#39;, &#39;__contains__&#39;, &#39;__delattr__&#39;, &#39;__delitem__&#39;,# &#39;__delslice__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;,# &#39;__getitem__&#39;, &#39;__getslice__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__iadd__&#39;, &#39;__imul__&#39;,# &#39;__init__&#39;, &#39;__iter__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__mul__&#39;, &#39;__ne__&#39;,# &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__reversed__&#39;, &#39;__rmul__&#39;,# &#39;__setattr__&#39;, &#39;__setitem__&#39;, &#39;__setslice__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;,# &#39;__subclasshook__&#39;, &#39;append&#39;, &#39;count&#39;, &#39;extend&#39;, &#39;index&#39;, &#39;insert&#39;, &#39;pop&#39;,# &#39;remove&#39;, &#39;reverse&#39;, &#39;sort&#39;]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="type和id">type和id</h4>
+<p><code>type</code>函数返回一个对象的类型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))</span><span class="c1"># Output: &lt;type &#39;str&#39;&gt;print(type([]))# Output: &lt;type &#39;list&#39;&gt;print(type({}))# Output: &lt;type &#39;dict&#39;&gt;print(type(dict))# Output: &lt;type &#39;type&#39;&gt;print(type(3))# Output: &lt;type &#39;int&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>id()</code>函数返回任意不同种类对象的唯一ID</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;Yasoob&#34;</span><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="c1"># Output: 139972439030304</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="inspect模块">inspect模块</h4>
+<p><code>inspect</code>模块也提供了许多有用的函数，来获取活跃对象的信息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">inspectprint</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span><span class="c1"># Output: [(&#39;__add__&#39;, &lt;slot wrapper &#39;__add__&#39; of ... ...</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="推导式">推导式</h2>
+<p>推导式（又称解析式）是Python的一种独有特性，推导式可以从一个数据序列构建另外一个数据序列的结构体。</p>
+<ul>
+<li>列表推导式</li>
+<li>字典推导式</li>
+<li>集合推导式</li>
+</ul>
+<h4 id="list-comprehension">List Comprehension</h4>
+<p>列表推导式（又称列表解析式）提供了一种简明扼要的方法来创建列表。 它的结构是在一个中括号里包含一个表达式，然后是一个<code>for</code>语句，然后是0个或多个<code>for</code>或者<code>if</code>语句。那个表达式可以是任意的，意思是你可以在列表中放入任意类型的对象。返回结果将是一个新的列表，在这个以<code>if</code>和<code>for</code>语句为上下文的表达式运行完成之后产生。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">variable</span> <span class="o">=</span> <span class="p">[</span><span class="n">out_exp</span> <span class="k">for</span> <span class="n">out_exp</span> <span class="ow">in</span> <span class="n">input_list</span> <span class="k">if</span> <span class="n">out_exp</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="dictionary-comprehension">Dictionary Comprehension</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mcase</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span><span class="n">mcase_frequency</span> <span class="o">=</span> <span class="p">{</span>    <span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span> <span class="n">mcase</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">mcase</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)</span>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">mcase</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span><span class="c1"># mcase_frequency == {&#39;a&#39;: 17, &#39;z&#39;: 3, &#39;b&#39;: 34}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>快速对换一个字典的键和值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="n">v</span><span class="p">:</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">some_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="set-comprehension">Set Comprehension</h4>
+<p>它们跟列表推导式也是类似的。 唯一的区别在于它们使用大括号<code>{}</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">squared</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]}</span><span class="k">print</span><span class="p">(</span><span class="n">squared</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="异常">异常</h2>
+<p>异常处理是一种艺术，一旦你掌握，会授予你无穷的力量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>    <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;An IOError occurred. {}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="处理多个异常">处理多个异常</h4>
+<p>第一种方法需要把所有可能发生的异常放到一个元组里。像这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>    <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="k">except</span> <span class="p">(</span><span class="ne">IOError</span><span class="p">,</span> <span class="ne">EOFError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;An error occurred. {}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>另外一种方式是对每个单独的异常在单独的<code>except</code>语句块中处理。我们想要多少个<code>except</code>语句块都可以。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>    <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="k">except</span> <span class="ne">EOFError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;An EOF error occurred.&#34;</span><span class="p">)</span>    <span class="k">raise</span> <span class="n">eexcept</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;An error occurred.&#34;</span><span class="p">)</span>    <span class="k">raise</span> <span class="n">e</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="捕获所有异常">捕获所有异常</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>    <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;test.txt&#34;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>    <span class="c1"># 打印一些异常日志，如果你想要的话    raise</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="finally-从句">finally 从句</h4>
+<p>包裹到<code>finally</code>从句中的代码不管异常是否触发都将会被执行。这可以被用来在脚本执行之后做清理工作。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>    <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;test.txt&#34;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;An IOError occurred.{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span><span class="k">finally</span><span class="p">:</span>    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;This would be printed wheher or not an exception occurred!&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="try--else从句">try / else从句</h4>
+<p>else可以用在不触发异常的情况下执行一些代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">try</span><span class="p">:</span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;I am sure no exception is going to occur!&#39;</span><span class="p">)</span><span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;exception&#39;</span><span class="p">)</span><span class="k">else</span><span class="p">:</span>    <span class="c1"># 这里的代码只会在try语句里没有触发异常时运行,    # 但是这里的异常将 *不会* 被捕获    print(&#39;This would only run if no exception occurs. And an error here &#39;          &#39;would NOT be caught.&#39;)finally:    print(&#39;This would be printed in every case.&#39;)# Output: I am sure no exception is going to occur!# This would only run if no exception occurs.# This would be printed in every case.</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="lambda表达式">lambda表达式</h2>
+<p>它们在其他语言中也被称为匿名函数。如果你不想在程序中对一个函数使用两次，你也许会想用lambda表达式</p>
+<p>原型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">lambda</span> <span class="err">参数</span><span class="p">:</span><span class="err">操作</span><span class="p">(</span><span class="err">参数</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>例子</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">yprint</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span><span class="c1"># Output: 8</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>列表排序</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span> <span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)]</span><span class="n">a</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="c1"># Output: [(13, -3), (4, 1), (1, 2), (9, 10)]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="一行式">一行式</h2>
+<h4 id="简易web-server"><strong>简易Web Server</strong></h4>
+<p>你是否想过通过网络快速共享文件？好消息，Python为你提供了这样的功能。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Python 2python -m SimpleHTTPServer# Python 3python -m http.server</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="漂亮的打印"><strong>漂亮的打印</strong></h4>
+<p>你可以在Python REPL漂亮的打印出列表和字典。这里是相关的代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprintmy_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Yasoob&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="s1">&#39;undefined&#39;</span><span class="p">,</span> <span class="s1">&#39;personality&#39;</span><span class="p">:</span> <span class="s1">&#39;awesome&#39;</span><span class="p">}</span>    <span class="n">pprint</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>想快速漂亮的从文件打印出json数据，那么你可以这么做</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">cat file.json <span class="p">|</span> python -m json.tool
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="脚本性能分析"><strong>脚本性能分析</strong></h4>
+<p>这可能在定位你的脚本中的性能瓶颈时</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">cProfile</span> <span class="n">my_scripy</span><span class="o">.</span><span class="n">py</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="csv转换为json">CSV转换为json</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"> python -c <span class="s2">&#34;import csv,json;print json.dumps(list(csv.reader(open(&#39;csv_file.csv&#39;))))&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="一行式的构造器">一行式的构造器</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">    <span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;self&#39;</span><span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="for-else">For-else</h2>
+<p>else<code>从句会在循环正常结束时执行。这意味着，循环没有遇到任何</code>break</p>
+<p>有个常见的构造是跑一个循环，并查找一个元素。如果这个元素被找到了，我们使用<code>break</code>来中断这个循环。有两个场景会让循环停下来。</p>
+<ul>
+<li>第一个是当一个元素被找到，<code>break</code>被触发。</li>
+<li>第二个场景是循环结束。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>            <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s1">&#39;equals&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">n</span> <span class="o">/</span> <span class="n">x</span><span class="p">)</span>           	<span class="k">break</span>    <span class="k">else</span><span class="p">:</span>        <span class="c1"># loop fell through without finding a factor        print(n , &#39;is a prime number&#39;)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="使用c扩展">使用C扩展</h2>
+<p>开发者有三种方法可以在自己的Python代码中来调用C编写的函数-<code>ctypes</code>，<code>SWIG</code>，<code>Python/C API</code>。每种方式也都有各自的利弊。</p>
+<p>要在Python中调用C？原因如下：</p>
+<ul>
+<li>你要提升代码的运行速度，而且你知道C要比Python快50倍以上</li>
+<li>C语言中有很多传统类库，而且有些正是你想要的，但你又不想用Python去重写它们</li>
+<li>想对从内存到文件接口这样的底层资源进行访问</li>
+<li>不需要理由，就是想这样做</li>
+</ul>
+<h4 id="ctypes">Ctypes</h4>
+<p>Python中的<a href="https://docs.python.org/2/library/ctypes.html" target="_blank" rel="noopener noreffer">ctypes模块</a>可能是Python调用C方法中最简单的一种。ctypes模块提供了和C语言兼容的数据类型和函数来加载dll文件，因此在调用时不需对源文件做任何的修改。也正是如此奠定了这种方法的简单性。</p>
+<h4 id="swig">SWIG</h4>
+<p>SWIG是Simplified Wrapper and Interface Generator的缩写。是Python中调用C代码的另一种方法。在这个方法中，开发人员必须编写一个额外的接口文件来作为SWIG(终端工具)的入口。</p>
+<p>Python开发者一般不会采用这种方法，因为大多数情况它会带来不必要的复杂。而当你有一个C/C++代码库需要被多种语言调用时，这将是个非常不错的选择。</p>
+<h4 id="pythonc-api">Python/C API</h4>
+<p><a href="https://docs.python.org/2/c-api/" target="_blank" rel="noopener noreffer">Python/C API</a>可能是被最广泛使用的方法。它不仅简单，而且可以在C代码中操作你的Python对象。</p>
+<h2 id="函数缓存">函数缓存</h2>
+<p>函数缓存允许我们将一个函数对于给定参数的返回值缓存起来。 当一个I/O密集的函数被频繁使用相同的参数调用的时候，函数缓存可以节约时间。 在Python 3.2版本以前我们只有写一个自定义的实现。在Python 3.2以后版本，有个<code>lru_cache</code>的装饰器，允许我们将一个函数的返回值快速地缓存或取消缓存。</p>
+<h4 id="python32">python3.2+</h4>
+<p>实现一个斐波那契计算器，并使用<code>lru_cache</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">
+</code></pre></td></tr></table>
+</div>
+</div></div>
+
+            <div class="post" style="padding-top: 0">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://www.longtermbook.com/posts/intermediatepython/"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-whatsapp" href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://www.longtermbook.com/posts/intermediatepython/" data-title="IntermediatePython" data-web><span class="svg-social-icon icon-whatsapp"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-line" href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://www.longtermbook.com/posts/intermediatepython/" data-title="IntermediatePython"><span data-svg-src="/lib/simple-icons/icons/line.min.svg"></span></a>
+</div><div class="share-link">
+        <a class="share-icon share-evernote" href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://www.longtermbook.com/posts/intermediatepython/" data-title="IntermediatePython"><span class="svg-social-icon icon-evernote"></span></a>
+    </div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://ublogger.netlify.app/?utm_source=http://www.longtermbook.com/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2018 - 2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body>
+</html>

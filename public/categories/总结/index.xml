@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>总结 - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/%E6%80%BB%E7%BB%93/</link>
+        <description>总结 - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 02 Apr 2021 19:26:53 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/%E6%80%BB%E7%BB%93/" rel="self" type="application/rss+xml" /><item>
+    <title>三月的总结</title>
+    <link>http://www.longtermbook.com/posts/%E4%B8%89%E6%9C%88%E7%9A%84%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Fri, 02 Apr 2021 19:26:53 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E4%B8%89%E6%9C%88%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[求证的合群，不如自证的孤独 本月主题 ： python爬虫， 读书记录 python编程之美 爬虫Request库作者所书，难度适中，封面美丽。 学习 这个]]></description>
+</item><item>
+    <title>二月的总结</title>
+    <link>http://www.longtermbook.com/posts/%E4%BA%8C%E6%9C%88%E7%9A%84%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Mon, 01 Mar 2021 19:26:48 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E4%BA%8C%E6%9C%88%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[正月已过，重新启程。先做正确的事情，再把事情做对 本月主题 ： 区块链技术入门，密西根Python3 Programming， 如何销售 读书记录 区块链]]></description>
+</item></channel>
+</rss>

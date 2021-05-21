@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>CS50web - 标签 - 且慢</title>
+        <link>http://www.longtermbook.com/tags/cs50web/</link>
+        <description>CS50web - 标签 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 14 May 2021 13:24:47 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/tags/cs50web/" rel="self" type="application/rss+xml" /><item>
+    <title>Cs50_html_and_css</title>
+    <link>http://www.longtermbook.com/posts/cs50_html_and_css/</link>
+    <pubDate>Fri, 14 May 2021 13:24:47 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/cs50_html_and_css/</guid>
+    <description><![CDATA[Lecture 0 Introduction Web Programming HTML (Hypertext Markup Language) Document Object Model (DOM) More HTML Elements Forms CSS (Cascading Style Sheets) Responsive Design Bootstrap Sass (Syntactically Awesome Style Sheets) Introduction In this course, we’re picking up where CS50 left off and diving into the design and creation of web applications. We’ll build our web-design skills by working on a number of projects]]></description>
+</item></channel>
+</rss>
