@@ -3,9 +3,16 @@
         <title>且慢</title>
         <link>http://www.longtermbook.com/</link>
         <description>This is My New Hugo Site</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 21 May 2021 11:11:59 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 26 May 2021 10:58:58 &#43;0800</lastBuildDate>
             <atom:link href="http://www.longtermbook.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>抽象数据类型</title>
+    <link>http://www.longtermbook.com/posts/adt_date_type/</link>
+    <pubDate>Wed, 26 May 2021 10:58:58 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/adt_date_type/</guid>
+    <description><![CDATA[Abstract Data Types Abstract Data type (ADT) is a type (or class) for objects whose behaviour is defined by a set of value and a set of operations. The definition of ADT only mentions what operations are to be performed but not how these operations will be implemented. It does not specify how data will be organized in memory and what algorithms will be used for implementing the operations. It]]></description>
+</item><item>
     <title>JS数组操作</title>
     <link>http://www.longtermbook.com/posts/js%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/</link>
     <pubDate>Fri, 21 May 2021 11:11:59 &#43;0800</pubDate>

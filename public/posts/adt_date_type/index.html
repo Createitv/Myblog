@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>抽象数据类型 | 且慢</title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="抽象数据类型"/>
+<meta name="twitter:description" content="Createitv"/><meta name="Description" content="Createitv"><meta property="og:title" content="抽象数据类型" />
+<meta property="og:description" content="Createitv" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.longtermbook.com/posts/adt_date_type/" /><meta property="og:image" content="http://www.longtermbook.com/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-26T10:58:58&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-26T10:58:58&#43;08:00" /><meta property="og:site_name" content="且慢" />
+
+<meta name="application-name" content="萧綦">
+<meta name="apple-mobile-web-app-title" content="萧綦"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://www.longtermbook.com/posts/adt_date_type/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "抽象数据类型",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/www.longtermbook.com\/posts\/adt_date_type\/"
+        },"genre": "posts","wordCount":  945 ,
+        "url": "http:\/\/www.longtermbook.com\/posts\/adt_date_type\/","datePublished": "2021-05-26T10:58:58+08:00","dateModified": "2021-05-26T10:58:58+08:00","description": "Createitv"
+    }
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "主页",
+            "item": "http:\/\/www.longtermbook.com\/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "算法",
+            "item": "http://www.longtermbook.com/categories/%E7%AE%97%E6%B3%95/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "抽象数据类型"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="且慢" class="header-logo logo-svg">且慢</a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul class="menu-inner"><li>
+                        <a class="menu-item" href="/posts/"> 文章 </a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/"> 标签 </a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/"> 分类 </a>
+                    </li></ul>
+            </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="且慢" class="header-logo">且慢</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><nav>
+                <ul><li>
+                        <a class="menu-item" href="/posts/" title="">文章</a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/" title="">标签</a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/" title="">分类</a>
+                    </li></ul>
+            </nav>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <span class="svg-icon icon-moon"></span>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+<div class="container content-article  theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">目录</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+
+    <div class="header-post">
+
+        
+
+        
+        <div class="post-title">
+
+                <div class="post-all-meta">
+                    <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">主页 </a></li><li><a href="/categories/%E7%AE%97%E6%B3%95/">算法 </a></li><li>抽象数据类型</li>
+    </ol>
+</nav>
+                    <h1 class="single-title flipInX">抽象数据类型</h1><div class="post-meta">
+                        <div class="post-meta-line"><span class="post-category">
+                                <a href="/categories/%E7%AE%97%E6%B3%95/"><i class="svg-icon icon-folder"></i>算法</a>
+                            </span><span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-05-26">2021-05-26</time>
+                            </span><span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>约 945 字
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>预计阅读 2 分钟
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+    <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#list-adt">List ADT</a></li>
+        <li><a href="#stack-adt">Stack ADT</a></li>
+        <li><a href="#queue-adt">Queue ADT</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><h1 id="abstract-data-types">Abstract Data Types</h1>
+<p>Abstract Data type (ADT) is a type (or class) for objects whose behaviour is defined by a set of value and a set of operations.</p>
+<p>The definition of ADT only mentions what operations are to be performed but not how these operations will be implemented. It does not specify how data will be organized in memory and what algorithms will be used for implementing the operations. It is called “abstract” because it gives an implementation-independent view. The process of providing only the essentials and hiding the details is known as abstraction.</p>
+<p><a href="https://media.geeksforgeeks.org/wp-content/uploads/20190828194629/ADT.jpg" target="_blank" rel="noopener noreffer">
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://media.geeksforgeeks.org/wp-content/uploads/20190828194629/ADT.jpg"
+         alt="img"
+         title="ADT.jpg"
+    /></a></p>
+<p>The user of <a href="https://www.geeksforgeeks.org/data-types-in-c/" target="_blank" rel="noopener noreffer">data type</a> does not need to know how that data type is implemented, for example, we have been using Primitive values like int, float, char data types only with the knowledge that these data type can operate and be performed on without any idea of how they are implemented. So a user only needs to know what a data type can do, but not how it will be implemented. Think of ADT as a black box which hides the inner structure and design of the data type. Now we’ll define three ADTs namely <a href="https://www.geeksforgeeks.org/linked-list-set-1-introduction/" target="_blank" rel="noopener noreffer">List</a> ADT, <a href="https://www.geeksforgeeks.org/stack-data-structure-introduction-program/" target="_blank" rel="noopener noreffer">Stack</a> ADT, <a href="https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/" target="_blank" rel="noopener noreffer">Queue</a> ADT.</p>
+<h3 id="list-adt">List ADT</h3>
+<p>The data is generally stored in key sequence in a list which has a head structure consisting of count,pointers and address of compare function needed to compare the data in the list.</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://media.geeksforgeeks.org/wp-content/uploads/20190917225727/ListADTStructure.png"
+         alt="img"
+         title="ListADTStructure.png"
+    /></p>
+<p>The data node contains the pointer to a data structure and a</p>
+<p>self-referential pointer which points to the next node in the list.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">//List ADT Type Definitions
+</span><span class="c1"></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">node</span>
+<span class="p">{</span>
+<span class="kt">void</span> <span class="o">*</span><span class="n">DataPtr</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">link</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Node</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="k">struct</span>
+<span class="p">{</span>
+<span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
+<span class="n">Node</span> <span class="o">*</span><span class="n">pos</span><span class="p">;</span>
+<span class="n">Node</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+<span class="n">Node</span> <span class="o">*</span><span class="n">rear</span><span class="p">;</span>
+<span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">compare</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">argument1</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">argument2</span><span class="p">)</span>
+<span class="p">}</span> <span class="n">LIST</span><span class="p">;</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>The List ADT Functions is given below:</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://media.geeksforgeeks.org/wp-content/uploads/20190917225726/ListADTFunctions.png"
+         alt="img"
+         title="ListADTFunctions.png"
+    /></p>
+<p>A list contains elements of the same type arranged in sequential order and following operations can be performed on the list.</p>
+<ul>
+<li>get() – Return an element from the list at any given position.</li>
+<li>insert() – Insert an element at any position of the list.</li>
+<li>remove() – Remove the first occurrence of any element from a non-empty list.</li>
+<li>removeAt() – Remove the element at a specified location from a non-empty list.</li>
+<li>replace() – Replace an element at any position by another element.</li>
+<li>size() – Return the number of elements in the list.</li>
+<li>isEmpty() – Return true if the list is empty, otherwise return false.</li>
+<li>isFull() – Return true if the list is full, otherwise return false.</li>
+</ul>
+<h3 id="stack-adt">Stack ADT</h3>
+<ul>
+<li>
+<p>In Stack ADT Implementation instead of data being stored in each node, the pointer to data is stored.</p>
+</li>
+<li>
+<p>The program allocates memory for the date and address is passed to the stack ADT.</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://media.geeksforgeeks.org/wp-content/uploads/20190917225800/StackADT.jpg"
+         alt="img"
+         title="StackADT.jpg"
+    /></p>
+</li>
+<li>
+<p>The head node and the data nodes are encapsulated in the ADT. The calling function can only see the pointer to the stack.</p>
+</li>
+<li>
+<p>The stack head structure also contains a pointer to top and count of number of entries currently in stack.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">//Stack ADT Type Definitions
+</span><span class="c1"></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">node</span>
+<span class="p">{</span>
+<span class="kt">void</span> <span class="o">*</span><span class="n">DataPtr</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">link</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">StackNode</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="k">struct</span>
+<span class="p">{</span>
+<span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
+<span class="n">StackNode</span> <span class="o">*</span><span class="n">top</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">STACK</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>A Stack contains elements of the same type arranged in sequential order. All operations take place at a single end that is top of the stack and following operations can be performed:</p>
+<ul>
+<li>push() – Insert an element at one end of the stack called top.</li>
+<li>pop() – Remove and return the element at the top of the stack, if it is not empty.</li>
+<li>peek() – Return the element at the top of the stack without removing it, if the stack is not empty.</li>
+<li>size() – Return the number of elements in the stack.</li>
+<li>isEmpty() – Return true if the stack is empty, otherwise return false.</li>
+<li>isFull() – Return true if the stack is full, otherwise return false.</li>
+</ul>
+<h3 id="queue-adt">Queue ADT</h3>
+<ul>
+<li>
+<p>The queue abstract data type (ADT) follows the basic design of the stack abstract data type.</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://media.geeksforgeeks.org/wp-content/uploads/20190917225729/QueueADT.png"
+         alt="img"
+         title="QueueADT.png"
+    /></p>
+</li>
+<li>
+<p>Each node contains a void pointer to the data and the link pointer to the next element in the queue. The program’s responsibility is to allocate memory for storing the data.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">//Queue ADT Type Definitions
+</span><span class="c1"></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">node</span>
+<span class="p">{</span>
+<span class="kt">void</span> <span class="o">*</span><span class="n">DataPtr</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">QueueNode</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="k">struct</span>
+<span class="p">{</span>
+<span class="n">QueueNode</span> <span class="o">*</span><span class="n">front</span><span class="p">;</span>
+<span class="n">QueueNode</span> <span class="o">*</span><span class="n">rear</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">QUEUE</span><span class="p">;</span>
+  
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>A Queue contains elements of the same type arranged in sequential order. Operations take place at both ends, insertion is done at the end and deletion is done at the front. Following operations can be performed:</p>
+<ul>
+<li>enqueue() – Insert an element at the end of the queue.</li>
+<li>dequeue() – Remove and return the first element of the queue, if the queue is not empty.</li>
+<li>peek() – Return the element of the queue without removing it, if the queue is not empty.</li>
+<li>size() – Return the number of elements in the queue.</li>
+<li>isEmpty() – Return true if the queue is empty, otherwise return false.</li>
+<li>isFull() – Return true if the queue is full, otherwise return false.</li>
+</ul>
+<p>From these definitions, we can clearly see that the definitions do not specify how these ADTs will be represented and how the operations will be carried out. There can be different ways to implement an ADT, for example, the List ADT can be implemented using arrays, or singly linked list or doubly linked list. Similarly, stack ADT and Queue ADT can be implemented using arrays or linked lists.</p>
+</div>
+
+            <div class="post" style="padding-top: 0">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://www.longtermbook.com/posts/adt_date_type/"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-whatsapp" href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://www.longtermbook.com/posts/adt_date_type/" data-title="抽象数据类型" data-web><span class="svg-social-icon icon-whatsapp"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-line" href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://www.longtermbook.com/posts/adt_date_type/" data-title="抽象数据类型"><span data-svg-src="/lib/simple-icons/icons/line.min.svg"></span></a>
+</div><div class="share-link">
+        <a class="share-icon share-evernote" href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://www.longtermbook.com/posts/adt_date_type/" data-title="抽象数据类型"><span class="svg-social-icon icon-evernote"></span></a>
+    </div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://ublogger.netlify.app/?utm_source=http://www.longtermbook.com/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2018 - 2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body>
+</html>

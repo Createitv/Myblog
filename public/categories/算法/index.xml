@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>算法 - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/%E7%AE%97%E6%B3%95/</link>
+        <description>算法 - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 26 May 2021 10:58:58 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/%E7%AE%97%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
+    <title>抽象数据类型</title>
+    <link>http://www.longtermbook.com/posts/adt_date_type/</link>
+    <pubDate>Wed, 26 May 2021 10:58:58 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/adt_date_type/</guid>
+    <description><![CDATA[Abstract Data Types Abstract Data type (ADT) is a type (or class) for objects whose behaviour is defined by a set of value and a set of operations. The definition of ADT only mentions what operations are to be performed but not how these operations will be implemented. It does not specify how data will be organized in memory and what algorithms will be used for implementing the operations. It]]></description>
+</item></channel>
+</rss>
