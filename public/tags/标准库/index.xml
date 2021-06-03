@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>标准库 - 标签 - 且慢</title>
+        <link>http://www.longtermbook.com/tags/%E6%A0%87%E5%87%86%E5%BA%93/</link>
+        <description>标准库 - 标签 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 02 Jun 2021 19:46:34 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/tags/%E6%A0%87%E5%87%86%E5%BA%93/" rel="self" type="application/rss+xml" /><item>
+    <title>Argparse使用</title>
+    <link>http://www.longtermbook.com/posts/argparse%E4%BD%BF%E7%94%A8/</link>
+    <pubDate>Wed, 02 Jun 2021 19:46:34 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/argparse%E4%BD%BF%E7%94%A8/</guid>
+    <description><![CDATA[argparse 使用简介 argparse 是 Python 内置的一个用于命令项选项与参数解析的模块，通过在程序中定义好我们需要的参数，argparse 将会从 sys.argv 中解析出这些参数，并自动]]></description>
+</item></channel>
+</rss>
