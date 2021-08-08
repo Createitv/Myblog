@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>设计模式 - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+        <description>设计模式 - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 08 Jun 2021 12:32:30 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
+    <title>工厂模式</title>
+    <link>http://www.longtermbook.com/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Tue, 08 Jun 2021 12:32:30 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[简介 工厂模式三姐妹：简单工厂模式（小妹妹）、工厂方法模式（妹妹）、抽象工厂模式（姐姐）。这三种模式可以理解为同一种编程思想的三个版本，从简单]]></description>
+</item></channel>
+</rss>

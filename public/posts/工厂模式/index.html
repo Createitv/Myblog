@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>工厂模式 | 且慢</title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="工厂模式"/>
+<meta name="twitter:description" content="Createitv"/><meta name="Description" content="Createitv"><meta property="og:title" content="工厂模式" />
+<meta property="og:description" content="Createitv" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.longtermbook.com/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" /><meta property="og:image" content="http://www.longtermbook.com/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-08T12:32:30&#43;08:00" />
+<meta property="article:modified_time" content="2021-06-08T12:32:30&#43;08:00" /><meta property="og:site_name" content="且慢" />
+
+<meta name="application-name" content="Createitv">
+<meta name="apple-mobile-web-app-title" content="Createitv"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://www.longtermbook.com/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "工厂模式",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/www.longtermbook.com\/posts\/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F\/"
+        },"genre": "posts","wordCount":  2920 ,
+        "url": "http:\/\/www.longtermbook.com\/posts\/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F\/","datePublished": "2021-06-08T12:32:30+08:00","dateModified": "2021-06-08T12:32:30+08:00","description": "Createitv"
+    }
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "主页",
+            "item": "http:\/\/www.longtermbook.com\/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "设计模式",
+            "item": "http://www.longtermbook.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "工厂模式"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="且慢" class="header-logo logo-svg">且慢</a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul class="menu-inner"><li>
+                        <a class="menu-item" href="/posts/"> 文章 </a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/"> 标签 </a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/"> 分类 </a>
+                    </li></ul>
+            </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="且慢" class="header-logo">且慢</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><nav>
+                <ul><li>
+                        <a class="menu-item" href="/posts/" title="">文章</a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/" title="">标签</a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/" title="">分类</a>
+                    </li></ul>
+            </nav>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <span class="svg-icon icon-moon"></span>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+<div class="container content-article  theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">目录</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+
+    <div class="header-post">
+
+        
+
+        
+        <div class="post-title">
+
+                <div class="post-all-meta">
+                    <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">主页 </a></li><li><a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式 </a></li><li>工厂模式</li>
+    </ol>
+</nav>
+                    <h1 class="single-title flipInX">工厂模式</h1><div class="post-meta">
+                        <div class="post-meta-line"><span class="post-category">
+                                <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><i class="svg-icon icon-folder"></i>设计模式</a>
+                            </span><span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-06-08">2021-06-08</time>
+                            </span><span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>约 2920 字
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>预计阅读 6 分钟
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+    <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#使用步骤">使用步骤</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#抽象工厂方法举例一">抽象工厂方法举例一</a></li>
+          </ul>
+        </li>
+        <li><a href="#抽象方法举例二">抽象方法举例二</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><h2 id="简介">简介</h2>
+<p><strong>工厂模式三姐妹</strong>：简单工厂模式（小妹妹）、工厂方法模式（妹妹）、抽象工厂模式（姐姐）。这三种模式可以理解为同一种编程思想的三个版本，从简单到高级不断升级。</p>
+<p><strong>简单工厂</strong>：只有一个工厂类 SimpleFactory，类中有一个静态的创建方法createProduct，该方法根据参数传递过来的类型值（type）或名称（name）来创建具体的产品（子类）对象。</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/image-20210608131330914.png"
+         alt="image-20210608131330914"
+         title="image-20210608131330914.png"
+    /></p>
+<p>**工厂方法模式：**工厂方法模式是简单工厂模式的一个升级版本，为解决简单工厂模式不符合“开放-封闭”原则的问题，对 SimpleFactory 进行了一个拆分，抽象出一个父类 Factory，并增加多个子类分别负责创建不同的具体产品</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/image-20210608131423117.png"
+         alt="image-20210608131423117"
+         title="image-20210608131423117.png"
+    /></p>
+<p>**抽象工厂模式：**抽象工厂模式是工厂方法模式的升级版本，工厂方法模式不能解决具有二级分类的产品的创建问题，抽象工厂模式就是用来解决这一问题的。提供一个创建一系列相关或相互依赖的对象的接口，而无须指定它们的具体类。</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/image-20210608131801505.png"
+         alt="image-20210608131801505"
+         title="image-20210608131801505.png"
+    /></p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://refactoringguru.cn/images/patterns/diagrams/abstract-factory/structure.png"
+         alt="抽象工厂设计模式"
+         title="structure.png"
+    /></p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://refactoringguru.cn/images/patterns/diagrams/abstract-factory/example.png"
+         alt="抽象工厂模式示例的类图"
+         title="example.png"
+    /></p>
+<h2 id="使用步骤">使用步骤</h2>
+<p>创建抽象产品类 &amp; 定义具体产品的公共接口；
+创建具体产品类（继承抽象产品类） &amp; 定义生产的具体产品；
+创建工厂类，通过创建静态方法根据传入不同参数从而创建不同具体产品类的实例；
+外界通过调用工厂类的静态方法，传入不同参数从而创建不同具体产品类的实例</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/Users/tnt/Documents/虚拟环境/Django/bin/python3</span>
+<span class="c1"># -*- encoding: utf-8 -*-</span>
+<span class="c1"># Time  : 2021/06/05 17:34:24</span>
+<span class="c1"># Theme : 简单工厂设计模式,工厂是创建其他产品类型的类</span>
+
+
+<span class="c1"># ---------例子一:简单工厂模式---------------</span>
+<span class="k">class</span> <span class="nc">Mercedes</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&#34;Mercedes-Benz&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">Bmw</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&#34;BMW&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">Audi</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&#34;Audi A8&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">SimpleCarFactory</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;简单工厂
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">product_car</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;mb&#34;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Mercedes</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;bmw&#34;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Bmw</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&#34;audi&#34;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Audi</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="n">c1</span> <span class="o">=</span> <span class="n">SimpleCarFactory</span><span class="o">.</span><span class="n">product_car</span><span class="p">(</span><span class="s2">&#34;mb&#34;</span><span class="p">)</span>
+    <span class="n">c2</span> <span class="o">=</span> <span class="n">SimpleCarFactory</span><span class="o">.</span><span class="n">product_car</span><span class="p">(</span><span class="s2">&#34;bmw&#34;</span><span class="p">)</span>
+    <span class="n">c3</span> <span class="o">=</span> <span class="n">SimpleCarFactory</span><span class="o">.</span><span class="n">product_car</span><span class="p">(</span><span class="s2">&#34;audi&#34;</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">c3</span><span class="p">)</span>
+
+
+<span class="c1"># -----------例子2 工厂方法模式--------------------</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+
+<span class="k">class</span> <span class="nc">Operation</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;抽象产品角色&#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_num</span><span class="p">,</span> <span class="n">second_num</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first_num</span> <span class="o">=</span> <span class="n">first_num</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">second_num</span> <span class="o">=</span> <span class="n">second_num</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">getResult</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Add</span><span class="p">(</span><span class="n">Operation</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;具体产品角色&#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">getResult</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_num</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">second_num</span>
+
+
+<span class="k">class</span> <span class="nc">Sub</span><span class="p">(</span><span class="n">Operation</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;具体产品角色&#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">getResult</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_num</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">second_num</span>
+
+
+<span class="k">class</span> <span class="nc">Mul</span><span class="p">(</span><span class="n">Operation</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;具体产品角色&#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">getResult</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_num</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">second_num</span>
+
+
+<span class="k">class</span> <span class="nc">Div</span><span class="p">(</span><span class="n">Operation</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;具体产品角色&#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">getResult</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_num</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">second_num</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="k">raise</span>
+
+
+<span class="k">class</span> <span class="nc">OperationFactory</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;产品工厂角色&#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">op</span> <span class="o">=</span> <span class="n">operation</span>
+
+    <span class="k">def</span> <span class="nf">chooseOpertator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span> <span class="o">==</span> <span class="s2">&#34;+&#34;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Add</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span> <span class="o">==</span> <span class="s2">&#34;-&#34;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Sub</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span> <span class="o">==</span> <span class="s2">&#34;*&#34;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Mul</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">op</span> <span class="o">==</span> <span class="s2">&#34;/&#34;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Div</span>
+
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="n">operator</span> <span class="o">=</span> <span class="n">OperationFactory</span><span class="p">(</span><span class="s2">&#34;*&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">chooseOpertator</span><span class="p">()</span>
+
+    <span class="c1"># operator.first_num = 4</span>
+    <span class="c1"># operator.second_num = 5</span>
+    <span class="c1"># print(operator == Add())</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">operator</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">getResult</span><span class="p">())</span>
+
+
+<span class="n">test</span><span class="p">()</span>
+
+
+<span class="c1"># ---------------例子3 工厂方法模式------------------</span>
+<span class="k">class</span> <span class="nc">Coffee</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;咖啡类,抽象产品&#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__name</span>  <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">getName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__name</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">getTaste</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">LatteCaffe</span><span class="p">(</span><span class="n">Coffee</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;拉铁咖啡, 具体产品&#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">getTaste</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&#34;轻柔而香纯&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">MochaCoffee</span><span class="p">(</span><span class="n">Coffee</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;摩卡咖啡, 具体产品&#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">getTaste</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&#34;丝滑与醇厚&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">Coffeemaker</span><span class="p">:</span>
+    <span class="s2">&#34;&#34;&#34;咖啡机&#34;&#34;&#34;</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">makeCoffee</span><span class="p">(</span><span class="n">coffeeBean</span><span class="p">):</span>
+        <span class="s2">&#34;通过staticmethod装饰器修饰来定义一个静态方法&#34;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">coffeeBean</span> <span class="o">==</span> <span class="s2">&#34;拿铁咖啡豆&#34;</span><span class="p">):</span>
+            <span class="n">coffee</span> <span class="o">=</span> <span class="n">LatteCaffe</span><span class="p">(</span><span class="s2">&#34;拿铁咖啡&#34;</span><span class="p">)</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">coffeeBean</span> <span class="o">==</span> <span class="s2">&#34;摩卡咖啡豆&#34;</span><span class="p">):</span>
+            <span class="n">coffee</span> <span class="o">=</span> <span class="n">MochaCoffee</span><span class="p">(</span><span class="s2">&#34;摩卡咖啡&#34;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&#34;不支持的参数：</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">coffeeBean</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">coffee</span>
+
+
+<span class="k">def</span> <span class="nf">testCoffeeMaker</span><span class="p">():</span>
+    <span class="n">latte</span> <span class="o">=</span> <span class="n">Coffeemaker</span><span class="o">.</span><span class="n">makeCoffee</span><span class="p">(</span><span class="s2">&#34;拿铁咖啡豆&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%s</span><span class="s2">已为您准备好了，口感：</span><span class="si">%s</span><span class="s2">。请慢慢享用！&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">latte</span><span class="o">.</span><span class="n">getName</span><span class="p">(),</span> <span class="n">latte</span><span class="o">.</span><span class="n">getTaste</span><span class="p">()))</span>
+    <span class="n">mocha</span> <span class="o">=</span> <span class="n">Coffeemaker</span><span class="o">.</span><span class="n">makeCoffee</span><span class="p">(</span><span class="s2">&#34;摩卡咖啡豆&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%s</span><span class="s2">已为您准备好了，口感：</span><span class="si">%s</span><span class="s2">。请慢慢享用！&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mocha</span><span class="o">.</span><span class="n">getName</span><span class="p">(),</span> <span class="n">mocha</span><span class="o">.</span><span class="n">getTaste</span><span class="p">()))</span>
+
+<span class="n">testCoffeeMaker</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="抽象工厂方法举例一">抽象工厂方法举例一</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+
+<span class="k">class</span> <span class="nc">AbstractFactory</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    The Abstract Factory interface declares a set of methods that return
+</span><span class="s2">    different abstract products. These products are called a family and are
+</span><span class="s2">    related by a high-level theme or concept. Products of one family are usually
+</span><span class="s2">    able to collaborate among themselves. A family of products may have several
+</span><span class="s2">    variants, but the products of one variant are incompatible with products of
+</span><span class="s2">    another.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">create_product_a</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractProductA</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">create_product_b</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractProductB</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">ConcreteFactory1</span><span class="p">(</span><span class="n">AbstractFactory</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Concrete Factories produce a family of products that belong to a single
+</span><span class="s2">    variant. The factory guarantees that resulting products are compatible. Note
+</span><span class="s2">    that signatures of the Concrete Factory&#39;s methods return an abstract
+</span><span class="s2">    product, while inside the method a concrete product is instantiated.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">create_product_a</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractProductA</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ConcreteProductA1</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">create_product_b</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractProductB</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ConcreteProductB1</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">ConcreteFactory2</span><span class="p">(</span><span class="n">AbstractFactory</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Each Concrete Factory has a corresponding product variant.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">create_product_a</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractProductA</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ConcreteProductA2</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">create_product_b</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractProductB</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ConcreteProductB2</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">AbstractProductA</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Each distinct product of a product family should have a base interface. All
+</span><span class="s2">    variants of the product must implement this interface.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">useful_function_a</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+
+<span class="s2">&#34;&#34;&#34;
+</span><span class="s2">Concrete Products are created by corresponding Concrete Factories.
+</span><span class="s2">&#34;&#34;&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">ConcreteProductA1</span><span class="p">(</span><span class="n">AbstractProductA</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">useful_function_a</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&#34;The result of the product A1.&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">ConcreteProductA2</span><span class="p">(</span><span class="n">AbstractProductA</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">useful_function_a</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&#34;The result of the product A2.&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">AbstractProductB</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    Here&#39;s the the base interface of another product. All products can interact
+</span><span class="s2">    with each other, but proper interaction is possible only between products of
+</span><span class="s2">    the same concrete variant.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">useful_function_b</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Product B is able to do its own thing...
+</span><span class="s2">        &#34;&#34;&#34;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">another_useful_function_b</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">collaborator</span><span class="p">:</span> <span class="n">AbstractProductA</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        ...but it also can collaborate with the ProductA.
+</span><span class="s2">
+</span><span class="s2">        The Abstract Factory makes sure that all products it creates are of the
+</span><span class="s2">        same variant and thus, compatible.
+</span><span class="s2">        &#34;&#34;&#34;</span>
+        <span class="k">pass</span>
+
+
+<span class="s2">&#34;&#34;&#34;
+</span><span class="s2">Concrete Products are created by corresponding Concrete Factories.
+</span><span class="s2">&#34;&#34;&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">ConcreteProductB1</span><span class="p">(</span><span class="n">AbstractProductB</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">useful_function_b</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&#34;The result of the product B1.&#34;</span>
+
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    The variant, Product B1, is only able to work correctly with the variant,
+</span><span class="s2">    Product A1. Nevertheless, it accepts any instance of AbstractProductA as an
+</span><span class="s2">    argument.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">another_useful_function_b</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">collaborator</span><span class="p">:</span> <span class="n">AbstractProductA</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">collaborator</span><span class="o">.</span><span class="n">useful_function_a</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">f</span><span class="s2">&#34;The result of the B1 collaborating with the ({result})&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">ConcreteProductB2</span><span class="p">(</span><span class="n">AbstractProductB</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">useful_function_b</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&#34;The result of the product B2.&#34;</span>
+
+    <span class="k">def</span> <span class="nf">another_useful_function_b</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">collaborator</span><span class="p">:</span> <span class="n">AbstractProductA</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        The variant, Product B2, is only able to work correctly with the
+</span><span class="s2">        variant, Product A2. Nevertheless, it accepts any instance of
+</span><span class="s2">        AbstractProductA as an argument.
+</span><span class="s2">        &#34;&#34;&#34;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">collaborator</span><span class="o">.</span><span class="n">useful_function_a</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">f</span><span class="s2">&#34;The result of the B2 collaborating with the ({result})&#34;</span>
+
+
+<span class="k">def</span> <span class="nf">client_code</span><span class="p">(</span><span class="n">factory</span><span class="p">:</span> <span class="n">AbstractFactory</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    The client code works with factories and products only through abstract
+</span><span class="s2">    types: AbstractFactory and AbstractProduct. This lets you pass any factory
+</span><span class="s2">    or product subclass to the client code without breaking it.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">product_a</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_product_a</span><span class="p">()</span>
+    <span class="n">product_b</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_product_b</span><span class="p">()</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;{product_b.useful_function_b()}&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;{product_b.another_useful_function_b(product_a)}&#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    The client code can work with any concrete factory class.
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Client: Testing client code with the first factory type:&#34;</span><span class="p">)</span>
+    <span class="n">client_code</span><span class="p">(</span><span class="n">ConcreteFactory1</span><span class="p">())</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Client: Testing the same client code with the second factory type:&#34;</span><span class="p">)</span>
+    <span class="n">client_code</span><span class="p">(</span><span class="n">ConcreteFactory2</span><span class="p">())</span>
+    
+ <span class="o">--</span><span class="n">Output</span><span class="o">.</span><span class="n">txt</span><span class="p">:</span> <span class="err">执行结果</span>
+<span class="n">Client</span><span class="p">:</span> <span class="n">Testing</span> <span class="n">client</span> <span class="n">code</span> <span class="k">with</span> <span class="n">the</span> <span class="n">first</span> <span class="n">factory</span> <span class="nb">type</span><span class="p">:</span>
+<span class="n">The</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">product</span> <span class="n">B1</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">B1</span> <span class="n">collaborating</span> <span class="k">with</span> <span class="n">the</span> <span class="p">(</span><span class="n">The</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">product</span> <span class="n">A1</span><span class="o">.</span><span class="p">)</span>
+
+<span class="n">Client</span><span class="p">:</span> <span class="n">Testing</span> <span class="n">the</span> <span class="n">same</span> <span class="n">client</span> <span class="n">code</span> <span class="k">with</span> <span class="n">the</span> <span class="n">second</span> <span class="n">factory</span> <span class="nb">type</span><span class="p">:</span>
+<span class="n">The</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">product</span> <span class="n">B2</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">B2</span> <span class="n">collaborating</span> <span class="k">with</span> <span class="n">the</span> <span class="p">(</span><span class="n">The</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">product</span> <span class="n">A2</span><span class="o">.</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="抽象方法举例二">抽象方法举例二</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="c1"># http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/</span>
+
+<span class="s2">&#34;&#34;&#34;Implementation of the abstract factory pattern&#34;&#34;&#34;</span>
+<span class="kn">import</span> <span class="nn">abc</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+
+<span class="k">class</span> <span class="nc">Solider</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gun</span><span class="p">,</span> <span class="n">buttle</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gun</span> <span class="o">=</span> <span class="n">gun</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buttle</span> <span class="o">=</span> <span class="n">buttle</span>
+
+    <span class="k">def</span> <span class="nf">fire</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gun</span><span class="o">.</span><span class="n">pong</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buttle</span><span class="o">.</span><span class="n">pa</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">Gunfactory</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="vm">__metaclass__</span> <span class="o">=</span> <span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span>
+
+    <span class="nd">@abc.abstractmethod</span>
+    <span class="k">def</span> <span class="nf">get_gun</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abc.abstractmethod</span>
+    <span class="k">def</span> <span class="nf">get_bullet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Gun</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="vm">__metaclass__</span> <span class="o">=</span> <span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span>
+
+    <span class="nd">@abc.abstractmethod</span>
+    <span class="k">def</span> <span class="nf">pong</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Bullet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="vm">__metaclass__</span> <span class="o">=</span> <span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span>
+
+    <span class="nd">@abc.abstractmethod</span>
+    <span class="k">def</span> <span class="nf">pa</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Rifle</span><span class="p">(</span><span class="n">Gun</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">pong</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&#34;Rifle fire,pong!&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">Handgun</span><span class="p">(</span><span class="n">Gun</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">pong</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&#34;Handgun fire,pong,pong,pong&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">RifleBullet</span><span class="p">(</span><span class="n">Bullet</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">pa</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&#34;Rifle buttle,pa!&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">HandgunBullet</span><span class="p">(</span><span class="n">Bullet</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">pa</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s2">&#34;Handgun buttle,pa,pa,pa&#34;</span>
+
+
+<span class="k">class</span> <span class="nc">RifleFactory</span><span class="p">(</span><span class="n">Gunfactory</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">get_gun</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Rifle</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">get_bullet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">RifleBullet</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">HandgunFactory</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">get_gun</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Handgun</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">get_bullet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">HandgunBullet</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="n">rifle_factory</span> <span class="o">=</span> <span class="n">RifleFactory</span><span class="p">()</span>
+    <span class="n">handgun_factory</span> <span class="o">=</span> <span class="n">HandgunFactory</span><span class="p">()</span>
+    <span class="n">factories</span> <span class="o">=</span> <span class="p">[</span><span class="n">rifle_factory</span><span class="p">,</span> <span class="n">handgun_factory</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">factory</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">factories</span><span class="p">)</span>
+        <span class="n">gun</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">get_gun</span><span class="p">()</span>
+        <span class="n">bullet</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">get_bullet</span><span class="p">()</span>
+        <span class="n">solider</span> <span class="o">=</span> <span class="n">Solider</span><span class="p">(</span><span class="n">gun</span><span class="p">,</span> <span class="n">bullet</span><span class="p">)</span>
+        <span class="n">solider</span><span class="o">.</span><span class="n">fire</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;=&#34;</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="c1">### OUTPUT ###</span>
+<span class="c1"># Rifle fire,pong!</span>
+<span class="c1"># Rifle buttle,pa!</span>
+<span class="c1"># ====================</span>
+<span class="c1"># Handgun fire,pong,pong,pong</span>
+<span class="c1"># Handgun buttle,pa,pa,pa</span>
+<span class="c1"># ====================</span>
+<span class="c1"># Handgun fire,pong,pong,pong</span>
+<span class="c1"># Handgun buttle,pa,pa,pa</span>
+<span class="c1"># ====================</span>
+<span class="c1"># Rifle fire,pong!</span>
+<span class="c1"># Rifle buttle,pa!</span>
+<span class="c1"># ====================</span>
+</code></pre></td></tr></table>
+</div>
+</div></div>
+
+            <div class="post" style="padding-top: 0">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://www.longtermbook.com/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-whatsapp" href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://www.longtermbook.com/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" data-title="工厂模式" data-web><span class="svg-social-icon icon-whatsapp"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-line" href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://www.longtermbook.com/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" data-title="工厂模式"><span data-svg-src="/lib/simple-icons/icons/line.min.svg"></span></a>
+</div><div class="share-link">
+        <a class="share-icon share-evernote" href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://www.longtermbook.com/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" data-title="工厂模式"><span class="svg-social-icon icon-evernote"></span></a>
+    </div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://ublogger.netlify.app/?utm_source=http://www.longtermbook.com/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2018 - 2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body>
+</html>

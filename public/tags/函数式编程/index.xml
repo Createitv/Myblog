@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>函数式编程 - 标签 - 且慢</title>
+        <link>http://www.longtermbook.com/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
+        <description>函数式编程 - 标签 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 03 Jun 2021 15:59:44 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+    <title>Python函数式编程</title>
+    <link>http://www.longtermbook.com/posts/python%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
+    <pubDate>Thu, 03 Jun 2021 15:59:44 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/python%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
+    <description><![CDATA[3种编程范式 命令式编程 Procedural programming is the most basic form of coding. Code is structured hierarchically into blocks (such as if statements, loops, and functions). It is arguably the simplest form of coding. However, it can be difficult to write and maintain large and complex software due to its lack of enforced structure. 1 2 3 4 5 6 7 8 def]]></description>
+</item></channel>
+</rss>

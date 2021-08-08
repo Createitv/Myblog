@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>JAVA - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/java/</link>
+        <description>JAVA - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 27 Jul 2021 11:17:29 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/java/" rel="self" type="application/rss+xml" /><item>
+    <title>JavaSE</title>
+    <link>http://www.longtermbook.com/posts/javase/</link>
+    <pubDate>Tue, 27 Jul 2021 11:17:29 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/javase/</guid>
+    <description><![CDATA[1.Java 概述 Java 编程语言是一种通用的、并行的、基于类的、面向对象的语言。它被设计得非常简单，这样程序员可以在该语言上流畅的交流。Java 编程语言与 C]]></description>
+</item></channel>
+</rss>

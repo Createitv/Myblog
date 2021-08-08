@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>git - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/git/</link>
+        <description>git - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 08 Aug 2021 12:14:41 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/git/" rel="self" type="application/rss+xml" /><item>
+    <title>美妙的git</title>
+    <link>http://www.longtermbook.com/posts/%E7%BE%8E%E5%A6%99%E7%9A%84git/</link>
+    <pubDate>Sun, 08 Aug 2021 12:14:41 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E7%BE%8E%E5%A6%99%E7%9A%84git/</guid>
+    <description><![CDATA[Git的故事 十年前的这一周，Linux 内核开发社区正面临严峻的挑战：他们不能继续使用 BitKeeper 了（注：原因是当时BitKeeper 著作权所有者决定收]]></description>
+</item></channel>
+</rss>

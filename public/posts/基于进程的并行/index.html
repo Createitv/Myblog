@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>基于进程的并行 | 且慢</title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="基于进程的并行"/>
+<meta name="twitter:description" content="Createitv"/><meta name="Description" content="Createitv"><meta property="og:title" content="基于进程的并行" />
+<meta property="og:description" content="Createitv" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.longtermbook.com/posts/%E5%9F%BA%E4%BA%8E%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C/" /><meta property="og:image" content="http://www.longtermbook.com/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-27T11:07:19&#43;08:00" />
+<meta property="article:modified_time" content="2021-07-27T11:07:19&#43;08:00" /><meta property="og:site_name" content="且慢" />
+
+<meta name="application-name" content="Createitv">
+<meta name="apple-mobile-web-app-title" content="Createitv"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://www.longtermbook.com/posts/%E5%9F%BA%E4%BA%8E%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "基于进程的并行",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/www.longtermbook.com\/posts\/%E5%9F%BA%E4%BA%8E%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C\/"
+        },"genre": "posts","keywords": "python高性能编程","wordCount":  3573 ,
+        "url": "http:\/\/www.longtermbook.com\/posts\/%E5%9F%BA%E4%BA%8E%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C\/","datePublished": "2021-07-27T11:07:19+08:00","dateModified": "2021-07-27T11:07:19+08:00","description": "Createitv"
+    }
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "主页",
+            "item": "http:\/\/www.longtermbook.com\/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "python",
+            "item": "http://www.longtermbook.com/categories/python/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "基于进程的并行"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="且慢" class="header-logo logo-svg">且慢</a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul class="menu-inner"><li>
+                        <a class="menu-item" href="/posts/"> 文章 </a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/"> 标签 </a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/"> 分类 </a>
+                    </li></ul>
+            </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="且慢" class="header-logo">且慢</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><nav>
+                <ul><li>
+                        <a class="menu-item" href="/posts/" title="">文章</a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/" title="">标签</a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/" title="">分类</a>
+                    </li></ul>
+            </nav>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <span class="svg-icon icon-moon"></span>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+<div class="container content-article  theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">目录</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+
+    <div class="header-post">
+
+        
+
+        
+        <div class="post-title">
+
+                <div class="post-all-meta">
+                    <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">主页 </a></li><li><a href="/categories/python/">python </a></li><li>基于进程的并行</li>
+    </ol>
+</nav>
+                    <h1 class="single-title flipInX">基于进程的并行</h1><div class="post-meta">
+                        <div class="post-meta-line"><span class="post-category">
+                                <a href="/categories/python/"><i class="svg-icon icon-folder"></i>python</a>
+                            </span><span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-07-27">2021-07-27</time>
+                            </span><span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>约 3573 字
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>预计阅读 8 分钟
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+    <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-介绍">1. 介绍</a></li>
+    <li><a href="#2-多进程基本使用">2. 多进程基本使用</a>
+      <ul>
+        <li><a href="#21-代码">2.1. 代码</a></li>
+        <li><a href="#22-解释">2.2. 解释</a></li>
+        <li><a href="#23-了解更多">2.3. 了解更多</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-线程命名">3. 线程命名</a>
+      <ul>
+        <li><a href="#32-讨论">3.2. 讨论</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-后台守护进程">4. 后台守护进程</a></li>
+    <li><a href="#5杀掉一个进程">5.杀掉一个进程</a>
+      <ul>
+        <li><a href="#51-代码">5.1 代码</a></li>
+        <li><a href="#52-解释">5.2 解释</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-自定义进程">6. 自定义进程</a>
+      <ul>
+        <li><a href="#61-代码">6.1 代码</a></li>
+        <li><a href="#62-解释">6.2 解释</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-进程间对象交换">7. 进程间对象交换</a>
+      <ul>
+        <li><a href="#71-使用队列交换对象">7.1 使用队列交换对象</a></li>
+        <li><a href="#72-队列交换对象代码">7.2 队列交换对象代码</a></li>
+        <li><a href="#73-解释">7.3 解释</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-进程池">8. 进程池</a>
+      <ul>
+        <li><a href="#81-代码">8.1 代码</a></li>
+        <li><a href="#82-解释">8.2 解释</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><h2 id="1-介绍">1. 介绍</h2>
+<p><code>multiprocessing</code> 是Python标准库中的模块，实现了共享内存机制，也就是说，可以让运行在不同处理器核心的进程能读取共享内存。</p>
+<p><code>mpi4py</code> 库实现了消息传递的编程范例（设计模式）。简单来说，就是进程之间不靠任何共享信息来进行通讯（也叫做shared nothing），所有的交流都通过传递信息代替。</p>
+<p>这方面与使用共享内存通讯，通过加锁或类似机制实现互斥的技术行成对比。在信息传递的代码中，进程通过 <code>send()</code> 和 <code>receive</code> 进行交流。</p>
+<p>在Python多进程的官方文档中，明确指出 <code>multiprocessing</code> 模块要求，使用此模块的函数的main模块对子类来说必须是可导入的（ <a href="https://docs.python.org/3.3/library/multiprocessing.html">https://docs.python.org/3.3/library/multiprocessing.html</a> ）。</p>
+<p><code>__main__</code> 在IDLE中并不是可以导入的，即使你在IDLE中将文件当做一个脚本来运行。为了能正确使用此模块，本章我们将在命令行使用下面的命令运行脚本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">python multiprocessing example.py
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2-多进程基本使用">2. 多进程基本使用</h2>
+<p>“产生”（spawn）的意思是，由父进程创建子进程。父进程既可以在产生子进程之后继续异步执行，也可以暂停等待子进程创建完成之后再继续执行。Python的multiprocessing库通过以下几步创建进程：</p>
+<ol>
+<li>创建进程对象</li>
+<li>调用 <code>start()</code> 方法，开启进程的活动</li>
+<li>调用 <code>join()</code> 方法，在进程结束之前一直等待</li>
+</ol>
+<h3 id="21-代码">2.1. 代码</h3>
+<p>下面的例子创建了5个进程，每一个进程都分配了 <code>foo(i)</code> 函数， <code>i</code> 表示进程的id：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># -*- coding: utf-8 -*-
+
+import multiprocessing
+
+def foo(i):
+    print (&#39;called function in process: %s&#39; %i)
+    return
+
+if __name__ == &#39;__main__&#39;:
+    Process_jobs = []
+    for i in range(5):
+        p = multiprocessing.Process(target=foo, args=(i,))
+        Process_jobs.append(p)
+        p.start()
+        p.join()
+</code></pre></td></tr></table>
+</div>
+</div><p>执行本例需要打开命令行，到文件 <code>spawn_a_process.py</code> （脚本名字）所在的目录下，然后输入下面的命令执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">python spawn_a_process.py
+</code></pre></td></tr></table>
+</div>
+</div><p>我们会得到以下结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ python process_2.py
+called function in process: 0
+called function in process: 1
+called function in process: 2
+called function in process: 3
+called function in process: 4
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="22-解释">2.2. 解释</h3>
+<p>按照本节前面提到的步骤，创建进程对象首先需要引入multiprocessing模块：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">import multiprocessing
+</code></pre></td></tr></table>
+</div>
+</div><p>然后，我们在主程序中创建进程对象：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">p = multiprocessing.Process(target=foo, args=(i,))
+</code></pre></td></tr></table>
+</div>
+</div><p>最后，我们调用 <code>start()</code> 方法启动：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">p.start()
+</code></pre></td></tr></table>
+</div>
+</div><p>进程对象的时候需要分配一个函数，作为进程的执行任务，本例中，这个函数是 <code>foo()</code> 。我们可以用元组的形式给函数传递一些参数。最后，使用进程对象调用 <code>join()</code> 方法。</p>
+<p>如果没有 <code>join()</code> ，主进程退出之后子进程会留在idle中，你必须手动杀死它们。</p>
+<h3 id="23-了解更多">2.3. 了解更多</h3>
+<p>这是因为，子进程创建的时候需要导入包含目标函数的脚本。通过在 <code>__main__</code> 代码块中实例化进程对象，我们可以预防无限递归调用。最佳实践是在不同的脚本文件中定义目标函数，然后导入进来使用。所以上面的代码可以修改为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">import</span> <span class="nn">target_function</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">Process_jobs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target_function</span><span class="o">.</span><span class="n">function</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="p">,))</span>
+        <span class="n">Process_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>target_function.py</code> 的内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">def function(i):
+    print(&#39;called function in process: %s&#39; %i)
+    return
+</code></pre></td></tr></table>
+</div>
+</div><p>输出和上面一样。</p>
+<h2 id="3-线程命名">3. 线程命名</h2>
+<p>命名进程的方法和前一章中介绍的命名线程差不多</p>
+<p>下面的代码在主程序中创建了一个有名字的进程和一个没有名字的进程，目标函数都是 <code>foo()</code> 函数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 命名一个进程</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">current_process</span><span class="p">()</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Starting </span><span class="si">%s</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Exiting </span><span class="si">%s</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">process_with_name</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;foo_process&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">foo</span><span class="p">)</span>
+    <span class="n">process_with_name</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">True</span>  <span class="c1"># 注意原代码有这一行，但是译者发现删掉这一行才能得到正确输出</span>
+    <span class="n">process_with_default_name</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">foo</span><span class="p">)</span>
+    <span class="n">process_with_name</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">process_with_default_name</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>运行上面的代码，打开终端输入:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">python naming_process.py
+</code></pre></td></tr></table>
+</div>
+</div><p>输出的结果如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ python naming_process.pyStarting foo_processStarting Process-2Exiting foo_processExiting Process-2
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="32-讨论">3.2. 讨论</h3>
+<p>这个过程和命名线程很像。命名进程需要为进程对象提供 <code>name</code> 参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">process_with_name = multiprocessing.Process(name=&#39;foo_process&#39;, target=foo)
+</code></pre></td></tr></table>
+</div>
+</div><p>在本例子中，进程的名字就是 <code>foo_function</code> 。如果子进程需要知道父进程的名字，可以使用以下声明：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">name = multiprocessing.current_process().name
+</code></pre></td></tr></table>
+</div>
+</div><p>然后就能看见父进程的名字。</p>
+<h2 id="4-后台守护进程">4. 后台守护进程</h2>
+<p>如果需要处理比较巨大的任务，又不需要人为干预，将其作为后台进程执行是个非常常用的编程模型。此进程又可以和其他进程并发执行。通过Python的multiprocessing模块的后台进程选项，我们可以让进程在后台运行。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">multiprocessingimport</span> <span class="nn">timedef</span> <span class="nn">foo</span><span class="p">():</span>    <span class="n">name</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">current_process</span><span class="p">()</span><span class="o">.</span><span class="n">name</span>    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Starting </span><span class="si">%s</span><span class="s2"> &#34;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Exiting </span><span class="si">%s</span><span class="s2"> &#34;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>    <span class="n">background_process</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;background_process&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">foo</span><span class="p">)</span>    <span class="n">background_process</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">True</span>    <span class="n">NO_background_process</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;NO_background_process&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">foo</span><span class="p">)</span>    <span class="n">NO_background_process</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">False</span>    <span class="n">background_process</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>    <span class="n">NO_background_process</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1">#注释掉这一句讲没有任何输出</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>运行结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ python background_process.pyStarting NO_background_processExiting NO_background_process
+</code></pre></td></tr></table>
+</div>
+</div><p>为了在后台运行进程，我们设置 <code>daemon</code> 参数为 <code>True</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">background_process.daemon = True
+</code></pre></td></tr></table>
+</div>
+</div><p>在非后台运行的进程会看到一个输出，后台运行的没有输出，后台运行进程在主进程结束之后会自动结束。</p>
+<p>注意，后台进程不允许创建子进程。否则，当后台进程跟随父进程退出的时候，子进程会变成孤儿进程。另外，它们并不是Unix的守护进程或服务（daemons or services），所以当非后台进程退出，它们会被终结。</p>
+<h2 id="5杀掉一个进程">5.杀掉一个进程</h2>
+<p>我们可以使用 <code>terminate()</code> 方法立即杀死一个进程。另外，我们可以使用 <code>is_alive()</code> 方法来判断一个进程是否还存活。</p>
+<h3 id="51-代码">5.1 代码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">multiprocessingimport</span> <span class="nn">timedef</span> <span class="nn">foo</span><span class="p">():</span>        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Starting function&#39;</span><span class="p">)</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Finished function&#39;</span><span class="p">)</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>        <span class="n">p</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">foo</span><span class="p">)</span>        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Process before execution:&#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">is_alive</span><span class="p">())</span>        <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Process running:&#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">is_alive</span><span class="p">())</span>        <span class="n">p</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Process terminated:&#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">is_alive</span><span class="p">())</span>        <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Process joined:&#39;</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">is_alive</span><span class="p">())</span>        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Process exit code:&#39;</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">exitcode</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>运行结果：</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/image-20210624113614033.png"
+         alt="运行结果"
+         title="image-20210624113614033.png"
+    /></p>
+<h3 id="52-解释">5.2 解释</h3>
+<p>我们创建了一个线程，然后用 <code>is_alive()</code> 方法监控它的声明周期。然后通过调用 <code>terminate()</code> 方法结束进程。</p>
+<p>最后，我们通过读进程的 <code>ExitCode</code> 状态码（status code）验证进程已经结束， <code>ExitCode</code> 可能的值如下：</p>
+<ul>
+<li>== 0: 没有错误正常退出</li>
+<li>&gt; 0: 进程有错误，并以此状态码退出</li>
+<li>&lt; 0: 进程被 <code>-1 *</code> 的信号杀死并以此作为 ExitCode 退出</li>
+</ul>
+<p>在我们的例子中，输出的 <code>ExitCode</code> 是 <code>-15</code> 。负数表示子进程被数字为15的信号杀死。</p>
+<h2 id="6-自定义进程">6. 自定义进程</h2>
+<p>实现一个自定义的进程子类，需要以下三步：</p>
+<ul>
+<li>定义 <code>Process</code> 的子类</li>
+<li>覆盖 <code>__init__(self [,args])</code> 方法来添加额外的参数</li>
+<li>覆盖 <code>run(self, [.args])</code> 方法来实现 <code>Process</code> 启动的时候执行的任务</li>
+</ul>
+<p>创建 <code>Porcess</code> 子类之后，你可以创建它的实例并通过 <code>start()</code> 方法启动它，启动之后会运行 <code>run()</code> 方法。</p>
+<h3 id="61-代码">6.1 代码</h3>
+<p>我们将使用子类的形式重写之前的例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># -*- coding: utf-8 -*-# 自定义子类进程import multiprocessingclass MyProcess(multiprocessing.Process):    def run(self):        print(&#34;Called run method in process: %s&#34; % self.name)        returnif __name__ == &#34;__main__&#34;:    jobs = []    for i in range(5):        p = MyProcess()        jobs.append(p)        p.start()        p.join()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>输入以下命令运行脚本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">python subclass_process.py
+</code></pre></td></tr></table>
+</div>
+</div><p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/image-20210624114014461.png"
+         alt="image-20210624114014461"
+         title="image-20210624114014461.png"
+    /></p>
+<h3 id="62-解释">6.2 解释</h3>
+<p>每一个继承了 <code>Process</code> 并重写了 <code>run()</code> 方法的子类都代表一个进程。此方法是进程的入口：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">MyProcess</span><span class="p">(</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;called run method in process: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>        <span class="k">return</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在主程序中，我们创建了一些 <code>MyProcess()</code> 的子类。当 <code>start()</code> 方法被调用的时候进程开始执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">p = MyProcess()p.start()
+</code></pre></td></tr></table>
+</div>
+</div><p><code>join()</code> 命令可以让主进程等待其他进程结束最后退出</p>
+<h2 id="7-进程间对象交换">7. 进程间对象交换</h2>
+<p>并行应用常常需要在进程之间交换数据。Multiprocessing库有两个Communication Channel可以交换对象：队列(queue)和管道（pipe）。</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/_images/communication-channel.png"
+         alt="../_images/communication-channel.png"
+         title="communication-channel.png"
+    /></p>
+<h3 id="71-使用队列交换对象">7.1 使用队列交换对象</h3>
+<p>我们可以通过队列数据结构来共享对象。</p>
+<p><code>Queue</code> 返回一个进程共享的队列，是线程安全的，也是进程安全的。任何可序列化的对象（Python通过 <code>pickable</code> 模块序列化对象）都可以通过它进行交换。</p>
+<h3 id="72-队列交换对象代码">7.2 队列交换对象代码</h3>
+<p>我们将展示如何使用队列来实现生产者-消费者问题。 <code>Producer</code> 类生产item放到队列中，然后 <code>Consumer</code> 类从队列中移除它们。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">multiprocessingimport</span> <span class="nn">randomimport</span> <span class="nn">timeclass</span> <span class="nn">Producer</span><span class="p">(</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queue</span><span class="p">):</span>        <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>            <span class="n">item</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>            <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Process Producer : item </span><span class="si">%d</span><span class="s2"> appended to queue </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;The size of queue is </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">qsize</span><span class="p">())</span><span class="k">class</span> <span class="nc">Consumer</span><span class="p">(</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queue</span><span class="p">):</span>        <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span>                <span class="k">print</span><span class="p">(</span><span class="s2">&#34;the queue is empty&#34;</span><span class="p">)</span>                <span class="k">break</span>            <span class="k">else</span><span class="p">:</span>                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>                <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Process Consumer : item </span><span class="si">%d</span><span class="s1"> popped from by </span><span class="si">%s</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>    <span class="n">queue</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>    <span class="n">process_producer</span> <span class="o">=</span> <span class="n">Producer</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>    <span class="n">process_consumer</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>    <span class="n">process_producer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>    <span class="n">process_consumer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>    <span class="n">process_producer</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>    <span class="n">process_consumer</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>运行结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">Chapter 3&gt;python using_queue.pyProcess Producer : item <span class="m">69</span> appended to queue producer-1The size of queue is 1Process Producer : item <span class="m">168</span> appended to queue producer-1The size of queue is 2Process Consumer : item <span class="m">69</span> popped from by consumer-2Process Producer : item <span class="m">235</span> appended to queue producer-1The size of queue is 2Process Producer : item <span class="m">152</span> appended to queue producer-1The size of queue is 3Process Producer : item <span class="m">213</span> appended to queue producer-1Process Consumer : item <span class="m">168</span> popped from by consumer-2The size of queue is 3Process Producer : item <span class="m">35</span> appended to queue producer-1The size of queue is 4Process Producer : item <span class="m">218</span> appended to queue producer-1The size of queue is 5Process Producer : item <span class="m">175</span> appended to queue producer-1Process Consumer : item <span class="m">235</span> popped from by consumer-2The size of queue is 5Process Producer : item <span class="m">140</span> appended to queue producer-1The size of queue is 6Process Producer : item <span class="m">241</span> appended to queue producer-1The size of queue is 7Process Consumer : item <span class="m">152</span> popped from by consumer-2Process Consumer : item <span class="m">213</span> popped from by consumer-2Process Consumer : item <span class="m">35</span> popped from by consumer-2Process Consumer : item <span class="m">218</span> popped from by consumer-2Process Consumer : item <span class="m">175</span> popped from by consumer-2Process Consumer : item <span class="m">140</span> popped from by consumer-2Process Consumer : item <span class="m">241</span> popped from by consumer-2the queue is empty
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="73-解释">7.3 解释</h3>
+<p>我们使用 <code>multiprocessing</code> 类在主程序中创建了 <code>Queue</code> 的实例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>    <span class="n">queue</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后我们创建了两个进程，生产者和消费者， <code>Queue</code> 对象作为一个属性。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">process_producer</span> <span class="o">=</span> <span class="n">Producer</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span><span class="n">process_consumer</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>生产者类负责使用 <code>put()</code> 方法放入10个item：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>    <span class="n">item</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>    <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>消费者进程负责使用 <code>get()</code> 方法从队列中移除item，并且确认队列是否为空，如果为空，就执行 <code>break</code> 跳出 <code>while</code> 循环：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span>            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;the queue is empty&#34;</span><span class="p">)</span>            <span class="k">break</span>        <span class="k">else</span><span class="p">:</span>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>            <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Process Consumer : item </span><span class="si">%d</span><span class="s1"> popped from by </span><span class="si">%s</span><span class="s1"> </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="8-进程池">8. 进程池</h2>
+<p>多进程库提供了 <code>Pool</code> 类来实现简单的多进程任务。 <code>Pool</code> 类有以下方法：</p>
+<ul>
+<li><code>apply()</code>: 直到得到结果之前一直阻塞。</li>
+<li><code>apply_async()</code>: 这是 <code>apply()</code> 方法的一个变体，返回的是一个result对象。这是一个异步的操作，在所有的子类执行之前不会锁住主进程。</li>
+<li><code>map()</code>: 这是内置的 <code>map()</code> 函数的并行版本。在得到结果之前一直阻塞，此方法将可迭代的数据的每一个元素作为进程池的一个任务来执行。</li>
+<li><code>map_async()</code>: 这是 <code>map()</code> 方法的一个变体，返回一个result对象。如果指定了回调函数，回调函数应该是callable的，并且只接受一个参数。当result准备好时会自动调用回调函数（除非调用失败）。回调函数应该立即完成，否则，持有result的进程将被阻塞。</li>
+</ul>
+<h3 id="81-代码">8.1 代码</h3>
+<p>下面的例子展示了如果通过进程池来执行一个并行应用。我们创建了有4个进程的进程池，然后使用 <code>map()</code> 方法进行一个简单的计算。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">multiprocessingdef</span> <span class="nn">function_square</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">*</span><span class="n">data</span>    <span class="k">return</span> <span class="n">resultif</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>    <span class="n">inputs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>    <span class="n">pool</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>    <span class="n">pool_outputs</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">function_square</span><span class="p">,</span> <span class="n">inputs</span><span class="p">)</span>    <span class="n">pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>    <span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>    <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Pool    :&#39;</span><span class="p">,</span> <span class="n">pool_outputs</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>计算的结果如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ python poll.py<span class="o">(</span><span class="s1">&#39;Pool    :&#39;</span>, <span class="o">[</span>0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961, 1024, 1089, 1156, 1225, 1296, 1369, 1444, 1521, 1600, 1681, 1764, 1849, 1936, 2025, 2116, 2209, 2304, 2401, 2500, 2601, 2704, 2809, 2916, 3025, 3136, 3249, 3364, 3481, 3600, 3721, 3844, 3969, 4096, 4225, 4356, 4489, 4624, 4761, 4900, 5041, 5184, 5329, 5476, 5625, 5776, 5929, 6084, 6241, 6400, 6561, 6724, 6889, 7056, 7225, 7396, 7569, 7744, 7921, 8100, 8281, 8464, 8649, 8836, 9025, 9216, 9409, 9604, 9801<span class="o">])</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="82-解释">8.2 解释</h3>
+<p><code>multiprocessing.Pool</code> 方法在输入元素上应用 <code>function_square</code> 方法来执行简单的计算。并行的进程数量是4：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pool = multiprocessing.Pool(processes=4)
+</code></pre></td></tr></table>
+</div>
+</div><p><code>pool.map</code> 方法将一些独立的任务提交给进程池：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pool_outputs = pool.map(function_square, inputs)
+</code></pre></td></tr></table>
+</div>
+</div><p><code>input</code> 是一个从 <code>0</code> 到 <code>100</code> 的list：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">inputs = list(range(100))
+</code></pre></td></tr></table>
+</div>
+</div><p>计算的结果存储在 <code>pool_outputs</code> 中。最后的结果打印出来：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">print (&#39;Pool    :&#39;, pool_outputs)
+</code></pre></td></tr></table>
+</div>
+</div><p>需要注意的是， <code>pool.map()</code> 方法的结果和Python内置的 <code>map()</code> 结果是相同的，不同的是 <code>pool.map()</code> 是通过多个并行进程计算的。</p>
+</div>
+
+            <div class="post" style="padding-top: 0">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://www.longtermbook.com/posts/%E5%9F%BA%E4%BA%8E%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C/" data-hashtag="python高性能编程"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-whatsapp" href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://www.longtermbook.com/posts/%E5%9F%BA%E4%BA%8E%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C/" data-title="基于进程的并行" data-web><span class="svg-social-icon icon-whatsapp"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-line" href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://www.longtermbook.com/posts/%E5%9F%BA%E4%BA%8E%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C/" data-title="基于进程的并行"><span data-svg-src="/lib/simple-icons/icons/line.min.svg"></span></a>
+</div><div class="share-link">
+        <a class="share-icon share-evernote" href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://www.longtermbook.com/posts/%E5%9F%BA%E4%BA%8E%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C/" data-title="基于进程的并行"><span class="svg-social-icon icon-evernote"></span></a>
+    </div></div>
+<div class="post-tags"><a href="/tags/python%E9%AB%98%E6%80%A7%E8%83%BD%E7%BC%96%E7%A8%8B/" class="tag">python高性能编程</a></div></div>
+        </div>
+    <div id="toc-final"></div>
+    </article></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://ublogger.netlify.app/?utm_source=http://www.longtermbook.com/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2018 - 2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body>
+</html>

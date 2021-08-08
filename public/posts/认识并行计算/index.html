@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>认识并行计算 | 且慢</title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="认识并行计算"/>
+<meta name="twitter:description" content="Createitv"/><meta name="Description" content="Createitv"><meta property="og:title" content="认识并行计算" />
+<meta property="og:description" content="Createitv" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.longtermbook.com/posts/%E8%AE%A4%E8%AF%86%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" /><meta property="og:image" content="http://www.longtermbook.com/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-27T11:04:16&#43;08:00" />
+<meta property="article:modified_time" content="2021-07-27T11:04:16&#43;08:00" /><meta property="og:site_name" content="且慢" />
+
+<meta name="application-name" content="Createitv">
+<meta name="apple-mobile-web-app-title" content="Createitv"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://www.longtermbook.com/posts/%E8%AE%A4%E8%AF%86%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "认识并行计算",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/www.longtermbook.com\/posts\/%E8%AE%A4%E8%AF%86%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97\/"
+        },"genre": "posts","keywords": "python高性能编程","wordCount":  5655 ,
+        "url": "http:\/\/www.longtermbook.com\/posts\/%E8%AE%A4%E8%AF%86%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97\/","datePublished": "2021-07-27T11:04:16+08:00","dateModified": "2021-07-27T11:04:16+08:00","description": "Createitv"
+    }
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "主页",
+            "item": "http:\/\/www.longtermbook.com\/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "python",
+            "item": "http://www.longtermbook.com/categories/python/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "认识并行计算"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="且慢" class="header-logo logo-svg">且慢</a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul class="menu-inner"><li>
+                        <a class="menu-item" href="/posts/"> 文章 </a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/"> 标签 </a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/"> 分类 </a>
+                    </li></ul>
+            </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="且慢" class="header-logo">且慢</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><nav>
+                <ul><li>
+                        <a class="menu-item" href="/posts/" title="">文章</a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/" title="">标签</a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/" title="">分类</a>
+                    </li></ul>
+            </nav>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <span class="svg-icon icon-moon"></span>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+<div class="container content-article  theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">目录</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+
+    <div class="header-post">
+
+        
+
+        
+        <div class="post-title">
+
+                <div class="post-all-meta">
+                    <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">主页 </a></li><li><a href="/categories/python/">python </a></li><li>认识并行计算</li>
+    </ol>
+</nav>
+                    <h1 class="single-title flipInX">认识并行计算</h1><div class="post-meta">
+                        <div class="post-meta-line"><span class="post-category">
+                                <a href="/categories/python/"><i class="svg-icon icon-folder"></i>python</a>
+                            </span><span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-07-27">2021-07-27</time>
+                            </span><span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>约 5655 字
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>预计阅读 12 分钟
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+    <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-简介">1. 简介</a></li>
+    <li><a href="#2-并行计算的内存架构">2. 并行计算的内存架构</a>
+      <ul>
+        <li><a href="#21-sisd">2.1. SISD</a></li>
+        <li><a href="#22-misd">2.2. MISD</a></li>
+        <li><a href="#23-simd">2.3. SIMD</a></li>
+        <li><a href="#24-mimd">2.4. MIMD</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-内存管理">3. 内存管理</a>
+      <ul>
+        <li><a href="#31-共享内存">3.1. 共享内存</a></li>
+        <li><a href="#32-分布式内存">3.2. 分布式内存</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-并行编程模型">4. 并行编程模型</a>
+      <ul>
+        <li><a href="#41-共享内存模型">4.1. 共享内存模型</a></li>
+        <li><a href="#42-多线程模型">4.2. 多线程模型</a></li>
+        <li><a href="#43-消息传递模型">4.3. 消息传递模型</a></li>
+        <li><a href="#44-数据并行模型">4.4. 数据并行模型</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-python的并行计算">5. python的并行计算</a></li>
+    <li><a href="#6-线程与进程">6. 线程与进程</a>
+      <ul>
+        <li><a href="#7-python中的线程和进程">7. python中的线程和进程</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><h2 id="1-简介">1. 简介</h2>
+<p>解决一个大问题的一般方法是，将其拆分成若干小的、独立的问题，然后分别解它们。并行的程序也是使用这种方法，用多个处理器同时工作，来完成同一个任务。每一个处理器都做自己的那部分工作（独立的部分）。而且计算过程中处理器之间可能需要交换数据。如果，软件应用要求越来越高的计算能力。提高计算能力有两种思路：提高处理器的时钟速度或增加芯片上的核心数。提高时钟速度就必然会增加散热，然后每瓦特的性能就会降低，甚至可能要求特殊的冷却设备。提高芯片的核心数是更可行的一种方案，因为能源的消耗和散热，第一种方法必然有上限，而且计算能力提高没有特别明显。</p>
+<p>为了解决这个问题，计算机硬件供应商的选择是多核心的架构，就是在同一个芯片上放两个或者多个处理器（核心）。GPU制造商也逐渐引进了这种基于多处理器核心的硬件架构。事实上，今天的计算机几乎都是各种多核、异构的计算单元组成的，每一个单元都有多个处理核心。</p>
+<h2 id="2-并行计算的内存架构">2. 并行计算的内存架构</h2>
+<p>根据指令的同时执行和数据的同时执行，计算机系统可以分成以下四类：</p>
+<ul>
+<li>单处理器，单数据 (SISD)</li>
+<li>单处理器，多数据 (SIMD)</li>
+<li>多处理器，单数据 (MISD)</li>
+<li>多处理器，多数据 (MIMD)</li>
+</ul>
+<p>这种分类方法叫做“费林分类”:</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/_images/flynn.png"
+         alt="../_images/flynn.png"
+         title="flynn.png"
+    /></p>
+<h3 id="21-sisd">2.1. SISD</h3>
+<p>单处理器单数据就是“单CPU的机器”，它在单一的数据流上执行指令。在SISD中，指令被顺序地执行。</p>
+<p>对于每一个“CPU时钟”，CPU按照下面的顺序执行：</p>
+<ul>
+<li><strong>Fetch</strong>: CPU 从一片内存区域中（寄存器）获得数据和指令</li>
+<li><strong>Decode</strong>: CPU对指令进行解码</li>
+<li><strong>Execute</strong>: 该执行在数据上执行，将结果保存在另一个寄存器中</li>
+</ul>
+<p>当Execute阶段完成之后，CPU回到步骤1准备执行下一个时钟循环。</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/_images/SISD-schema.png"
+         alt="../_images/SISD-schema.png"
+         title="SISD-schema.png"
+    /></p>
+<p>运行在这些计算机上的算法是顺序执行的（连续的），不存在任何并行。只有一个CPU的硬件系统就是SISD的例子。</p>
+<p>这种架构（冯·诺依曼体系）的主要元素有以下：</p>
+<ul>
+<li>中心内存单元：存储指令和数据</li>
+<li>CPU：用于从内存单元获得指令/数据，对指令解码并顺序执行它们</li>
+<li>I/O系统：程序的输入和输出流</li>
+</ul>
+<p>传统的单处理器计算机都是经典的SISD系统。下图表述了CPU在Fetch、Decode、Execute的步骤中分别用到了哪些单元：</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/_images/cpu-phase.png"
+         alt="../_images/cpu-phase.png"
+         title="cpu-phase.png"
+    /></p>
+<h3 id="22-misd">2.2. MISD</h3>
+<p>这种模型中，有n个处理器，每一个都有自己的控制单元，共享同一个内存单元。在每一个CPU时钟中，从内存获得的数据会被所有的处理器同时处理，每一个处理器按照自己的控制单元发送的指令处理。在这种情况下，并行实际上是指令层面的并行，多个指令在相同的数据上操作。能够合理利用这种架构的问题模型比较特殊，例如数据加密等。因此，MISD在现实中并没有很多用武之地，更多的是作为一个抽象模型的存在。</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/_images/MISD.png"
+         alt="../_images/MISD.png"
+         title="MISD.png"
+    /></p>
+<h3 id="23-simd">2.3. SIMD</h3>
+<p>SIMD计算机包括多个独立的处理器，每一个都有自己的局部内存，可以用来存储数据。所有的处理器都在单一指令流下工作；具体说，就是有n个数据流，每个处理器处理一个。所有的处理器同时处理每一步，在不同的数据上执行相同的指令。这是一个数据并行的例子。SIMD架构比MISD架构要实用的多。很多问题都可以用SIMD计算机的架构来解决。这种架构另一个有趣的特性是，这种架构的算法非常好设计，分析和实现。限制是，只有可以被分解成很多个小问题（小问题之间要独立，可以不分先后顺序被相同的指令执行）的问题才可以用这种架构解决。很多超级计算机就是使用这架构设计出来的。例如Connection Machine（1985年的 Thinking Machine)和MPP（NASA-1983）.我们在第六章 GPU Python编程中会接触到高级的现代图形处理器（GPU），这种处理器就是内置了很多个SIMD处理单元，使这种架构在今天应用非常广泛。</p>
+<h3 id="24-mimd">2.4. MIMD</h3>
+<p>在费林分类中，这种计算机是最广泛使用、也是最强大的一个种类。这种架构有n个处理器，n个指令流，n个数据流。每一个处理器都有自己的控制单元和局部内存，让MIMD架构比SIMD架构的计算能力更强。每一个处理器都在独立的控制单元分配的指令流下工作；因此，处理器可以在不同的数据上运行不同的程序，这样可以解决完全不同的子问题甚至是单一的大问题。在MIMD中，架构是通过线程或进程层面的并行来实现的，这也意味着处理器一般是异步工作的。这种类型的计算机通常用来解决那些没有统一结构、无法用SIMD来解决的问题。如今，很多计算机都应用了这中间架构，例如超级计算机，计算机网络等。然而，有一个问题不得不考虑：异步的算法非常难设计、分析和实现。</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/_images/MIMD.png"
+         alt="../_images/MIMD.png"
+         title="MIMD.png"
+    /></p>
+<h2 id="3-内存管理">3. 内存管理</h2>
+<p>内存管理是并行架构需要考虑的另一方面，确切来说是获得数据的方式。无论处理单元多快，如果内存提供指令和数据的速度跟不上，系统性能也不会得到提升。制约内存达到处理器速度级别的响应时间的主要因素是内存存取周期。所谓存取周期就是连续启动两次读或写操作所需间隔的最小时间。处理器的周期通常比内存周期短得多。当处理器传送数据到内存或从内存中获取数据时，内存依旧在一个周期中，其他任何设备（I/O控制器，处理器）都不能使用内存，因为内存必须先对上一个请求作出响应。</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/_images/Page-7-Image-1.png"
+         alt="../_images/Page-7-Image-1.png"
+         title="Page-7-Image-1.png"
+    /></p>
+<h3 id="31-共享内存">3.1. 共享内存</h3>
+<p>下图展示了共享内存多处理器系统的架构，这里只展示了各部件之间简单的物理连接。总线结构允许任意数量的设备共享一个通道。总线协议最初设计是让单处理器，一个或多个磁盘和磁带控制器通过共享内存进行通讯。可以注意到处理器拥有各自的Cache，Cache中保存着局部内存中有可能被处理器使用的指令或数据。可以想象一下，当一个处理器修改了内存中的数据，同时另外一个处理器正在使用这个数据时，就会出现问题。已修改的值会从处理器的Cache传递到共享内存中，接着，新值会传递到其他处理器的Cache中，其它处理器就不可以使用旧值进行计算。这就是人们所熟知的Cache一致性问题，是内存一致性问题的一种特殊情况，要解决这个问题需要硬件能像多进程编程一样实现处理并发问题 和同步控制 。</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/_images/Page-8-Image-1.png"
+         alt="../_images/Page-8-Image-1.png"
+         title="Page-8-Image-1.png"
+    /></p>
+<h3 id="32-分布式内存">3.2. 分布式内存</h3>
+<p>在使用分布式内存的系统中，各个处理器都有其各自的内存，而且每个处理器只能处理属于自己的内存。某些学者把这类系统称为“多计算机系统”，这个名字很真实地反映了组成这类系统的元素能够独立作为一个具有内存和处理器的微型系统，如下图所示：</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/_images/Page-10-Image-1.png"
+         alt="../_images/Page-10-Image-1.png"
+         title="Page-10-Image-1.png"
+    /></p>
+<p>这种内存管理方式有几个好处。第一，总线和开关级别的的通讯不会发生冲突。每个处理器都可以无视其他处理器的干扰而充分利用局部内存的带宽；第二，没有通用总线意味着没有处理器数量的限制，系统的规模只局限于连接处理器的网络带宽；第三，没有Cache一致性问题的困扰。每个处理器只需要处理属于自己的数据而无须关心上传数据副本的问题。但最大的缺点是，很难实现处理器之间的通讯。如果一个处理器需要其他处理器的数据，这两个处理器必须要通过消息传递协议来交换消息。这样进行通讯会导致速度降低，原因有两个，首先，从一个处理器创建和发送消息到另外一个处理器需要时间；其次，任何处理器都需要停止工作，处理来自其他处理器的消息。面向分布式内存机器的程序必须按照尽量相互独立的任务来组织，任务之间通过消息进行通讯。</p>
+<h2 id="4-并行编程模型">4. 并行编程模型</h2>
+<p>并行编程模型是作为对硬件和内存架构的抽象而存在的。事实上，这些模式不是特定的，而且和机器的类型或内存的架构无关。他们在理论上能在任何类型的机器上实现。相对于前面的架构细分，这些编程模型会在更高的层面上建立，用于表示软件执行并行计算时必须实现的方式。为了访问内存和分解任务，每一个模型都以它独自的方式和其他处理器共享信息。</p>
+<p>需要明白的是没有最好的编程模型，模型的效果如何很大程度上取决于实际的问题。使用范围最广的并行编程模型有：</p>
+<ul>
+<li>共享内存模型</li>
+<li>多线程模型</li>
+<li>分布式内存/消息传递模型</li>
+<li>数据并行模型</li>
+</ul>
+<p>在这节中，会描述这些编程模型的概览。在下一章会更加准确的描述这些编程模型，并会介绍Python中实现这些模型的相应模块。</p>
+<h3 id="41-共享内存模型">4.1. 共享内存模型</h3>
+<p>在这个编程模型中所有任务都共享一个内存空间，对共享资源的读写是 异步的。系统提供一些机制，如锁和信号量，来让程序员控制共享内存的访问权限。使用这个编程模型的优点是，程序员不需要清楚任务之间通讯的细节。但性能方面的一个重要缺点是,了解和管理数据区域变得更加困难;将数据保存在处理器本地才可以节省内存访问，缓存刷新以及多处理器使用相同数据时发生的总线流量。</p>
+<h3 id="42-多线程模型">4.2. 多线程模型</h3>
+<p>在这个模型中，单个处理器可以有多个执行流程，例如，创建了一个顺序执行任务之后，会创建一系列可以并行执行的任务。通常情况下，这类模型会应用在共享内存架构中。由于多个线程会对共享内存进行操作，所以进行线程间的同步控制是很重要的，作为程序员必须防止多个线程同时修改相同的内存单元。现代的CPU可以在软件和硬件上实现多线程。POSIX 线程就是典型的在软件层面上实现多线程的例子。Intel 的超线程 (Hyper-threading) 技术则在硬件层面上实现多线程，超线程技术是通过当一个线程在停止或等待I/O状态时切换到另外一个线程实现的。使用这个模型即使是非线性的数据对齐也能实现并行性。</p>
+<h3 id="43-消息传递模型">4.3. 消息传递模型</h3>
+<p>消息传递模型通常在分布式内存系统（每一个处理器都有独立的内存空间）中应用。更多的任务可以驻留在一台或多台物理机器上。程序员需要确定并行和通过消息产生的数据交换。实现这个数据模型需要在代码中调用特定的库。于是便出现了大量消息传递模型的实现，最早的实现可以追溯到20世纪80年代，但直到90年代中期才有标准化的模型——实现了名为MPI (the Message Passing Interface, 消息传递接口)的事实标准。MPI 模型是专门为分布式内存设计的，但作为一个并行编程模型，也可以在共享内存机器上跨平台使用。</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/_images/Page-15-Image-1.png"
+         alt="../_images/Page-15-Image-1.png"
+         title="Page-15-Image-1.png"
+    /></p>
+<h3 id="44-数据并行模型">4.4. 数据并行模型</h3>
+<p>在这个模型中，有多个任务需要操作同一个数据结构，但每一个任务操作的是数据的不同部分。在共享内存架构中，所有任务都通过共享内存来访问数据；在分布式内存架构中则会将数据分割并且保存到每个任务的局部内存中。为了实现这个模型，程序员必须指定数据的分配方式和对齐方式。现代的GPU在数据已对齐的情况下运行的效率非常高。</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://python-parallel-programmning-cookbook.readthedocs.io/zh_CN/latest/_images/Page-16-Image-1.png"
+         alt="../_images/Page-16-Image-1.png"
+         title="Page-16-Image-1.png"
+    /></p>
+<h2 id="5-python的并行计算">5. python的并行计算</h2>
+<p>作为一种解释型的语言，Python的速度并不算慢。如果对速度有很高的要求的话，可以选择用更快的语言实现，比如C或C++，然后用Python调用。Python的一种常见应用场景是实现高级的逻辑。Python的解释器就是用C语言写的，即CPython。解释器将Python转换成一种中间语言，叫做Python字节码，类似于汇编语言，但是包含一些更高级的指令。当一个运行一个Python程序的时候，评估循环不断将Python字节码转换成机器码。解释型语言的好处是方便编程和调试，但是程序的运行速度慢。其中的一种解决办法是，用C语言实现一些第三方的库，然后在Python中使用。另一种方法是使用即时编译器来替换Cpython，例如PyPy，PyPy对代码生成和Python的运行速度做了优化。但是在本书中，我们将研究第三种方法。Python提供了很多可以利用并行的模块，在后面的章节中，我们将着重讨论这些并行编程的模块。</p>
+<h2 id="6-线程与进程">6. 线程与进程</h2>
+<p>来源： <a href="https://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html" target="_blank" rel="noopener noreffer">进程与线程的一个简单解释</a>，看过最通俗易懂的解释</p>
+<p><a href="https://zh.wikipedia.org/zh-cn/%e8%bf%9b%e7%a8%8b" target="_blank" rel="noopener noreffer">进程</a>（process）和<a href="https://zh.wikipedia.org/zh-cn/%e7%ba%bf%e7%a8%8b" target="_blank" rel="noopener noreffer">线程</a>（thread）是操作系统的基本概念，但是它们比较抽象，不容易掌握。</p>
+<ol>
+<li></li>
+</ol>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://www.ruanyifeng.com/blogimg/asset/201304/bg2013042401.jpg"
+         alt="img"
+         title="bg2013042401.jpg"
+    /></p>
+<p>计算机的核心是CPU，它承担了所有的计算任务。它就像一座工厂，时刻在运行。</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://www.ruanyifeng.com/blogimg/asset/201304/bg2013042402.png"
+         alt="img"
+         title="bg2013042402.png"
+    /></p>
+<p>假定工厂的电力有限，一次只能供给一个车间使用。也就是说，一个车间开工的时候，其他车间都必须停工。背后的含义就是，单个CPU一次只能运行一个任务。</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://www.ruanyifeng.com/blogimg/asset/201304/bg2013042403.jpg"
+         alt="img"
+         title="bg2013042403.jpg"
+    /></p>
+<p>进程就好比工厂的车间，它代表CPU所能处理的单个任务。任一时刻，CPU总是运行一个进程，其他进程处于非运行状态。</p>
+<ol start="4">
+<li></li>
+</ol>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://www.ruanyifeng.com/blogimg/asset/201304/bg2013042404.jpg"
+         alt="img"
+         title="bg2013042404.jpg"
+    /></p>
+<p>一个车间里，可以有很多工人。他们协同完成一个任务。</p>
+<ol start="5">
+<li></li>
+</ol>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://www.ruanyifeng.com/blogimg/asset/201304/bg2013042405.jpg"
+         alt="img"
+         title="bg2013042405.jpg"
+    /></p>
+<p>线程就好比车间里的工人。一个进程可以包括多个线程。</p>
+<ol start="6">
+<li></li>
+</ol>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://www.ruanyifeng.com/blogimg/asset/201304/bg2013042406.png"
+         alt="img"
+         title="bg2013042406.png"
+    /></p>
+<p>车间的空间是工人们共享的，比如许多房间是每个工人都可以进出的。这象征一个进程的内存空间是共享的，每个线程都可以使用这些共享内存。</p>
+<ol start="7">
+<li></li>
+</ol>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://www.ruanyifeng.com/blogimg/asset/201304/bg2013042407.jpg"
+         alt="img"
+         title="bg2013042407.jpg"
+    /></p>
+<p>可是，每间房间的大小不同，有些房间最多只能容纳一个人，比如厕所。里面有人的时候，其他人就不能进去了。这代表一个线程使用某些共享内存时，其他线程必须等它结束，才能使用这一块内存。</p>
+<ol start="8">
+<li></li>
+</ol>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://www.ruanyifeng.com/blogimg/asset/201304/bg2013042408.jpg"
+         alt="img"
+         title="bg2013042408.jpg"
+    /></p>
+<p>一个防止他人进入的简单方法，就是门口加一把锁。先到的人锁上门，后到的人看到上锁，就在门口排队，等锁打开再进去。这就叫<a href="https://zh.wikipedia.org/wiki/%e4%ba%92%e6%96%a5%e9%94%81" target="_blank" rel="noopener noreffer">&ldquo;互斥锁&rdquo;</a>（Mutual exclusion，缩写 Mutex），防止多个线程同时读写某一块内存区域。</p>
+<ol start="9">
+<li></li>
+</ol>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://www.ruanyifeng.com/blogimg/asset/201304/bg2013042409.jpg"
+         alt="img"
+         title="bg2013042409.jpg"
+    /></p>
+<p>还有些房间，可以同时容纳n个人，比如厨房。也就是说，如果人数大于n，多出来的人只能在外面等着。这好比某些内存区域，只能供给固定数目的线程使用。</p>
+<ol start="10">
+<li></li>
+</ol>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://www.ruanyifeng.com/blogimg/asset/201304/bg2013042410.jpg"
+         alt="img"
+         title="bg2013042410.jpg"
+    /></p>
+<p>这时的解决方法，就是在门口挂n把钥匙。进去的人就取一把钥匙，出来时再把钥匙挂回原处。后到的人发现钥匙架空了，就知道必须在门口排队等着了。这种做法叫做<a href="https://en.wikipedia.org/wiki/Semaphore_%28programming%29" target="_blank" rel="noopener noreffer">&ldquo;信号量&rdquo;</a>（Semaphore），用来保证多个线程不会互相冲突。</p>
+<p>不难看出，mutex是semaphore的一种特殊情况（n=1时）。也就是说，完全可以用后者替代前者。但是，因为mutex较为简单，且效率高，所以在必须保证资源独占的情况下，还是采用这种设计。</p>
+<h3 id="7-python中的线程和进程">7. python中的线程和进程</h3>
+<p>基于线程的并行是编写并行程序的标准方法。然而，Python解释器并不完全是线程安全的。为了支持多线程的Python程序，CPython使用了一个叫做全局解释器锁（Global Interpreter Lock， GIL）的技术。这意味着同一时间只有一个线程可以执行Python代码；执行某一个线程一小段时间之后，Python会自动切换到下一个线程。GIL并没有完全解决线程安全的问题，如果多个线程试图使用共享数据，还是可能导致未确定的行为。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># To use threads you need import Thread using the following code:</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+<span class="c1"># Also we use the sleep function to make the thread &#34;sleep&#34;</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="c1"># To create a thread in Python you&#39;ll want to make your class work as a thread.</span>
+<span class="c1"># For this, you should subclass your class from the Thread class</span>
+<span class="k">class</span> <span class="nc">CookBook</span><span class="p">(</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;Hello Parallel Python CookBook!!</span><span class="se">\n</span><span class="s2">&#34;</span>
+
+    <span class="c1"># this method prints only the message</span>
+    <span class="k">def</span> <span class="nf">print_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+
+    <span class="c1"># The run method prints ten times the message</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Thread Starting</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">print_message</span><span class="p">()</span>
+            <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Thread Ended</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+
+<span class="c1"># start the main process</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Process Started&#34;</span><span class="p">)</span>
+
+<span class="c1"># create an instance of the HelloWorld class</span>
+<span class="n">hello_Python</span> <span class="o">=</span> <span class="n">CookBook</span><span class="p">()</span>
+
+<span class="c1"># print the message...starting the thread</span>
+<span class="n">hello_Python</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># end the main process</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Process Ended&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>输出</p>
+<p>
+
+
+
+
+<img loading="lazy" decoding="async"
+         src="https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/image-20210624090952335.png"
+         alt="image-20210624090952335"
+         title="image-20210624090952335.png"
+    /></p>
+<p>可以看到主进程先结束，子线程还在继续运行知道完毕才结束。</p>
+</div>
+
+            <div class="post" style="padding-top: 0">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://www.longtermbook.com/posts/%E8%AE%A4%E8%AF%86%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" data-hashtag="python高性能编程"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-whatsapp" href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://www.longtermbook.com/posts/%E8%AE%A4%E8%AF%86%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" data-title="认识并行计算" data-web><span class="svg-social-icon icon-whatsapp"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-line" href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://www.longtermbook.com/posts/%E8%AE%A4%E8%AF%86%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" data-title="认识并行计算"><span data-svg-src="/lib/simple-icons/icons/line.min.svg"></span></a>
+</div><div class="share-link">
+        <a class="share-icon share-evernote" href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://www.longtermbook.com/posts/%E8%AE%A4%E8%AF%86%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" data-title="认识并行计算"><span class="svg-social-icon icon-evernote"></span></a>
+    </div></div>
+<div class="post-tags"><a href="/tags/python%E9%AB%98%E6%80%A7%E8%83%BD%E7%BC%96%E7%A8%8B/" class="tag">python高性能编程</a></div></div>
+        </div>
+    <div id="toc-final"></div>
+    </article></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://ublogger.netlify.app/?utm_source=http://www.longtermbook.com/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2018 - 2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body>
+</html>
