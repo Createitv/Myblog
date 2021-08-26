@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/www.longtermbook.com\/posts\/%E7%BE%8E%E5%A6%99%E7%9A%84git\/"
-        },"genre": "posts","wordCount":  2123 ,
+        },"genre": "posts","wordCount":  2119 ,
         "url": "http:\/\/www.longtermbook.com\/posts\/%E7%BE%8E%E5%A6%99%E7%9A%84git\/","datePublished": "2021-08-08T12:14:41+08:00","dateModified": "2021-08-08T12:14:41+08:00","description": "Createitv"
     }
     </script><script type="application/ld+json">
@@ -151,7 +151,7 @@
                             </span><span class="post-meta-date">
                                 <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-08-08">2021-08-08</time>
                             </span><span class="post-meta-words">
-                                <i class="svg-icon icon-pencil"></i>约 2123 字
+                                <i class="svg-icon icon-pencil"></i>约 2119 字
                             </span>
                             <span class="post-meta-reading">
                                 <i class="svg-icon icon-stopwatch"></i>预计阅读 5 分钟
@@ -174,20 +174,20 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#git的故事">Git的故事</a></li>
+    <li><a href="#git-的故事">Git 的故事</a></li>
     <li><a href="#有关版本控制">有关版本控制</a></li>
     <li><a href="#git-介绍">Git 介绍</a></li>
-    <li><a href="#git使用参考">Git使用参考</a>
+    <li><a href="#git-使用参考">Git 使用参考</a>
       <ul>
         <li><a href="#1-安装">1. 安装</a></li>
         <li><a href="#2-配置">2. 配置</a></li>
       </ul>
     </li>
-    <li><a href="#git基本使用">Git基本使用</a>
+    <li><a href="#git-基本使用">Git 基本使用</a>
       <ul>
         <li><a href="#1-git-工作区暂存区和版本库">1. Git 工作区、暂存区和版本库</a></li>
         <li><a href="#2命令介绍">2.命令介绍</a></li>
-        <li><a href="#3-上传github">3. 上传github</a></li>
+        <li><a href="#3-上传-github">3. 上传 github</a></li>
         <li><a href="#4标签管理">4.标签管理</a></li>
         <li><a href="#5分支管理">5.分支管理</a></li>
       </ul>
@@ -195,7 +195,7 @@
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav></div>
-            </div><h2 id="git的故事">Git的故事</h2>
+            </div><h2 id="git-的故事">Git 的故事</h2>
 <p>
 
 
@@ -227,7 +227,7 @@
 <p>Git 中所有数据在存储前都计算校验和，然后以校验和来引用</p>
 <p><strong>Git 一般只添加数据</strong></p>
 <p>执行的 Git 操作，几乎只往 Git 数据库中增加数据</p>
-<h2 id="git使用参考">Git使用参考</h2>
+<h2 id="git-使用参考">Git 使用参考</h2>
 <h3 id="1-安装">1. 安装</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -238,7 +238,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="2-配置">2. 配置</h3>
-<p><code>--global</code>电脑全局配置，该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。你也可以在项目内配置项目的git，配置完后可以使用 <code>git config --list</code> 查看配置信息</p>
+<p><code>--global</code>电脑全局配置，该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。你也可以在项目内配置项目的 git，配置完后可以使用 <code>git config --list</code> 查看配置信息</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -251,7 +251,7 @@ $ git config --global user.email zouxq412@foxmail.com
 
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="git基本使用">Git基本使用</h2>
+</div><h2 id="git-基本使用">Git 基本使用</h2>
 <h3 id="1-git-工作区暂存区和版本库">1. Git 工作区、暂存区和版本库</h3>
 <p>在了解 Git 的基本操作之前，我们先来了解 Git 工作区、暂存区和版本库的概念</p>
 <p>在 Git 中的文件有三种状态：<em>已提交(committed)：</em> 表示数据已经安全的保存在本地数据库中；<em>已修改(modified)：</em> 表示修改了文件，但还没保存到数据库中；<em>已暂存(staged)：</em> 表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中</p>
@@ -299,7 +299,7 @@ git mv                  <span class="c1"># 命令用于移动或重命名一个�
 git checkout &lt;file&gt;     <span class="c1"># 文件回退</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="3-上传github">3. 上传github</h3>
+</div><h3 id="3-上传-github">3. 上传 github</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -367,6 +367,7 @@ git branch -d &lt;branchname&gt; 					<span class="c1">#删除分支</span>
 </div><h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://linuxstory.org/10-years-of-git-an-interview-with-git-creator-linus-torvalds/" target="_blank" rel="noopener noreffer">Git 10 周年访谈：Linus Torvalds 讲述背后故事</a></li>
+<li><a href="https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener noreffer">常用 Git 命令清单</a></li>
 </ul>
 </div>
 

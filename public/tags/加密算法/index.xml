@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>加密算法 - 标签 - 且慢</title>
+        <link>http://www.longtermbook.com/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</link>
+        <description>加密算法 - 标签 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 26 Aug 2021 11:43:51 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
+    <title>加密算法</title>
+    <link>http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</link>
+    <pubDate>Thu, 26 Aug 2021 11:43:51 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</guid>
+    <description><![CDATA[常见的加密算法可以分成三类 MD5、hash256、hash1、hash128 对称加密算法：AES、DES 非对称加密算法：RSA、&helli]]></description>
+</item></channel>
+</rss>

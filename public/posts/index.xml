@@ -3,13 +3,27 @@
         <title>所有文章 - 且慢</title>
         <link>http://www.longtermbook.com/posts/</link>
         <description>所有文章 | 且慢</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 08 Aug 2021 12:14:41 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 26 Aug 2021 11:43:51 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>加密算法</title>
+    <link>http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</link>
+    <pubDate>Thu, 26 Aug 2021 11:43:51 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</guid>
+    <description><![CDATA[常见的加密算法可以分成三类 MD5、hash256、hash1、hash128 对称加密算法：AES、DES 非对称加密算法：RSA、&helli]]></description>
+</item><item>
+    <title>Vim使用</title>
+    <link>http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/</link>
+    <pubDate>Sat, 14 Aug 2021 09:15:16 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/</guid>
+    <description><![CDATA[Vim文件编辑 插入 e 编辑文件 :bn 和 :bp → 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件 i 光标前插入 I 行首插入 o 下一行插入 O 上一行]]></description>
+</item><item>
     <title>美妙的git</title>
     <link>http://www.longtermbook.com/posts/%E7%BE%8E%E5%A6%99%E7%9A%84git/</link>
     <pubDate>Sun, 08 Aug 2021 12:14:41 &#43;0800</pubDate>
     <author>Createitv</author>
     <guid>http://www.longtermbook.com/posts/%E7%BE%8E%E5%A6%99%E7%9A%84git/</guid>
-    <description><![CDATA[Git的故事 十年前的这一周，Linux 内核开发社区正面临严峻的挑战：他们不能继续使用 BitKeeper 了（注：原因是当时BitKeeper 著作权所有者决定收]]></description>
+    <description><![CDATA[Git 的故事 十年前的这一周，Linux 内核开发社区正面临严峻的挑战：他们不能继续使用 BitKeeper 了（注：原因是当时BitKeeper 著作权所有者决定收回授]]></description>
 </item><item>
     <title>JavaSE</title>
     <link>http://www.longtermbook.com/posts/javase/</link>
@@ -59,19 +73,5 @@
     <author>Createitv</author>
     <guid>http://www.longtermbook.com/posts/python%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
     <description><![CDATA[3种编程范式 命令式编程 Procedural programming is the most basic form of coding. Code is structured hierarchically into blocks (such as if statements, loops, and functions). It is arguably the simplest form of coding. However, it can be difficult to write and maintain large and complex software due to its lack of enforced structure. 1 2 3 4 5 6 7 8 def]]></description>
-</item><item>
-    <title>抽象数据类型(转)</title>
-    <link>http://www.longtermbook.com/posts/adt_date_type/</link>
-    <pubDate>Wed, 26 May 2021 10:58:58 &#43;0800</pubDate>
-    <author>Createitv</author>
-    <guid>http://www.longtermbook.com/posts/adt_date_type/</guid>
-    <description><![CDATA[Abstract Data Types Abstract Data type (ADT) is a type (or class) for objects whose behaviour is defined by a set of value and a set of operations. The definition of ADT only mentions what operations are to be performed but not how these operations will be implemented. It does not specify how data will be organized in memory and what algorithms will be used for implementing the operations. It]]></description>
-</item><item>
-    <title>JS数组操作</title>
-    <link>http://www.longtermbook.com/posts/js%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/</link>
-    <pubDate>Fri, 21 May 2021 11:11:59 &#43;0800</pubDate>
-    <author>Createitv</author>
-    <guid>http://www.longtermbook.com/posts/js%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/</guid>
-    <description><![CDATA[数组常用方法总结 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 01_数组常用方法1.html =&gt; 数组基础方法 =&gt; push() =&gt; pop() =&gt; unshift() =&gt;]]></description>
 </item></channel>
 </rss>

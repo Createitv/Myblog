@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Vim - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/vim/</link>
+        <description>Vim - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 14 Aug 2021 09:15:16 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/vim/" rel="self" type="application/rss+xml" /><item>
+    <title>Vim使用</title>
+    <link>http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/</link>
+    <pubDate>Sat, 14 Aug 2021 09:15:16 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/</guid>
+    <description><![CDATA[Vim文件编辑 插入 e 编辑文件 :bn 和 :bp → 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件 i 光标前插入 I 行首插入 o 下一行插入 O 上一行]]></description>
+</item></channel>
+</rss>

@@ -20,17 +20,17 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 
 resources:
-- name: "featured-image"
-  src: "featured-image.jpg"
-- name: featured-image-preview
-  src: featured-image-preview.jpg
+    - name: "featured-image"
+      src: "featured-image.jpg"
+    - name: featured-image-preview
+      src: featured-image-preview.jpg
 
 featuredImage: ""
 featuredImagePreview: ""
 images: [""]
 ---
 
-## Git的故事
+## Git 的故事
 
 ![img](https://linuxstory.org/wp-content/uploads/2015/04/git-training-philadelphia-pa.png)
 
@@ -76,7 +76,7 @@ Git 中所有数据在存储前都计算校验和，然后以校验和来引用
 
 执行的 Git 操作，几乎只往 Git 数据库中增加数据
 
-## Git使用参考
+## Git 使用参考
 
 ### 1. 安装
 
@@ -86,7 +86,7 @@ brew install git
 
 ### 2. 配置
 
-`--global`电脑全局配置，该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。你也可以在项目内配置项目的git，配置完后可以使用 `git config --list` 查看配置信息
+`--global`电脑全局配置，该命令只需要运行一次，因为之后无论你在该系统上做任何事情， Git 都会使用那些信息。你也可以在项目内配置项目的 git，配置完后可以使用 `git config --list` 查看配置信息
 
 ```bash
 $ git config --global user.name "zou"
@@ -94,23 +94,21 @@ $ git config --global user.email zouxq412@foxmail.com
 
 ```
 
-## Git基本使用
+## Git 基本使用
 
 ### 1. Git 工作区、暂存区和版本库
 
 在了解 Git 的基本操作之前，我们先来了解 Git 工作区、暂存区和版本库的概念
 
-在 Git 中的文件有三种状态：*已提交(committed)：* 表示数据已经安全的保存在本地数据库中；*已修改(modified)：* 表示修改了文件，但还没保存到数据库中；*已暂存(staged)：* 表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中
+在 Git 中的文件有三种状态：_已提交(committed)：_ 表示数据已经安全的保存在本地数据库中；_已修改(modified)：_ 表示修改了文件，但还没保存到数据库中；_已暂存(staged)：_ 表示对一个已修改文件的当前版本做了标记，使之包含在下次提交的快照中
 
 由此也引入了 Git 项目的三个工作区域的概念：
 
-- **工作区：** 就是项目文件所在的目录
-- **暂存区：** stage 或 index。一般存放在 `.git/index` 文件中，所以我们把暂存区有时也叫作索引
-- **版本库：** 工作区下隐藏目录 `.git`，这里记录着仓库的版本信息和历史记录
+-   **工作区：** 就是项目文件所在的目录
+-   **暂存区：** stage 或 index。一般存放在 `.git/index` 文件中，所以我们把暂存区有时也叫作索引
+-   **版本库：** 工作区下隐藏目录 `.git`，这里记录着仓库的版本信息和历史记录
 
 下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：
-
-
 
 ![img](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2019/10/31/16e1f6b9b4972fda~tplv-t2oaga2asx-watermark.awebp)
 
@@ -129,7 +127,7 @@ git mv                  # 命令用于移动或重命名一个文件、目录、
 git checkout <file>     # 文件回退
 ```
 
-### 3. 上传github
+### 3. 上传 github
 
 ```bash
 git remote add origin <url> # 添加一个新的远程 Git 仓库
@@ -166,9 +164,8 @@ git branch -d <branchname> 					#删除分支
 
 ```
 
-
-
 ## 参考
 
-- [Git 10 周年访谈：Linus Torvalds 讲述背后故事](https://linuxstory.org/10-years-of-git-an-interview-with-git-creator-linus-torvalds/)
+-   [Git 10 周年访谈：Linus Torvalds 讲述背后故事](https://linuxstory.org/10-years-of-git-an-interview-with-git-creator-linus-torvalds/)
+-   [常用 Git 命令清单](https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
 

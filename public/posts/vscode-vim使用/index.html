@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>Vim使用 | 且慢</title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="Vim使用"/>
+<meta name="twitter:description" content="Createitv"/><meta name="Description" content="Createitv"><meta property="og:title" content="Vim使用" />
+<meta property="og:description" content="Createitv" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/" /><meta property="og:image" content="http://www.longtermbook.com/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-14T09:15:16&#43;08:00" />
+<meta property="article:modified_time" content="2021-08-14T09:15:16&#43;08:00" /><meta property="og:site_name" content="且慢" />
+
+<meta name="application-name" content="Createitv">
+<meta name="apple-mobile-web-app-title" content="Createitv"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Vim使用",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/www.longtermbook.com\/posts\/vscode-vim%E4%BD%BF%E7%94%A8\/"
+        },"genre": "posts","wordCount":  887 ,
+        "url": "http:\/\/www.longtermbook.com\/posts\/vscode-vim%E4%BD%BF%E7%94%A8\/","datePublished": "2021-08-14T09:15:16+08:00","dateModified": "2021-08-14T09:15:16+08:00","description": "Createitv"
+    }
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "主页",
+            "item": "http:\/\/www.longtermbook.com\/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Vim",
+            "item": "http://www.longtermbook.com/categories/vim/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Vim使用"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="且慢" class="header-logo logo-svg">且慢</a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul class="menu-inner"><li>
+                        <a class="menu-item" href="/posts/"> 文章 </a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/"> 标签 </a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/"> 分类 </a>
+                    </li></ul>
+            </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="且慢" class="header-logo">且慢</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><nav>
+                <ul><li>
+                        <a class="menu-item" href="/posts/" title="">文章</a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/" title="">标签</a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/" title="">分类</a>
+                    </li></ul>
+            </nav>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <span class="svg-icon icon-moon"></span>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+<div class="container content-article  theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">目录</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+
+    <div class="header-post">
+
+        
+
+        
+        <div class="post-title">
+
+                <div class="post-all-meta">
+                    <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">主页 </a></li><li><a href="/categories/vim/">Vim </a></li><li>Vim使用</li>
+    </ol>
+</nav>
+                    <h1 class="single-title flipInX">Vim使用</h1><div class="post-meta">
+                        <div class="post-meta-line"><span class="post-category">
+                                <a href="/categories/vim/"><i class="svg-icon icon-folder"></i>Vim</a>
+                            </span><span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-08-14">2021-08-14</time>
+                            </span><span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>约 887 字
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>预计阅读 2 分钟
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+    <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#vim文件编辑">Vim文件编辑</a>
+      <ul>
+        <li><a href="#插入">插入</a></li>
+        <li><a href="#复制粘贴">复制粘贴</a></li>
+      </ul>
+    </li>
+    <li><a href="#vim移动">Vim移动</a></li>
+    <li><a href="#vim修改">Vim修改</a>
+      <ul>
+        <li><a href="#c字符"><code>c</code>字符</a></li>
+        <li><a href="#d字符"><code>d</code>字符</a></li>
+      </ul>
+    </li>
+    <li><a href="#vim回退">Vim回退</a></li>
+  </ul>
+</nav></div>
+            </div><h2 id="vim文件编辑">Vim文件编辑</h2>
+<h3 id="插入">插入</h3>
+<p><code>e</code> 编辑文件</p>
+<p><code>:bn</code> <em>和</em> <code>:bp</code> <em>→ 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件</em></p>
+<p><code>i</code> 光标前插入</p>
+<p><code>I</code> 行首插入</p>
+<p><code>o</code>	下一行插入</p>
+<p><code>O</code> 上一行插入</p>
+<p><code>a</code> 光标后插入</p>
+<p><code>A</code> 行尾插入</p>
+<p><code>s</code> 删除当前字符并进入插入模式</p>
+<p><code>S</code> 删除当前行并进入插入模式</p>
+<p><code>r</code> 替换当前字符</p>
+<p><code>R</code> 替换当前光标的字符直到退出插入模式</p>
+<h3 id="复制粘贴">复制粘贴</h3>
+<p><code>yw</code> 拷贝当前的一个单词
+<code>y0</code> 拷贝的范围是当前光标处到行首
+<code>y^</code> 同上
+<code>y$</code> 拷贝的范围是当前光标处到行尾
+<code>yy</code> 拷贝当前行
+<code>Y</code>  同上
+<code>Nyy</code> 从当前行开始拷贝 N 行
+<code>yf</code> + 字符 复制从当前字符到指定字符
+<code>yG</code> 拷贝当前行到文件尾
+<code>ygg</code> 拷贝当前行到文件头
+<code>ggyG</code> 复制整个文件
+<code>&quot;+y</code> 复制到系统剪切板
+<code>&quot;+p</code> 粘贴剪切板中的内容</p>
+<h2 id="vim移动">Vim移动</h2>
+<p><strong>单位级</strong></p>
+<ul>
+<li>
+<p><code>h</code> 向左一字符</p>
+</li>
+<li>
+<p><code>j</code> 下一行</p>
+</li>
+<li>
+<p><code>k</code> 上一行</p>
+</li>
+<li>
+<p><code>l</code> 向右一字符</p>
+</li>
+</ul>
+<p><strong>单词级</strong></p>
+<ul>
+<li><code>w</code> or <code>W</code> 向右移动到下一单词开头</li>
+<li><code>e</code> or <code>E</code> 向右移动到单词结尾</li>
+<li><code>b</code> or <code>B</code> 向左移动到单词开头</li>
+<li><code>*</code> 和 <code>#</code>:  匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（*是下一个，#是上一个）</li>
+</ul>
+<p>注：所有小写单词都是以分词符作为单词界限，大写字母以空格作为界限。</p>
+<p><strong>块级</strong></p>
+<ul>
+<li><code>(</code> 移动到当前句子开头</li>
+<li><code>)</code> 移动到下一句子开头</li>
+<li><code>{</code> 移动到当前段落开头</li>
+<li><code>}</code> 移动到下一段落开头</li>
+<li><code>+</code> 移动到下一行开头</li>
+<li><code>-</code> 移动到上一行开头</li>
+<li><code>t,</code> → 到逗号前的第一个字符。逗号可以变成其它字符。</li>
+<li><code>F</code> <em>和</em> <code>T</code> <em>→ 和</em> <code>f</code> <em>和</em> <code>t</code> <em>一样，只不过是相反方向。</em></li>
+<li><code>gg</code> 到文档第一行</li>
+<li><code>G</code> 到文档最后一行</li>
+<li><code>0</code>, <code>|</code> 到行首（第 1 列）</li>
+<li><code>^</code> 到第一个非空白字符</li>
+<li><code>$</code> 到行尾</li>
+<li><code>0nl</code>, <code>n|</code> 到当前行的第n 列</li>
+<li><code>g_</code> 到当前行的最后一个非空格字符处</li>
+<li><code>H</code> 到屏幕的首行</li>
+<li><code>L</code> 到屏幕尾行</li>
+<li><code>M</code> 到屏幕中间</li>
+<li><code>%</code> 到匹配的括号（包括小括号、中括号、大括号）</li>
+<li><code>zt</code> 将当前行移到屏幕顶部</li>
+<li><code>zz</code> 将当前行移到屏幕中部</li>
+<li><code>zb</code> 将当前行移到屏幕底部</li>
+<li><code>Ctrl-d</code> 向下移动半页</li>
+<li><code>Ctrl-u</code> 向上移动半页</li>
+<li><code>Ctrl-f</code> 向下移动一页</li>
+<li><code>Ctrl-b</code> 向上移动一页</li>
+<li><code>:&lt;N&gt;</code> or <code>&lt;N&gt;gg</code> 跳转到第 N 行</li>
+<li><code>:+&lt;N&gt;</code> or <code>&lt;N&gt;j</code> 向下跳 N 行</li>
+<li><code>:-&lt;N&gt;</code> or <code>&lt;N&gt;k</code> 向上跳 N 行</li>
+</ul>
+<h2 id="vim修改">Vim修改</h2>
+<h3 id="c字符"><code>c</code>字符</h3>
+<p><code>c</code> 修改命令 <code>change</code>,复合命令,修改后进入插入模式</p>
+<p><code>cw</code>修改一个单词</p>
+<p><code>cb</code>向后修改一个单词</p>
+<p><code>ct)</code>修改知道碰到符号）</p>
+<p><code>ci)</code> 修改)内的内容</p>
+<p><code>ca)</code>修改)内的内容包括）</p>
+<p><code>cc</code>删除整行保持缩进并进入编辑模式</p>
+<p><code>diw</code>删除光标所在的单词=&gt; <code>d inside word</code></p>
+<h3 id="d字符"><code>d</code>字符</h3>
+<p>只删除还是在普通模式</p>
+<p><code>dw</code>删除一个单词</p>
+<p><code>db</code>向后伤处一个单词</p>
+<p><code>d4l</code>向右删除4个字符</p>
+<p><code>dd</code>删除一正行</p>
+<h2 id="vim回退">Vim回退</h2>
+<p><code>u</code>撤销</p>
+</div>
+
+            <div class="post" style="padding-top: 0">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-whatsapp" href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/" data-title="Vim使用" data-web><span class="svg-social-icon icon-whatsapp"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-line" href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/" data-title="Vim使用"><span data-svg-src="/lib/simple-icons/icons/line.min.svg"></span></a>
+</div><div class="share-link">
+        <a class="share-icon share-evernote" href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/" data-title="Vim使用"><span class="svg-social-icon icon-evernote"></span></a>
+    </div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://ublogger.netlify.app/?utm_source=http://www.longtermbook.com/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2018 - 2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body>
+</html>

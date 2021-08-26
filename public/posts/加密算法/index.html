@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>加密算法 | 且慢</title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="加密算法"/>
+<meta name="twitter:description" content="Createitv"/><meta name="Description" content="Createitv"><meta property="og:title" content="加密算法" />
+<meta property="og:description" content="Createitv" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" /><meta property="og:image" content="http://www.longtermbook.com/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-26T11:43:51&#43;08:00" />
+<meta property="article:modified_time" content="2021-08-26T11:43:51&#43;08:00" /><meta property="og:site_name" content="且慢" />
+
+<meta name="application-name" content="Createitv">
+<meta name="apple-mobile-web-app-title" content="Createitv"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "加密算法",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/www.longtermbook.com\/posts\/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95\/"
+        },"genre": "posts","keywords": "加密算法","wordCount":  2856 ,
+        "url": "http:\/\/www.longtermbook.com\/posts\/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95\/","datePublished": "2021-08-26T11:43:51+08:00","dateModified": "2021-08-26T11:43:51+08:00","description": "Createitv"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="且慢" class="header-logo logo-svg">且慢</a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul class="menu-inner"><li>
+                        <a class="menu-item" href="/posts/"> 文章 </a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/"> 标签 </a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/"> 分类 </a>
+                    </li></ul>
+            </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="且慢" class="header-logo">且慢</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><nav>
+                <ul><li>
+                        <a class="menu-item" href="/posts/" title="">文章</a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/" title="">标签</a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/" title="">分类</a>
+                    </li></ul>
+            </nav>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <span class="svg-icon icon-moon"></span>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+<div class="container content-article  theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">目录</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+
+    <div class="header-post">
+
+        
+
+        
+        <div class="post-title">
+
+                <div class="post-all-meta">
+                    <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">主页 </a></li><li>加密算法</li>
+    </ol>
+</nav>
+                    <h1 class="single-title flipInX">加密算法</h1><div class="post-meta">
+                        <div class="post-meta-line"><span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-08-26">2021-08-26</time>
+                            </span><span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>约 2856 字
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>预计阅读 6 分钟
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+    <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#hash-md5算法">Hash MD5算法：</a>
+      <ul>
+        <li><a href="#特点">特点</a></li>
+        <li><a href="#python版本">python版本</a></li>
+        <li><a href="#js版本">JS版本</a></li>
+        <li><a href="#md5结合密钥加密">MD5结合密钥加密</a></li>
+        <li><a href="#sha256">sha256</a></li>
+        <li><a href="#base64">BASE64</a>
+          <ul>
+            <li><a href="#特点-1">特点</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#对称加密">对称加密</a>
+      <ul>
+        <li><a href="#什么是aes加密算法">什么是AES加密算法</a></li>
+      </ul>
+    </li>
+    <li><a href="#非对称加密">非对称加密</a>
+      <ul>
+        <li><a href="#使用openssl-工具生成rsa-私钥和秘钥">使用openssl 工具生成RSA 私钥和秘钥</a>
+          <ul>
+            <li><a href="#生成私钥">生成私钥</a></li>
+            <li><a href="#生成公钥">生成公钥</a></li>
+          </ul>
+        </li>
+        <li><a href="#python版本-1">python版本</a></li>
+        <li><a href="#javascript版本">javascript版本</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><h1 id="常见的加密算法可以分成三类">常见的加密算法可以分成三类</h1>
+<ul>
+<li>MD5、hash256、hash1、hash128</li>
+<li>对称加密算法：AES、DES</li>
+<li>非对称加密算法：RSA、&hellip;</li>
+</ul>
+<h2 id="hash-md5算法">Hash MD5算法：</h2>
+<p>Hash，一般翻译做“散列”，也有直接音译为“哈希”的，就是把任意长度的输入（又叫做预映射， pre-image），通过散列算法，变换成固定长度的输出，该输出就是散列值。这种转换是一种压缩映射，也就是，散列值的空间通常远小于输入的空间，不同的输入可能会散列成相同的输出，而不可能从散列值来唯一的确定输入值。一般为32位</p>
+<h3 id="特点">特点</h3>
+<p>优点：不可逆、易计算、特征化 缺点：可能存在散列冲突 使用场景：文件或字符串一致性校验、数字签名、鉴权协议</p>
+<p>对于 MD5 而言，有两个特性是很重要的，第一：明文数据经过散列以后的值是定长的；第二：是任意一段明文数据，经过散列以后，其结果必须永远是不变的。</p>
+<h3 id="python版本">python版本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">hashlib</span>
+
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&#34;w3213xcas0&#34;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">password</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">&#34;3e356fc9115d18c86e445ce2475a0961&#34;</span><span class="p">))</span>
+
+<span class="c1"># output</span>
+<span class="o">&gt;&gt;</span> <span class="mf">3e356</span><span class="n">fc9115d18c86e445ce2475a0961</span>
+<span class="o">&gt;&gt;</span> <span class="mi">32</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="js版本">JS版本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">const</span> <span class="n">crypto</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s2">&#34;crypto&#34;</span><span class="p">);</span> <span class="o">//</span><span class="err">引入</span><span class="n">crypto加密模块</span>
+
+
+<span class="o">//</span> <span class="n">update</span><span class="p">()</span><span class="err">方法默认字符串编码为</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span><span class="err">，也可以传入</span><span class="n">Buffer</span><span class="err">。</span>
+<span class="o">//</span> <span class="err">如果要计算</span><span class="n">SHA1</span><span class="err">，只需要把</span><span class="s1">&#39;md5&#39;</span><span class="err">改成</span><span class="s1">&#39;sha1&#39;</span><span class="err">，就可以得到</span><span class="n">SHA1的结果</span>
+<span class="n">const</span> <span class="nb">hash</span> <span class="o">=</span> <span class="n">crypto</span><span class="o">.</span><span class="n">createHash</span><span class="p">(</span><span class="s2">&#34;md5&#34;</span><span class="p">);</span> <span class="o">//</span><span class="err">规定使用哈希算法中的</span><span class="n">MD5算法</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&#34;w3213xcas0&#34;</span><span class="p">;</span>
+<span class="o">//</span> <span class="err">可任意多次调用</span><span class="n">update</span><span class="p">(),</span><span class="err">效果相当于多个字符串相加</span>
+<span class="nb">hash</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+<span class="o">//</span><span class="err">最终加密的字符串为</span><span class="s1">&#39;w3213xcas0&#39;</span><span class="p">,</span><span class="nb">hash</span><span class="o">.</span><span class="n">digest</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">)</span><span class="err">表示输出的格式为</span><span class="mi">16</span><span class="err">进制</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">hash</span><span class="o">.</span><span class="n">digest</span><span class="p">(</span><span class="s2">&#34;hex&#34;</span><span class="p">));</span> 
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">hash</span><span class="o">.</span><span class="n">digest</span><span class="p">(</span><span class="s2">&#34;hex&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">);</span>
+
+<span class="c1"># output</span>
+<span class="o">&gt;&gt;</span> <span class="mf">3e356</span><span class="n">fc9115d18c86e445ce2475a0961</span>
+<span class="o">&gt;&gt;</span> <span class="mi">32</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="md5结合密钥加密">MD5结合密钥加密</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">crypto</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;crypto&#34;</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">md5</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">createHash</span><span class="p">(</span><span class="s2">&#34;md5&#34;</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="nx">text</span><span class="p">).</span><span class="nx">digest</span><span class="p">(</span><span class="s2">&#34;hex&#34;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&#34;123&#34;</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">md5_suffix</span> <span class="o">=</span> <span class="s2">&#34;9d0f0dakdllwlelldda,x,,axx2&#34;</span><span class="p">;</span> <span class="c1">//md5_suffix作为秘钥,越复杂越好
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">FinalPass</span> <span class="o">=</span> <span class="nx">md5</span><span class="p">(</span><span class="nx">str</span> <span class="o">+</span> <span class="nx">md5_suffix</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">FinalPass</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="sha256">sha256</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">hashlib</span>
+
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&#34;w3213xcas0&#34;</span> <span class="o">+</span> <span class="s2">&#34;dasdasd&#34;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">password</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">&#34;998b2d30d19311f48758bc5601913edf66db6932eb14d39ab8a6b114f96973f4&#34;</span><span class="p">))</span>
+<span class="c1"># output</span>
+<span class="o">&gt;&gt;</span> <span class="mi">998</span><span class="n">b2d30d19311f48758bc5601913edf66db6932eb14d39ab8a6b114f96973f4</span>
+<span class="o">&gt;&gt;</span> <span class="mi">64</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="base64">BASE64</h3>
+<p>Base64 编码只是一种编码格式并不是加密算法，它可用于在 HTTP 环境下传递较长的标识信息。</p>
+<h4 id="特点-1">特点</h4>
+<p>可以将任意的二进制数据进行 Base64 编码</p>
+<p>数据加密之后，数据量会变大，变大 1/3 左右 编码后有个非常显著的特点，末尾有个=号 可进行反向解码 Base64 编码具有不可读性</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;binary</span><span class="se">\x00</span><span class="s2">string&#34;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="sa">b</span><span class="s2">&#34;YmluYXJ5AHN0cmluZw==&#34;</span><span class="p">))</span>
+<span class="c1"># output</span>
+<span class="o">&gt;&gt;</span> <span class="sa">b</span><span class="s1">&#39;YmluYXJ5AHN0cmluZw==&#39;</span>
+<span class="o">&gt;&gt;</span> <span class="sa">b</span><span class="s1">&#39;binary</span><span class="se">\x00</span><span class="s1">string&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="对称加密">对称加密</h2>
+<p>1、什么是对称加密？</p>
+<p>对称加密就是指，加密和解密使用同一个密钥的加密方式。</p>
+<p>2、对称加密的工作过程</p>
+<p>发送方使用密钥将明文数据加密成密文，然后发送出去，接收方收到密文后，使用同一个密钥将密文解密成明文读取。</p>
+<p>3、对称加密的优点</p>
+<p>加密计算量小、速度块，适合对大量数据进行加密的场景。（记住这个特点，实际使用是会用到的）</p>
+<p>4、对称加密的两大不足</p>
+<p>密钥传输问题：如上所说，由于对称加密的加密和解密使用的是同一个密钥，所以对称加密的安全性就不仅仅取决于加密算法本身的强度，更取决于密钥是否被安全的保管，因此加密者如何把密钥安全的传递到解密者手里，就成了对称加密面临的关键问题。（比如，我们客户端肯定不能直接存储对称加密的密钥，因为被反编译之后，密钥就泄露了，数据安全性就得不到保障，所以实际中我们一般都是客户端向服务端请求对称加密的密钥，而且密钥还得用非对称加密加密后再传输。）</p>
+<h3 id="什么是aes加密算法">什么是AES加密算法</h3>
+<p>针对对称加密的话，是有很多的对称加密算法的，如DES加密算法、3DES加密算法等，但是因为AES加密算法的安全性要高于DES和3DES，所以AES已经成为了主要的对称加密算法，因此本篇主要学习一下AES加密算法。</p>
+<p>AES加密算法就是众多对称加密算法中的一种，它的英文全称是Advanced Encryption Standard，翻译过来是高级加密标准，它是用来替代之前的DES加密算法的。</p>
+<p>AES加密算法采用分组密码体制，每个分组数据的长度为128位16个字节，密钥长度可以是128位16个字节、192位或256位，一共有四种加密模式，我们通常采用需要初始向量IV的CBC模式，初始向量的长度也是128位16个字节。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+
+
+<span class="n">BLOCK_SIZE</span> <span class="o">=</span> <span class="mi">16</span>  <span class="c1"># Bytes</span>
+<span class="k">def</span> <span class="nf">pad</span><span class="p">(</span><span class="n">s</span><span class="p">):</span> <span class="k">return</span> <span class="n">s</span> <span class="o">+</span> <span class="p">(</span><span class="n">BLOCK_SIZE</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">%</span> <span class="n">BLOCK_SIZE</span><span class="p">)</span> <span class="o">*</span> \
+    <span class="nb">chr</span><span class="p">(</span><span class="n">BLOCK_SIZE</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">%</span> <span class="n">BLOCK_SIZE</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">unpad</span><span class="p">(</span><span class="n">s</span><span class="p">):</span> <span class="k">return</span> <span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:])]</span>
+
+
+<span class="k">def</span> <span class="nf">aesEncrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="s1">&#39;&#39;&#39;
+</span><span class="s1">    AES的ECB模式加密方法
+</span><span class="s1">    :param key: 密钥
+</span><span class="s1">    :param data:被加密字符串（明文）
+</span><span class="s1">    :return:密文
+</span><span class="s1">    &#39;&#39;&#39;</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+    <span class="c1"># 字符串补位</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pad</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_ECB</span><span class="p">)</span>
+    <span class="c1"># 加密后得到的是bytes类型的数据，使用Base64进行编码,返回byte字符串</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+    <span class="n">encodestrs</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="n">enctext</span> <span class="o">=</span> <span class="n">encodestrs</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">enctext</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">enctext</span>
+
+
+<span class="k">def</span> <span class="nf">aesDecrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="s1">&#39;&#39;&#39;
+</span><span class="s1">
+</span><span class="s1">    :param key: 密钥
+</span><span class="s1">    :param data: 加密后的数据（密文）
+</span><span class="s1">    :return:明文
+</span><span class="s1">    &#39;&#39;&#39;</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_ECB</span><span class="p">)</span>
+
+    <span class="c1"># 去补位</span>
+    <span class="n">text_decrypted</span> <span class="o">=</span> <span class="n">unpad</span><span class="p">(</span><span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    <span class="n">text_decrypted</span> <span class="o">=</span> <span class="n">text_decrypted</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">text_decrypted</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">text_decrypted</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;5c44c819appsapi0&#39;</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;herish acorn&#39;</span>
+
+    <span class="n">ecdata</span> <span class="o">=</span> <span class="n">aesEncrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">aesDecrypt</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">ecdata</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="非对称加密">非对称加密</h2>
+<p>一、非对称加密算法 1、乙方生成两把密钥（公钥和私钥）。公钥是公开的，任何人都可以获得，私钥则是保密的。</p>
+<p>2、甲方获取乙方的公钥，然后用它对信息加密。</p>
+<p>3、乙方得到加密后的信息，用私钥解密。</p>
+<p>二、RSA算法</p>
+<p>1977年，三位数学家Rivest、Shamir 和 Adleman 设计了一种算法，可以实现非对称加密。这种算法用他们三个人的名字命名，叫做RSA算法。从那时直到现在，RSA算法一直是最广为使用的&quot;非对称加密算法&quot;。毫不夸张地说，只要有计算机网络的地方，就有RSA算法。</p>
+<p>这种算法非常可靠，密钥越长，它就越难破解。根据已经披露的文献，目前被破解的最长RSA密钥是768个二进制位。也就是说，长度超过768位的密钥，还无法破解（至少没人公开宣布）。因此可以认为，1024位的RSA密钥基本安全，2048位的密钥极其安全。</p>
+<h3 id="使用openssl-工具生成rsa-私钥和秘钥">使用openssl 工具生成RSA 私钥和秘钥</h3>
+<h4 id="生成私钥">生成私钥</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">openssl genrsa -out rsa_private_key.pem <span class="m">1024</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="生成公钥">生成公钥</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="python版本-1">python版本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">from</span> <span class="nn">Crypto.PublicKey</span> <span class="kn">import</span> <span class="n">RSA</span>
+<span class="kn">from</span> <span class="nn">Crypto.Hash</span> <span class="kn">import</span> <span class="n">SHA</span>
+<span class="kn">from</span> <span class="nn">Crypto.Signature</span> <span class="kn">import</span> <span class="n">PKCS1_v1_5</span> <span class="k">as</span> <span class="n">PKCS1_signature</span>
+<span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">PKCS1_v1_5</span> <span class="k">as</span> <span class="n">PKCS1_cipher</span>
+
+
+<span class="k">def</span> <span class="nf">get_key</span><span class="p">(</span><span class="n">key_file</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">key_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="o">.</span><span class="n">importKey</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">key</span>
+
+
+<span class="k">def</span> <span class="nf">encrypt_data</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="n">public_key</span> <span class="o">=</span> <span class="n">get_key</span><span class="p">(</span><span class="s1">&#39;rsa_public_key.pem&#39;</span><span class="p">)</span>
+    <span class="n">cipher</span> <span class="o">=</span> <span class="n">PKCS1_cipher</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">public_key</span><span class="p">)</span>
+    <span class="n">encrypt_text</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&#34;utf8&#34;</span><span class="p">))))</span>
+    <span class="k">return</span> <span class="n">encrypt_text</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">decrypt_data</span><span class="p">(</span><span class="n">encrypt_msg</span><span class="p">):</span>
+    <span class="n">private_key</span> <span class="o">=</span> <span class="n">get_key</span><span class="p">(</span><span class="s1">&#39;rsa_private_key.pem&#39;</span><span class="p">)</span>
+    <span class="n">cipher</span> <span class="o">=</span> <span class="n">PKCS1_cipher</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">private_key</span><span class="p">)</span>
+    <span class="n">back_text</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">encrypt_msg</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">back_text</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">test_encrypt_decrypt</span><span class="p">():</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s2">&#34;coolpython.net&#34;</span>
+    <span class="n">encrypt_text</span> <span class="o">=</span> <span class="n">encrypt_data</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="n">decrypt_text</span> <span class="o">=</span> <span class="n">decrypt_data</span><span class="p">(</span><span class="n">encrypt_text</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">msg</span> <span class="o">==</span> <span class="n">decrypt_text</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s2">&#34;coolpython.net&#34;</span>
+    <span class="n">encrypt_text</span> <span class="o">=</span> <span class="n">encrypt_data</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">encrypt_text</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">decrypt_data</span><span class="p">(</span><span class="n">encrypt_text</span><span class="p">))</span>
+    <span class="n">test_encrypt_decrypt</span><span class="p">()</span>
+
+<span class="c1"># output</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">eR5fRxkvKZA5sPCw1MEwjiqjkdI6</span><span class="o">/</span><span class="n">aQtGqbdwauaCIaM1WISSBmKMXZ7EflZXmR3a21wEWZ3rVCZzTYSypPjofPIAmZFH2sN20pTJ2iY9bnp</span><span class="o">+</span><span class="n">m5klWaHSa</span><span class="o">/</span><span class="mi">2</span><span class="n">FcNurAzy7NcL1r</span><span class="o">+</span><span class="mi">3</span><span class="n">tfGnMh5bHN81BYwtTOaVuYlD7Z3IBAf7RpY</span><span class="o">=</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">coolpython</span><span class="o">.</span><span class="n">net</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="javascript版本">javascript版本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;fs&#34;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">NodeRSA</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;node-rsa&#34;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">a_public_key_data</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">&#34;./rsa_public_key.pem&#34;</span><span class="p">,</span> <span class="s2">&#34;utf8&#34;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">a_private_key_data</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="s2">&#34;./rsa_private_key.pem&#34;</span><span class="p">,</span> <span class="s2">&#34;utf8&#34;</span><span class="p">);</span>
+<span class="c1">// console.log(a_public_key_data);
+</span><span class="c1">// console.log(a_private_key_data);
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">a_public_key</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NodeRSA</span><span class="p">(</span><span class="nx">a_public_key_data</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">a_private_key</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NodeRSA</span><span class="p">(</span><span class="nx">a_private_key_data</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="s2">&#34;coolpython.net&#34;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">sign</span> <span class="o">=</span> <span class="nx">a_private_key</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="s2">&#34;base64&#34;</span><span class="p">,</span> <span class="s2">&#34;utf8&#34;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;A 私钥加签:&#34;</span><span class="p">,</span> <span class="nx">sign</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">a_public_key</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="nx">sign</span><span class="p">,</span> <span class="s2">&#34;base64&#34;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;A 公钥加密:&#34;</span><span class="p">,</span> <span class="nx">encrypted</span><span class="p">);</span>
+
+<span class="c1">// 解密并验签
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">decrypted</span> <span class="o">=</span> <span class="nx">a_private_key</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">,</span> <span class="s2">&#34;utf8&#34;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;A 私钥解密:&#34;</span><span class="p">,</span> <span class="nx">decrypted</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">verify</span> <span class="o">=</span> <span class="nx">a_public_key</span><span class="p">.</span><span class="nx">verify</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">decrypted</span><span class="p">,</span> <span class="s2">&#34;utf8&#34;</span><span class="p">,</span> <span class="s2">&#34;base64&#34;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;A 公钥验签:&#34;</span><span class="p">,</span> <span class="nx">verify</span><span class="p">);</span>
+
+<span class="c1">// output
+</span><span class="c1"></span><span class="o">&gt;&gt;&gt;</span> <span class="nx">A</span> <span class="nx">私钥加密</span><span class="o">:</span> <span class="nx">PoYV1td</span><span class="o">/</span><span class="nx">yKT8YgcP5R6RlHRQmmBv4cWO8p7nuEH8YpZ1Q0KvrwQ</span><span class="o">/</span><span class="nx">r3vY</span><span class="o">+</span><span class="err">/b3Gjf7Ubr4xbApADzXtjASekey+dc1io85OCZ4Rodf2+k2/hrUbbExUDoc9arBgY5QBAgqd88xfjR5U+hovnSwhUVvALlXONJpqjeLLcH9grWwAhs=</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nx">A</span> <span class="nx">公钥加密</span><span class="o">:</span> <span class="nx">UBAONDQY1ZGHVTT3BzKEYIFGgJcYCLZEanLbdWDYsiZ3xXqWX7zTpiX35F30lob</span><span class="o">/</span><span class="nx">fgXCRoOnNLTxLwzN82BOW6OIEm9C4AOM4V72KTEP</span><span class="o">/</span><span class="mi">6</span><span class="nx">PUzEESCelpqc2tOJXpiBM</span><span class="o">/</span><span class="nx">mlAhEodCjQV8qU7</span><span class="o">+</span><span class="nx">k5wHm7uMc5uH2Eov2SkjEiqlUC2gkr04KBd1a6U5T3cWyme9qv65aFVAAOhuq</span><span class="o">+</span><span class="nx">Cf30C8hM4g3NZml</span><span class="o">/</span><span class="nx">QcMn4PJZettkOMo8KRSG</span><span class="o">+</span><span class="nx">vxJpyR</span><span class="o">/</span><span class="nx">q0pxIC5AuZl9IoMotWGGgfEC6GRbvDL95FDA3CacZopJWktGuNLAHzanMGn2wfQBHmn22yGeTUcDgfvV459UlON9UAeg</span><span class="o">==</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nx">A</span> <span class="nx">私钥解密</span><span class="o">:</span> <span class="nx">PoYV1td</span><span class="o">/</span><span class="nx">yKT8YgcP5R6RlHRQmmBv4cWO8p7nuEH8YpZ1Q0KvrwQ</span><span class="o">/</span><span class="nx">r3vY</span><span class="o">+</span><span class="err">/b3Gjf7Ubr4xbApADzXtjASekey+dc1io85OCZ4Rodf2+k2/hrUbbExUDoc9arBgY5QBAgqd88xfjR5U+hovnSwhUVvALlXONJpqjeLLcH9grWwAhs=</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nx">A</span> <span class="nx">公钥验密</span><span class="o">:</span> <span class="kc">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>RSA加密，私钥都是一样的，公钥每次加密的结果不一样跟对数据的padding（填充）有关。</p>
+<p>1、Padding (填充)属性定义元素边框与元素内容之间的空间。</p>
+<p>2、padding 简写属性在一个声明中设置所有内边距属性。设置所有当前或者指定元素内边距属性。该属性可以有1到4个值。</p>
+<p>3、当元素的 Padding(填充)(内边距)被清除时，所&quot;释放&quot;的区域将会受到元素背景颜色的填充。</p>
+<p>4、单独使用填充属性是在一个声明中设置元素的所内边距属性。缩写填充属性也可以使用，一旦改变一个数值，则padding对应的距离都会改变。</p>
+</div>
+
+            <div class="post" style="padding-top: 0">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" data-hashtag="加密算法"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-whatsapp" href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" data-title="加密算法" data-web><span class="svg-social-icon icon-whatsapp"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-line" href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" data-title="加密算法"><span data-svg-src="/lib/simple-icons/icons/line.min.svg"></span></a>
+</div><div class="share-link">
+        <a class="share-icon share-evernote" href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" data-title="加密算法"><span class="svg-social-icon icon-evernote"></span></a>
+    </div></div>
+<div class="post-tags"><a href="/tags/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/" class="tag">加密算法</a></div></div>
+        </div>
+    <div id="toc-final"></div>
+    </article></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://ublogger.netlify.app/?utm_source=http://www.longtermbook.com/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2018 - 2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body>
+</html>
