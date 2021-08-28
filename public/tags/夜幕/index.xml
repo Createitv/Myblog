@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>夜幕 - 标签 - 且慢</title>
+        <link>http://www.longtermbook.com/tags/%E5%A4%9C%E5%B9%95/</link>
+        <description>夜幕 - 标签 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 28 Aug 2021 17:38:19 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/tags/%E5%A4%9C%E5%B9%95/" rel="self" type="application/rss+xml" /><item>
+    <title>第9课练习颜文字混淆</title>
+    <link>http://www.longtermbook.com/posts/%E7%AC%AC9%E8%AF%BE%E7%BB%83%E4%B9%A0%E9%A2%9C%E6%96%87%E5%AD%97%E6%B7%B7%E6%B7%86/</link>
+    <pubDate>Sat, 28 Aug 2021 17:38:19 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E7%AC%AC9%E8%AF%BE%E7%BB%83%E4%B9%A0%E9%A2%9C%E6%96%87%E5%AD%97%E6%B7%B7%E6%B7%86/</guid>
+    <description><![CDATA[网页地址：http://js-crack-course-9-1.crawler-lab.com/ 加密分析流程 查看请求包，查看加密参数 搜索参数]]></description>
+</item></channel>
+</rss>
