@@ -3,7 +3,21 @@
         <title>所有文章 - 且慢</title>
         <link>http://www.longtermbook.com/posts/</link>
         <description>所有文章 | 且慢</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 28 Aug 2021 17:38:19 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 02 Sep 2021 21:31:55 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Environs库</title>
+    <link>http://www.longtermbook.com/posts/environs/</link>
+    <pubDate>Thu, 02 Sep 2021 21:31:55 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/environs/</guid>
+    <description><![CDATA[系统环境变量配置 设置Windows PowerShell环境变量 1 2 $env:Path +=&#34;;C:\Program Files\GnuWin32\bin&#34; $env:string=&#34;a string&#34; 查看Windows PowerShell环境变量 1 $env:NUMBER_OF_PROCESSORS. # 查看系统CP]]></description>
+</item><item>
+    <title>__Del__和__delete__</title>
+    <link>http://www.longtermbook.com/posts/__del__%E5%92%8C__delete__/</link>
+    <pubDate>Thu, 02 Sep 2021 17:02:25 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/__del__%E5%92%8C__delete__/</guid>
+    <description><![CDATA[Both __delete__ and __del__ are dunder or magic methods in Python. Dunder or magic methods in Python are the methods having two prefix and suffix underscores in the method name. Dunder here means “Double Under (Underscores)”. These are commonly used for operator overloading. del __del__ is a destructor method which]]></description>
+</item><item>
     <title>第9课练习颜文字混淆</title>
     <link>http://www.longtermbook.com/posts/%E7%AC%AC9%E8%AF%BE%E7%BB%83%E4%B9%A0%E9%A2%9C%E6%96%87%E5%AD%97%E6%B7%B7%E6%B7%86/</link>
     <pubDate>Sat, 28 Aug 2021 17:38:19 &#43;0800</pubDate>
@@ -59,19 +73,5 @@
     <author>Createitv</author>
     <guid>http://www.longtermbook.com/posts/%E5%9F%BA%E4%BA%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C/</guid>
     <description><![CDATA[1. 线程介绍 目前，在软件应用中使用最广泛的并发编程范例是多线程。通常，一个应用有一个进程，分成多个独立的线程，并行运行、互相配合，执行不同类型]]></description>
-</item><item>
-    <title>认识并行计算</title>
-    <link>http://www.longtermbook.com/posts/%E8%AE%A4%E8%AF%86%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</link>
-    <pubDate>Tue, 27 Jul 2021 11:04:16 &#43;0800</pubDate>
-    <author>Createitv</author>
-    <guid>http://www.longtermbook.com/posts/%E8%AE%A4%E8%AF%86%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</guid>
-    <description><![CDATA[1. 简介 解决一个大问题的一般方法是，将其拆分成若干小的、独立的问题，然后分别解它们。并行的程序也是使用这种方法，用多个处理器同时工作，来完成同]]></description>
-</item><item>
-    <title>工厂模式</title>
-    <link>http://www.longtermbook.com/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Tue, 08 Jun 2021 12:32:30 &#43;0800</pubDate>
-    <author>Createitv</author>
-    <guid>http://www.longtermbook.com/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[简介 工厂模式三姐妹：简单工厂模式（小妹妹）、工厂方法模式（妹妹）、抽象工厂模式（姐姐）。这三种模式可以理解为同一种编程思想的三个版本，从简单]]></description>
 </item></channel>
 </rss>

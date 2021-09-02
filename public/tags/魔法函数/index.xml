@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>魔法函数 - 标签 - 且慢</title>
+        <link>http://www.longtermbook.com/tags/%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/</link>
+        <description>魔法函数 - 标签 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 02 Sep 2021 17:02:25 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/tags/%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/" rel="self" type="application/rss+xml" /><item>
+    <title>__Del__和__delete__</title>
+    <link>http://www.longtermbook.com/posts/__del__%E5%92%8C__delete__/</link>
+    <pubDate>Thu, 02 Sep 2021 17:02:25 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/__del__%E5%92%8C__delete__/</guid>
+    <description><![CDATA[Both __delete__ and __del__ are dunder or magic methods in Python. Dunder or magic methods in Python are the methods having two prefix and suffix underscores in the method name. Dunder here means “Double Under (Underscores)”. These are commonly used for operator overloading. del __del__ is a destructor method which]]></description>
+</item></channel>
+</rss>
