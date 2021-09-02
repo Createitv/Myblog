@@ -3,7 +3,21 @@
         <title>python - 分类 - 且慢</title>
         <link>http://www.longtermbook.com/categories/python/</link>
         <description>python - 分类 - 且慢</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 27 Jul 2021 11:08:19 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/python/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 02 Sep 2021 21:31:55 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Environs库</title>
+    <link>http://www.longtermbook.com/posts/environs/</link>
+    <pubDate>Thu, 02 Sep 2021 21:31:55 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/environs/</guid>
+    <description><![CDATA[系统环境变量配置 设置Windows PowerShell环境变量 1 2 $env:Path +=&#34;;C:\Program Files\GnuWin32\bin&#34; $env:string=&#34;a string&#34; 查看Windows PowerShell环境变量 1 $env:NUMBER_OF_PROCESSORS. # 查看系统CP]]></description>
+</item><item>
+    <title>__Del__和__delete__</title>
+    <link>http://www.longtermbook.com/posts/__del__%E5%92%8C__delete__/</link>
+    <pubDate>Thu, 02 Sep 2021 17:02:25 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/__del__%E5%92%8C__delete__/</guid>
+    <description><![CDATA[Both __delete__ and __del__ are dunder or magic methods in Python. Dunder or magic methods in Python are the methods having two prefix and suffix underscores in the method name. Dunder here means “Double Under (Underscores)”. These are commonly used for operator overloading. del __del__ is a destructor method which]]></description>
+</item><item>
     <title>异步编程</title>
     <link>http://www.longtermbook.com/posts/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</link>
     <pubDate>Tue, 27 Jul 2021 11:08:19 &#43;0800</pubDate>
