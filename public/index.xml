@@ -3,9 +3,16 @@
         <title>且慢</title>
         <link>http://www.longtermbook.com/</link>
         <description>This is My New Hugo Site</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 02 Sep 2021 21:31:55 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 04 Sep 2021 14:35:24 &#43;0800</lastBuildDate>
             <atom:link href="http://www.longtermbook.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Python异步性能对比</title>
+    <link>http://www.longtermbook.com/posts/python%E5%BC%82%E6%AD%A5%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/</link>
+    <pubDate>Sat, 04 Sep 2021 14:35:24 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/python%E5%BC%82%E6%AD%A5%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/</guid>
+    <description><![CDATA[为什么出现异步编程 通常来说，程序都是顺序执行，同一时刻只会发生一件事。如果一个函数依赖于另一个函数的结果，它只能等待那个函数结束才能继续执行]]></description>
+</item><item>
     <title>Environs库</title>
     <link>http://www.longtermbook.com/posts/environs/</link>
     <pubDate>Thu, 02 Sep 2021 21:31:55 &#43;0800</pubDate>
@@ -68,12 +75,5 @@
     <author>Createitv</author>
     <guid>http://www.longtermbook.com/posts/%E5%9F%BA%E4%BA%8E%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C/</guid>
     <description><![CDATA[1. 介绍 multiprocessing 是Python标准库中的模块，实现了共享内存机制，也就是说，可以让运行在不同处理器核心的进程能读取共享内存。 mpi4py 库实现了消息传递的编程]]></description>
-</item><item>
-    <title>基于线程的并行</title>
-    <link>http://www.longtermbook.com/posts/%E5%9F%BA%E4%BA%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C/</link>
-    <pubDate>Tue, 27 Jul 2021 11:06:07 &#43;0800</pubDate>
-    <author>Createitv</author>
-    <guid>http://www.longtermbook.com/posts/%E5%9F%BA%E4%BA%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%B9%B6%E8%A1%8C/</guid>
-    <description><![CDATA[1. 线程介绍 目前，在软件应用中使用最广泛的并发编程范例是多线程。通常，一个应用有一个进程，分成多个独立的线程，并行运行、互相配合，执行不同类型]]></description>
 </item></channel>
 </rss>
