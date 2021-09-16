@@ -2,25 +2,27 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://www.longtermbook.com/categories/</loc><lastmod>2021-09-04T14:35:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/posts/</loc><lastmod>2021-09-04T14:35:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/categories/python/</loc><lastmod>2021-09-04T14:35:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/posts/python%E5%BC%82%E6%AD%A5%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/</loc><lastmod>2021-09-04T14:35:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/tags/</loc><lastmod>2021-09-04T14:35:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/</loc><lastmod>2021-09-04T14:35:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</loc><lastmod>2021-09-04T14:35:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/posts/environs/</loc><lastmod>2021-09-02T21:31:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/posts/__del__%E5%92%8C__delete__/</loc><lastmod>2021-09-02T17:02:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/tags/%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/</loc><lastmod>2021-09-02T17:02:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/categories/js%E9%80%86%E5%90%91/</loc><lastmod>2021-08-28T17:38:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/tags/%E5%A4%9C%E5%B9%95/</loc><lastmod>2021-08-28T17:38:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/posts/%E7%AC%AC9%E8%AF%BE%E7%BB%83%E4%B9%A0%E9%A2%9C%E6%96%87%E5%AD%97%E6%B7%B7%E6%B7%86/</loc><lastmod>2021-08-28T17:38:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://www.longtermbook.com/categories/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</loc><lastmod>2021-08-26T11:43:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</loc><lastmod>2021-08-26T11:43:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>http://www.longtermbook.com/categories/vim/</loc><lastmod>2021-08-14T09:15:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/</loc><lastmod>2021-08-14T09:15:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://www.longtermbook.com/categories/git/</loc><lastmod>2021-08-08T12:14:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://www.longtermbook.com/posts/%E7%BE%8E%E5%A6%99%E7%9A%84git/</loc><lastmod>2021-08-08T12:14:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://www.longtermbook.com/categories/</loc><lastmod>2021-09-16T15:34:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://www.longtermbook.com/posts/</loc><lastmod>2021-09-16T15:34:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://www.longtermbook.com/posts/%E4%B8%89%E5%8D%81%E5%B2%81%E7%9A%84%E7%94%B7%E4%BA%BA/</loc><lastmod>2021-09-16T15:34:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://www.longtermbook.com/</loc><lastmod>2021-09-16T15:34:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://www.longtermbook.com/categories/%E5%86%B7%E9%9D%99/</loc><lastmod>2021-09-16T15:34:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://www.longtermbook.com/categories/python/</loc><lastmod>2021-09-04T14:35:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://www.longtermbook.com/posts/python%E5%BC%82%E6%AD%A5%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/</loc><lastmod>2021-09-04T14:35:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://www.longtermbook.com/tags/</loc><lastmod>2021-09-04T14:35:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://www.longtermbook.com/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</loc><lastmod>2021-09-04T14:35:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://www.longtermbook.com/posts/environs/</loc><lastmod>2021-09-02T21:31:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://www.longtermbook.com/posts/__del__%E5%92%8C__delete__/</loc><lastmod>2021-09-02T17:02:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://www.longtermbook.com/tags/%E9%AD%94%E6%B3%95%E5%87%BD%E6%95%B0/</loc><lastmod>2021-09-02T17:02:25&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://www.longtermbook.com/categories/js%E9%80%86%E5%90%91/</loc><lastmod>2021-08-28T17:38:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://www.longtermbook.com/tags/%E5%A4%9C%E5%B9%95/</loc><lastmod>2021-08-28T17:38:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://www.longtermbook.com/posts/%E7%AC%AC9%E8%AF%BE%E7%BB%83%E4%B9%A0%E9%A2%9C%E6%96%87%E5%AD%97%E6%B7%B7%E6%B7%86/</loc><lastmod>2021-08-28T17:38:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://www.longtermbook.com/categories/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</loc><lastmod>2021-08-26T11:43:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://www.longtermbook.com/posts/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</loc><lastmod>2021-08-26T11:43:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://www.longtermbook.com/categories/vim/</loc><lastmod>2021-08-14T09:15:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://www.longtermbook.com/posts/vscode-vim%E4%BD%BF%E7%94%A8/</loc><lastmod>2021-08-14T09:15:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>http://www.longtermbook.com/categories/git/</loc><lastmod>2021-08-08T12:14:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://www.longtermbook.com/posts/%E7%BE%8E%E5%A6%99%E7%9A%84git/</loc><lastmod>2021-08-08T12:14:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://www.longtermbook.com/categories/java/</loc><lastmod>2021-07-27T11:17:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://www.longtermbook.com/tags/javase/</loc><lastmod>2021-07-27T11:17:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://www.longtermbook.com/posts/javase/</loc><lastmod>2021-07-27T11:17:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
