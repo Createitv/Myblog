@@ -30,6 +30,8 @@ featuredImagePreview: ""
 images: [""]
 ---
 
+
+
 # 什么是 Pytorch ？
 
 1. 可以把 Pytorch 当做 Numpy 的替代方案使用，做科学计算，而且更强大。
@@ -46,15 +48,13 @@ images: [""]
 
 1. 创建一个未初始化的、形状为 (5,3) 的空 tensor。
 
-输入：
-
 ```
 x = torch.empty(5, 3)
 print(x)
  
 ```
 
-输出：
+ 
 
 ```
 tensor([[1.0102e-38, 9.0919e-39, 1.0102e-38],
@@ -71,15 +71,13 @@ tensor([[1.0102e-38, 9.0919e-39, 1.0102e-38],
 
 1. 创建一个随机初始化，形状为 (5,3) 的 tensor。
 
-输入：
+
 
 ```
 x = torch.rand(5, 3)
 print(x)
  
 ```
-
-输出：
 
 ```
 tensor([[0.4133, 0.0885, 0.0503],
@@ -90,21 +88,13 @@ tensor([[0.4133, 0.0885, 0.0503],
  
 ```
 
-
-
-
-
 1. 创建一个0填充的、形状为 (5,3) 的 tensor。
-
-输入：
 
 ```
 x = torch.zeros(5, 3, dtype=torch.long)
 print(x)
  
 ```
-
-输出：
 
 ```
 tensor([[0, 0, 0],
@@ -115,12 +105,6 @@ tensor([[0, 0, 0],
  
 ```
 
-
-
-
-
-1. 
-
 直接从列表创建一个 tensor：
 
 ```
@@ -129,24 +113,16 @@ print(x)
  
 ```
 
-输出：
-
 ```
 tensor([5.5000, 3.0000])
- 
 ```
-
-
 
 在现有 tensor 的基础上新建一个全1 tensor，默认情况下新的 tensor 会继承已有 tensor 的属性，比如形状、数据类型等，当然也可以手动指定。：
 
 ```
 x = x.new_ones(5, 3, dtype=torch.double)
 print(x)
- 
 ```
-
-输出：
 
 ```
 tensor([[1., 1., 1.],
@@ -154,7 +130,6 @@ tensor([[1., 1., 1.],
         [1., 1., 1.],
         [1., 1., 1.],
         [1., 1., 1.]], dtype=torch.float64)
- 
 ```
 
 
@@ -167,7 +142,7 @@ print(x)
  
 ```
 
-输出：
+ 
 
 ```
 tensor([[ 0.9629,  0.0349,  0.5597],
@@ -182,14 +157,14 @@ tensor([[ 0.9629,  0.0349,  0.5597],
 
 1. 查看 tensor 的形状
 
-输入：
+ ：
 
 ```
 print(x.size())
  
 ```
 
-输出：
+ 
 
 ```
 torch.Size([5, 3])
@@ -197,8 +172,6 @@ torch.Size([5, 3])
 ```
 
 `tensor.size`方法返回的是一个tuple对象，可以执行tuple的各种操作。
-
-
 
 ## tensor 的基本操作
 
@@ -339,7 +312,7 @@ torch.set_num_interop_threads
 
 有多重方法可以控制 tensor 是否计算梯度
 
-输入：
+ ：
 
 ```
 x = torch.zeros(1, requires_grad=True)
@@ -360,7 +333,7 @@ print(y.requires_grad)
  
 ```
 
-输出：
+ 
 
 ```
 False
@@ -432,7 +405,7 @@ print(x)
  
 ```
 
-输出：
+ 
 
 ```
 tensor([[1., 1.],
@@ -446,7 +419,7 @@ tensor([[1., 1.],
 
 指当前这个 tensor 是通过哪个函数得来的，在链式求导时会按照此函数进行计算。一般来讲除了用户自己创建的 tensor 外，如果是 pytorch 内置函数所生成的 tensor 都会有 grad_fn。
 
-输入：
+ ：
 
 ```
 y = x + 2
@@ -459,7 +432,7 @@ print(z, out)
  
 ```
 
-输出：
+ 
 
 ```
 tensor([[3., 3.],
@@ -476,7 +449,7 @@ tensor([[27., 27.],
 
 backward 方法用于计算梯度，通过链式求导法则计算好的梯度就存在 tensor 的 grad 属性中。
 
-输入：
+ ：
 
 ```
 out.backward()
@@ -484,7 +457,7 @@ print(x.grad)
  
 ```
 
-输出：
+ 
 
 ```
 tensor([[4.5000, 4.5000],
@@ -498,7 +471,7 @@ tensor([[4.5000, 4.5000],
 
 通过这种方法，可以避免在计算中的梯度计算
 
-输入：
+ ：
 
 ```
 print(x.requires_grad)
@@ -508,7 +481,7 @@ with torch.no_grad():
  
 ```
 
-输出：
+ 
 
 ```
 True
@@ -523,7 +496,7 @@ False
 
 通过 detach 方法避免梯度计算
 
-输入：
+ ：
 
 ```
 print(x.requires_grad)
@@ -533,7 +506,7 @@ print(x.eq(y).all())
  
 ```
 
-输出：
+ 
 
 ```
 True
@@ -548,7 +521,7 @@ tensor(True)
 
 设置 `requires_grad_` 属性可直接更改 tensor 梯度计算配置。
 
-输入：
+ ：
 
 ```
 a = torch.randn(2, 2)
@@ -561,7 +534,7 @@ print(b.grad_fn)
  
 ```
 
-输出：
+ 
 
 ```
 False

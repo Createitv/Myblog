@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/www.longtermbook.com\/posts\/10%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3pytorch\/"
-        },"genre": "posts","keywords": "pytorch","wordCount":  1795 ,
+        },"genre": "posts","keywords": "pytorch","wordCount":  1714 ,
         "url": "http:\/\/www.longtermbook.com\/posts\/10%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3pytorch\/","datePublished": "2021-10-13T17:53:01+08:00","dateModified": "2021-10-13T17:53:01+08:00","description": "Createitv"
     }
     </script><script type="application/ld+json">
@@ -151,7 +151,7 @@
                             </span><span class="post-meta-date">
                                 <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-10-13">2021-10-13</time>
                             </span><span class="post-meta-words">
-                                <i class="svg-icon icon-pencil"></i>约 1795 字
+                                <i class="svg-icon icon-pencil"></i>约 1714 字
                             </span>
                             <span class="post-meta-reading">
                                 <i class="svg-icon icon-stopwatch"></i>预计阅读 4 分钟
@@ -188,8 +188,7 @@
     </li>
   </ul>
 </nav></div>
-            </div><h1 id="10分钟了解pytorch">10分钟了解Pytorch</h1>
-<h1 id="什么是-pytorch-">什么是 Pytorch ？</h1>
+            </div><h1 id="什么是-pytorch-">什么是 Pytorch ？</h1>
 <ol>
 <li>可以把 Pytorch 当做 Numpy 的替代方案使用，做科学计算，而且更强大。</li>
 <li>做 AI 任务的模型建模、训练、部署等。这方面唯一能与其比肩的是 Google 家的 Tensorflow。</li>
@@ -204,7 +203,6 @@
 <ol>
 <li>创建一个未初始化的、形状为 (5,3) 的空 tensor。</li>
 </ol>
-<p>输入：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -217,8 +215,7 @@ print(x)
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -239,7 +236,6 @@ print(x)
 </div><ol>
 <li>创建一个随机初始化，形状为 (5,3) 的 tensor。</li>
 </ol>
-<p>输入：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -252,8 +248,7 @@ print(x)
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -274,7 +269,6 @@ print(x)
 </div><ol>
 <li>创建一个0填充的、形状为 (5,3) 的 tensor。</li>
 </ol>
-<p>输入：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -287,8 +281,7 @@ print(x)
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -306,10 +299,7 @@ print(x)
  
 </code></pre></td></tr></table>
 </div>
-</div><ol>
-<li></li>
-</ol>
-<p>直接从列表创建一个 tensor：</p>
+</div><p>直接从列表创建一个 tensor：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -322,15 +312,12 @@ print(x)
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">tensor([5.5000, 3.0000])
- 
 </code></pre></td></tr></table>
 </div>
 </div><p>在现有 tensor 的基础上新建一个全1 tensor，默认情况下新的 tensor 会继承已有 tensor 的属性，比如形状、数据类型等，当然也可以手动指定。：</p>
@@ -338,23 +325,19 @@ print(x)
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">x = x.new_ones(5, 3, dtype=torch.double)
 print(x)
- 
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">tensor([[1., 1., 1.],
@@ -362,7 +345,6 @@ print(x)
         [1., 1., 1.],
         [1., 1., 1.],
         [1., 1., 1.]], dtype=torch.float64)
- 
 </code></pre></td></tr></table>
 </div>
 </div><p>生成一个与现有 tensor 一样形状的随机 tensor，且数据类型覆盖为 <code>torch.float</code>：</p>
@@ -378,8 +360,7 @@ print(x)
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -400,7 +381,7 @@ print(x)
 </div><ol>
 <li>查看 tensor 的形状</li>
 </ol>
-<p>输入：</p>
+<p>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -411,8 +392,7 @@ print(x)
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -668,7 +648,7 @@ torch.set_num_interop_threads
 </div>
 </div><h3 id="6-梯度控制">6. 梯度控制</h3>
 <p>有多重方法可以控制 tensor 是否计算梯度</p>
-<p>输入：</p>
+<p>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -707,8 +687,7 @@ print(y.requires_grad)
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -824,8 +803,7 @@ print(x)
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -841,7 +819,7 @@ print(x)
 <li>grad_fn</li>
 </ol>
 <p>指当前这个 tensor 是通过哪个函数得来的，在链式求导时会按照此函数进行计算。一般来讲除了用户自己创建的 tensor 外，如果是 pytorch 内置函数所生成的 tensor 都会有 grad_fn。</p>
-<p>输入：</p>
+<p>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -864,8 +842,7 @@ print(z, out)
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -887,7 +864,7 @@ tensor([[27., 27.],
 <li>backward &amp; grad</li>
 </ol>
 <p>backward 方法用于计算梯度，通过链式求导法则计算好的梯度就存在 tensor 的 grad 属性中。</p>
-<p>输入：</p>
+<p>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -900,8 +877,7 @@ print(x.grad)
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -917,7 +893,7 @@ print(x.grad)
 <li>with torch.no_grad</li>
 </ol>
 <p>通过这种方法，可以避免在计算中的梯度计算</p>
-<p>输入：</p>
+<p>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -934,8 +910,7 @@ with torch.no_grad():
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -953,7 +928,7 @@ False
 <li>detach</li>
 </ol>
 <p>通过 detach 方法避免梯度计算</p>
-<p>输入：</p>
+<p>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -970,8 +945,7 @@ print(x.eq(y).all())
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -989,7 +963,7 @@ tensor(True)
 <li>requires_grad_</li>
 </ol>
 <p>设置 <code>requires_grad_</code> 属性可直接更改 tensor 梯度计算配置。</p>
-<p>输入：</p>
+<p>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -1012,8 +986,7 @@ print(b.grad_fn)
  
 </code></pre></td></tr></table>
 </div>
-</div><p>输出：</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
