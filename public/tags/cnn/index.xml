@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>CNN - 标签 - 且慢</title>
+        <link>http://www.longtermbook.com/tags/cnn/</link>
+        <description>CNN - 标签 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 14 Oct 2021 11:05:53 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/tags/cnn/" rel="self" type="application/rss+xml" /><item>
+    <title>CNN卷积神经网络</title>
+    <link>http://www.longtermbook.com/posts/cnn%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
+    <pubDate>Thu, 14 Oct 2021 11:05:53 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/cnn%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+    <description><![CDATA[本文以CNN算法的的领域之一图像识别为基础介绍CNN相关原理。 1. 人是如何识别物体 人眼识别物体涉及脑神经，视觉神经。属于我的知识盲区，大致是从]]></description>
+</item></channel>
+</rss>
