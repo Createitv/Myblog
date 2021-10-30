@@ -70,7 +70,7 @@ images: [""]
 
 图片样例：
 
-![img](https://img2.baidu.com/it/u=1928696135,3556146331&fm=26&fmt=auto)
+![img](https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/u=1928696135,3556146331&fm=26&fmt=auto.jpeg)
 
 ```python
 from PIL import Image
@@ -157,7 +157,7 @@ print(im[0][0][0:5])
 
 CNN：Convolutional Neural Network（卷积神经网络）
 
-![img](https://pic1.zhimg.com/80/v2-1614367fe2f6a8a0fe64c06b8e437e0b_1440w.jpg?source=1940ef5c)
+![img](https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/v2-1614367fe2f6a8a0fe64c06b8e437e0b_1440w.jpg)
 
 
 
@@ -173,7 +173,7 @@ CNN 在图像分类问题上取得了不凡的成绩，同时一些学者也尝�
 
 下图为 Lecun 等人提出的 LeNet-5 的网络架构：
 
-![LeNet-5](https://leovan.me/images/cn/2018-08-25-cnn/lenet-5.png)
+![LeNet-5](https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/lenet-5.png)
 
 下面我们针对 CNN 网络中的不同类型的网络层逐一进行介绍。
 
@@ -183,7 +183,7 @@ LeNet-5 解决的手写数字分类问题的输入为一张 32x32 像素的灰�
 
 因此，一张图片在计算机的眼里就是一个如下图所示的数字矩阵 (示例图片来自于 MNIST 数据集：
 
-![Digit-Pixels](https://leovan.me/images/cn/2018-08-25-cnn/digit-pixels.png)
+![Digit-Pixels](https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/digit-pixels.png)
 
 在将图像输入到 CNN 网络之前，通常我们会对其进行预处理，因为每个像素点的最大取值为 255，因此将每个像素点的值除以 255 则可以将其归一化到 [0,1] 的范围。
 
@@ -199,7 +199,7 @@ LeNet-5 解决的手写数字分类问题的输入为一张 32x32 像素的灰�
 
 下图形象的刻画了利用一个 3x3 大小的卷积核的整个卷积计算过程：
 
-![Conv-Sobel](https://leovan.me/images/cn/2018-08-25-cnn/conv-sobel.gif)
+![Conv-Sobel](https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/conv-sobel.gif)
 
 一些预设的卷积核对于图片可以起到不同的滤波器效果，例如下面 4 个卷积核分别会对图像产生不同的效果：不改变，边缘检测，锐化和高斯模糊。
 
@@ -207,23 +207,23 @@ LeNet-5 解决的手写数字分类问题的输入为一张 32x32 像素的灰�
 
 对 lena 图片应用这 4 个卷积核，变换后的效果如下 (从左到右，从上到下)：
 
-![Lena-Filters](https://leovan.me/images/cn/2018-08-25-cnn/lena-filters.png)
+![Lena-Filters](https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/lena-filters.png)
 
 在上面整个计算卷积的动图中，我们不难发现，利用 3x3 大小 (我们一般将这个参数称之为 `kernel_size`，即**卷积核的大小**，其可以为一个整数表示长宽大小相同，也可以为两个不同的整数) 的卷积核对 5x5 大小的原始矩阵进行卷积操作后，结果矩阵并没有保持原来的大小，而是变为了 (5-(3-1))x(5-(3-1)) (即 3x3) 大小的矩阵。这就需要引入 CNN 网络中卷积层的两个常用参数 `padding` 和 `strides`。
 
 `padding` 是指是否对图像的外侧进行**补零操作**，其取值一般为 `VALID` 和 `SAME` 两种。`VALID` 表示**不进行补零**操作，对于输入形状为 (x,y) 的矩阵，利用形状为 (m,n) 的卷积核进行卷积，得到的结果矩阵的形状则为 (x−m+1,y−n+1)。
 
-![Conv2d-Zero-Padding](https://leovan.me/images/cn/2018-08-25-cnn/conv-zero-padding.png)
+![Conv2d-Zero-Padding](https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/conv-zero-padding.png)
 
 `strides` 是指进行卷积操作时，每次卷积核移动的步长。示例中，卷积核在横轴和纵轴方向上的移动步长均为 1，除此之外用于也可以指定不同的步长。移动的步长同样会对卷积后的结果的形状产生影响。
 
 除此之外，还有另一个重要的参数 `filters`，其表示在一个卷积层中使用的**卷积核的个数**。在一个卷积层中，一个卷积核可以学习并提取图像的一种特征，但往往图片中包含多种不同的特征信息，因此我们需要多个不同的卷积核提取不同的特征。下图 [15](https://leovan.me/cn/2018/08/cnn/#fn:15) 是一个利用 4 个不同的卷积核对一张图像进行卷积操作的示意图：
 
-![Conv2d-Kernels](https://leovan.me/images/cn/2018-08-25-cnn/conv2d-kernels.png)
+![Conv2d-Kernels](https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/conv2d-kernels.png)
 
 上面我们都是以一个灰度图像 (仅包含 1 个通道) 为示例进行的讨论，那么对于一个 RGB 图像 (包含 3 个通道)，相应的，卷积核也是一个 3 维的形状，如所示：
 
-![Conv3d-Kernels](https://leovan.me/images/cn/2018-08-25-cnn/conv3d-kernels.png)
+![Conv3d-Kernels](https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/conv3d-kernels.png)
 
 
 
@@ -235,7 +235,7 @@ LeNet-5 解决的手写数字分类问题的输入为一张 32x32 像素的灰�
 
 池化层同卷积层类似，具有三个比较重要的参数：`pool_size`，`strides` 和 `padding`，分别表示池化窗口的大小，步长以及是否对图像的外侧进行补零操作。下图 是一个 `pool_size=3`，`strides=3`，`padding='valid'` 的最大池化过程示例：
 
-![Max-Pooling](https://leovan.me/images/cn/2018-08-25-cnn/max-pooling.gif)
+![Max-Pooling](https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/max-pooling.gif)
 
 池化层同时也能够提高网络的计算效率，例如上图中在横轴和纵轴的步长均为 3，经过池化后，下一层网络节点的个数降低至前一层的 13×3=19。
 
@@ -396,6 +396,43 @@ def test_model(model, device, test_loader):
 for epoch in range(1, EPOCHS + 1):
     train_model(model, DEVICE, train_loader, optimizer, epoch)
     test_model(model, DEVICE,test_loader)
+```
+
+### 训练结果
+
+准确率98%
+
+```python
+Train Epoch : 1 	 Loss : 2.311116loss
+Train Epoch : 1 	 Loss : 0.004861loss
+Test Average loss : 0.0031 Accuracy : 98.450
+Train Epoch : 2 	 Loss : 0.122852loss
+Train Epoch : 2 	 Loss : 0.485804loss
+Test Average loss : 0.0026 Accuracy : 98.900
+Train Epoch : 3 	 Loss : 0.004043loss
+Train Epoch : 3 	 Loss : 0.000185loss
+Test Average loss : 0.0031 Accuracy : 98.460
+Train Epoch : 4 	 Loss : 0.000044loss
+Train Epoch : 4 	 Loss : 0.001558loss
+Test Average loss : 0.0029 Accuracy : 98.800
+Train Epoch : 5 	 Loss : 0.000024loss
+Train Epoch : 5 	 Loss : 0.005477loss
+Test Average loss : 0.0028 Accuracy : 98.860
+Train Epoch : 6 	 Loss : 0.000048loss
+Train Epoch : 6 	 Loss : 0.000001loss
+Test Average loss : 0.0029 Accuracy : 98.940
+Train Epoch : 7 	 Loss : 0.000998loss
+Train Epoch : 7 	 Loss : 0.000263loss
+Test Average loss : 0.0037 Accuracy : 98.940
+Train Epoch : 8 	 Loss : 0.040684loss
+Train Epoch : 8 	 Loss : 0.007434loss
+Test Average loss : 0.0039 Accuracy : 98.700
+Train Epoch : 9 	 Loss : 0.000308loss
+Train Epoch : 9 	 Loss : 0.000000loss
+Test Average loss : 0.0026 Accuracy : 99.040
+Train Epoch : 10 	 Loss : 0.000000loss
+Train Epoch : 10 	 Loss : 0.000000loss
+Test Average loss : 0.0059 Accuracy : 98.710
 ```
 
 
