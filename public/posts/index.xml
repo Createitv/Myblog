@@ -3,7 +3,21 @@
         <title>所有文章 - 且慢</title>
         <link>http://www.longtermbook.com/posts/</link>
         <description>所有文章 | 且慢</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 01 Dec 2021 11:52:19 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 20 Dec 2021 14:51:18 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Jwt认证</title>
+    <link>http://www.longtermbook.com/posts/jwt%E8%AE%A4%E8%AF%81/</link>
+    <pubDate>Mon, 20 Dec 2021 14:51:18 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/jwt%E8%AE%A4%E8%AF%81/</guid>
+    <description><![CDATA[JWT是什么？ JWT (JSON Web Token)是一个开放标准（RFC 7519），指基于JSON的、用于在网络上声明某种主张的令牌（token），以保证各方]]></description>
+</item><item>
+    <title>Golang占位符</title>
+    <link>http://www.longtermbook.com/posts/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6/</link>
+    <pubDate>Mon, 13 Dec 2021 13:02:51 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6/</guid>
+    <description><![CDATA[概念 什么是占位符？你就从表面意思理解，就是占位置，只不过有很多不同种类的位置，而且这个位置不是谁都能坐，是有要求的，在程序层面用于格式化数据]]></description>
+</item><item>
     <title>JS异步制作冰淇淋必看</title>
     <link>http://www.longtermbook.com/posts/js%E5%BC%82%E6%AD%A5%E5%88%B6%E4%BD%9C%E5%86%B0%E6%B7%87%E6%B7%8B%E5%BF%85%E7%9C%8B/</link>
     <pubDate>Wed, 01 Dec 2021 11:52:19 &#43;0800</pubDate>
@@ -59,19 +73,5 @@
     <author>Createitv</author>
     <guid>http://www.longtermbook.com/posts/serverless%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
     <description><![CDATA[Serverless 架构即“无服务器”架构，它是一种全新的架构方式，是云计算时代一种革命性的架构模式。与云计算、容器和人工智能一样，Serverless 是这两]]></description>
-</item><item>
-    <title>三十岁的男人</title>
-    <link>http://www.longtermbook.com/posts/%E4%B8%89%E5%8D%81%E5%B2%81%E7%9A%84%E7%94%B7%E4%BA%BA/</link>
-    <pubDate>Thu, 16 Sep 2021 15:34:53 &#43;0800</pubDate>
-    <author>Createitv</author>
-    <guid>http://www.longtermbook.com/posts/%E4%B8%89%E5%8D%81%E5%B2%81%E7%9A%84%E7%94%B7%E4%BA%BA/</guid>
-    <description><![CDATA[一个女性，唯一要警惕的，就是三四十岁的中年大叔男人。仿佛泰坦尼克号要警惕冰山一般。很多像这艘华丽大船一样有远大前程的女生，就是在爱情的处女航]]></description>
-</item><item>
-    <title>Python异步性能对比</title>
-    <link>http://www.longtermbook.com/posts/python%E5%BC%82%E6%AD%A5%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/</link>
-    <pubDate>Sat, 04 Sep 2021 14:35:24 &#43;0800</pubDate>
-    <author>Createitv</author>
-    <guid>http://www.longtermbook.com/posts/python%E5%BC%82%E6%AD%A5%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/</guid>
-    <description><![CDATA[为什么出现异步编程 通常来说，程序都是顺序执行，同一时刻只会发生一件事。如果一个函数依赖于另一个函数的结果，它只能等待那个函数结束才能继续执行]]></description>
 </item></channel>
 </rss>

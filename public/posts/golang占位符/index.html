@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>Golang占位符 | 且慢</title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+<meta name="twitter:title" content="Golang占位符"/>
+<meta name="twitter:description" content="Createitv"/><meta name="Description" content="Createitv"><meta property="og:title" content="Golang占位符" />
+<meta property="og:description" content="Createitv" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.longtermbook.com/posts/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6/" /><meta property="og:image" content="http://www.longtermbook.com/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-13T13:02:51&#43;08:00" />
+<meta property="article:modified_time" content="2021-12-13T13:02:51&#43;08:00" /><meta property="og:site_name" content="且慢" />
+
+<meta name="application-name" content="Createitv">
+<meta name="apple-mobile-web-app-title" content="Createitv"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://www.longtermbook.com/posts/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Golang占位符",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/www.longtermbook.com\/posts\/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6\/"
+        },"genre": "posts","wordCount":  2057 ,
+        "url": "http:\/\/www.longtermbook.com\/posts\/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6\/","datePublished": "2021-12-13T13:02:51+08:00","dateModified": "2021-12-13T13:02:51+08:00","description": "Createitv"
+    }
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "主页",
+            "item": "http:\/\/www.longtermbook.com\/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Golang",
+            "item": "http://www.longtermbook.com/categories/golang/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Golang占位符"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="且慢" class="header-logo logo-svg">且慢</a>
+        </div>
+        <div class="menu">
+            <nav>
+                <ul class="menu-inner"><li>
+                        <a class="menu-item" href="/posts/"> 文章 </a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/"> 标签 </a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/"> 分类 </a>
+                    </li></ul>
+            </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="且慢" class="header-logo">且慢</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><nav>
+                <ul><li>
+                        <a class="menu-item" href="/posts/" title="">文章</a>
+                    </li><li>
+                        <a class="menu-item" href="/tags/" title="">标签</a>
+                    </li><li>
+                        <a class="menu-item" href="/categories/" title="">分类</a>
+                    </li></ul>
+            </nav>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <span class="svg-icon icon-moon"></span>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div><main class="main">
+<div class="container content-article  theme-classic"><div class="toc" id="toc-auto">
+            <div class="toc-title">目录</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+
+    <div class="header-post">
+
+        
+
+        
+        <div class="post-title">
+
+                <div class="post-all-meta">
+                    <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">主页 </a></li><li><a href="/categories/golang/">Golang </a></li><li>Golang占位符</li>
+    </ol>
+</nav>
+                    <h1 class="single-title flipInX">Golang占位符</h1><div class="post-meta">
+                        <div class="post-meta-line"><span class="post-category">
+                                <a href="/categories/golang/"><i class="svg-icon icon-folder"></i>Golang</a>
+                            </span><span class="post-meta-date">
+                                <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-12-13">2021-12-13</time>
+                            </span><span class="post-meta-words">
+                                <i class="svg-icon icon-pencil"></i>约 2057 字
+                            </span>
+                            <span class="post-meta-reading">
+                                <i class="svg-icon icon-stopwatch"></i>预计阅读 5 分钟
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
+    <article class="single toc-start">
+
+        <div class="content-block content-block-first content-block-position">
+
+        <div class="post"><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#概念">概念</a></li>
+    <li><a href="#哪些函数支持">哪些函数支持</a>
+      <ul>
+        <li><a href="#普通占位符">普通占位符</a></li>
+        <li><a href="#1-vvv">1. %v、%+v、%#v</a></li>
+        <li><a href="#2-t">2. %T</a></li>
+        <li><a href="#3-">3. %%</a></li>
+      </ul>
+    </li>
+    <li><a href="#布尔占位符">布尔占位符</a>
+      <ul>
+        <li><a href="#t">%t</a></li>
+      </ul>
+    </li>
+    <li><a href="#整数占位符">整数占位符</a>
+      <ul>
+        <li><a href="#1-b">1. %b</a></li>
+        <li><a href="#2-c">2. %c</a></li>
+        <li><a href="#3-d5d-5d05d">3. %d、%5d、%-5d、%05d</a></li>
+        <li><a href="#4-oo">4. %o、%#o</a></li>
+        <li><a href="#5-q">5. %q</a></li>
+        <li><a href="#6-xx">6. %x、%#x</a></li>
+        <li><a href="#7-xx">7. %X、%#X</a></li>
+        <li><a href="#8-uu">8. %U、%#U</a></li>
+      </ul>
+    </li>
+    <li><a href="#浮点数与复数httpswwwzhihucomsearchq复数search_sourceentityhybrid_search_sourceentityhybrid_search_extrasourcetype3aanswer2csourceid3a2148418575">浮点数与<a href="https://www.zhihu.com/search?q=%E5%A4%8D%E6%95%B0&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2148418575%7D">复数</a></a>
+      <ul>
+        <li><a href="#1-b-1">1. %b</a></li>
+        <li><a href="#2-ee">2. %e、%E</a></li>
+        <li><a href="#3-f2f-等等">3. %f、%.2f 等等</a></li>
+        <li><a href="#4-g3g">4. %g、%.3g</a></li>
+      </ul>
+    </li>
+    <li><a href="#字符串与字节切片">字符串与字节切片</a>
+      <ul>
+        <li><a href="#1-s">1. %s</a></li>
+        <li><a href="#2-q">2. %q</a></li>
+        <li><a href="#3-xx">3. %x、%X</a></li>
+      </ul>
+    </li>
+    <li><a href="#指针">指针</a>
+      <ul>
+        <li><a href="#pp">%p、%#p</a></li>
+        <li><a href="#参考">参考：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><h2 id="概念">概念</h2>
+<p>什么是占位符？你就从表面意思理解，就是占位置，只不过有很多不同种类的位置，而且这个位置不是谁都能坐，是有要求的，在程序层面用于<a href="https://www.zhihu.com/search?q=%e6%a0%bc%e5%bc%8f%e5%8c%96%e6%95%b0%e6%8d%ae&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7b%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2148418575%7d" target="_blank" rel="noopener noreffer">格式化数据</a>。</p>
+<h2 id="哪些函数支持">哪些函数支持</h2>
+<p>在 Go 语言中，标准包 <code>fmt</code> 有好多格式化的<a href="https://www.zhihu.com/search?q=%e5%b7%a5%e5%85%b7%e5%87%bd%e6%95%b0&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7b%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2148418575%7d" target="_blank" rel="noopener noreffer">工具函数</a>，函数名末尾通常以 <code>f</code> 结尾，列举如下：</p>
+<ul>
+<li><code>fmt.Printf</code> 格式化<a href="https://www.zhihu.com/search?q=%e5%ad%97%e7%ac%a6%e4%b8%b2&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7b%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2148418575%7d" target="_blank" rel="noopener noreffer">字符串</a>并打印到终端（标准输出）。</li>
+<li><code>fmt.Sprintf</code> 格式化字符串并返回。</li>
+<li><code>fmt.Sscanf</code> 从字符串中解析占位符的对应位置数据。</li>
+<li><code>fmt.Fscanf</code> 从 <code>io.Reader</code> 类型中读取数据并解析占位符的对应位置数据，用于读取文件、终端（标准输入）。</li>
+<li><code>fmt.Fprintf</code> 将格式化的字符串数据输出到 <code>io.Writer</code> 类型中，用于输出到文件。</li>
+<li><code>fmt.Errorf</code> 格式化方式创建一个错误类型消息。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Website</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">Name</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="c1">// 打印结构体时
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">site</span> <span class="p">=</span> <span class="nx">Website</span><span class="p">{</span><span class="nx">Name</span><span class="p">:</span><span class="s">&#34;studygolang&#34;</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th style="text-align:center">占位符</th>
+<th style="text-align:center">说明</th>
+<th>举例</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">%v</td>
+<td style="text-align:center">相应值的默认格式。</td>
+<td>Printf(&quot;%v&quot;, site)，Printf(&quot;%+v&quot;, site)</td>
+<td>{studygolang}，{Name:studygolang}</td>
+</tr>
+<tr>
+<td style="text-align:center">%#v</td>
+<td style="text-align:center">相应值的Go语法表示</td>
+<td>Printf(&quot;#v&quot;, site)</td>
+<td>main.Website{Name:&ldquo;studygolang&rdquo;}</td>
+</tr>
+<tr>
+<td style="text-align:center">%T</td>
+<td style="text-align:center">相应值的类型的Go语法表示</td>
+<td>Printf(&quot;%T&quot;, site)</td>
+<td>main.Website</td>
+</tr>
+<tr>
+<td style="text-align:center">%t</td>
+<td style="text-align:center">单词 true 或 false。</td>
+<td>Printf(&quot;%t&quot;, true)</td>
+<td>true</td>
+</tr>
+<tr>
+<td style="text-align:center">%d</td>
+<td style="text-align:center">十进制表示</td>
+<td>Printf(&quot;%d&quot;, 0x12)</td>
+<td>18</td>
+</tr>
+<tr>
+<td style="text-align:center">%f</td>
+<td style="text-align:center">有小数点而无指数，</td>
+<td>例如 123.456</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">%s</td>
+<td style="text-align:center">输出字符串表示（string类型或[]byte)</td>
+<td>Printf(&quot;%s&quot;, []byte(&ldquo;Go语言学习园地&rdquo;))</td>
+<td>Go语言学习园地</td>
+</tr>
+<tr>
+<td style="text-align:center">%q</td>
+<td style="text-align:center">双引号围绕的字符串，由Go语法安全地转义</td>
+<td>Printf(&quot;%q&quot;, &ldquo;Go语言学习园地&rdquo;)</td>
+<td>&ldquo;Go语言学习园地&rdquo;</td>
+</tr>
+<tr>
+<td style="text-align:center">%p</td>
+<td style="text-align:center">十六进制表示，前缀 0x</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>作者：潇洒哥老苗
+链接：https://www.zhihu.com/question/489996619/answer/2148418575
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h3 id="普通占位符">普通占位符</h3>
+<p>先创建一个数据，作为打印的对象。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">type</span> <span class="nx">Example</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">Content</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="p">=</span> <span class="nx">Example</span><span class="p">{</span><span class="nx">Content</span><span class="p">:</span> <span class="s">&#34;例子&#34;</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="1-vvv">1. %v、%+v、%#v</h3>
+<p><strong>%v</strong>：获取数据的值，如果实现了<code>error</code> 接口，仅表示错误消息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%v&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> 
+<span class="c1">// 输出 
+</span><span class="c1"></span><span class="p">{</span><span class="nx">例子</span><span class="p">}</span>
+
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%v&#34;</span><span class="p">,</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;我错了&#34;</span><span class="p">))</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="nx">我错了</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>%+v</strong>：获取数据的值，如果结构体，会携带字段名。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%+v&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="p">{</span><span class="nx">Content</span><span class="p">:</span><span class="nx">例子</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>%#v</strong>：获取数据的值，如果是结构体，会携带结构体名和字段名。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%#v&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="nx">main</span><span class="p">.</span><span class="nx">Example</span><span class="p">{</span><span class="nx">Content</span><span class="p">:</span><span class="s">&#34;例子&#34;</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2-t">2. %T</h3>
+<p>获取数据类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%T&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="nx">main</span><span class="p">.</span><span class="nx">Example</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3-">3. %%</h3>
+<p>字面上的一个百分号。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%%&#34;</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="o">%</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="布尔占位符">布尔占位符</h2>
+<h3 id="t">%t</h3>
+<p>true 或 false。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%t&#34;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="kc">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="整数占位符">整数占位符</h2>
+<h3 id="1-b">1. %b</h3>
+<p><a href="https://www.zhihu.com/search?q=%e4%ba%8c%e8%bf%9b%e5%88%b6&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7b%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2148418575%7d" target="_blank" rel="noopener noreffer">二进制</a>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%b&#34;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mi">100</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2-c">2. %c</h3>
+<p><code>Unicode</code> 码转字符。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%c&#34;</span><span class="p">,</span> <span class="mh">0x82d7</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="nx">苗</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3-d5d-5d05d">3. %d、%5d、%-5d、%05d</h3>
+<p>十进制整数表示。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%d,%d,%d&#34;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mo">010</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>三个数据： <code>10</code> 十进制，<code>010</code> <a href="https://www.zhihu.com/search?q=%e5%85%ab%e8%bf%9b%e5%88%b6&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7b%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2148418575%7d" target="_blank" rel="noopener noreffer">八进制</a>，<code>0x10</code> 十六进制</li>
+</ul>
+<p>占位符还可以指定最小宽度，格式如下：</p>
+<ul>
+<li><code>%5d</code>：最小宽度为 5，右对齐，左边留白。</li>
+<li><code>%-5d</code>：左对齐，右边留白。</li>
+<li><code>%05d</code>：数字位数不足 5 位时，左边补零。</li>
+</ul>
+<p>例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;|%5d|%-5d|%05d|&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="p">|</span>    <span class="mi">1</span><span class="p">|</span><span class="mi">1</span>    <span class="p">|</span><span class="mo">00001</span><span class="p">|</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="4-oo">4. %o、%#o</h3>
+<p>八进制表示。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%o,%o,%o&#34;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mo">010</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在很多开发语言中，0 打头的数字都表示八进制。通过 <code>%#o</code> 输出带 0 开头。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;\n%#o\n&#34;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mo">012</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="5-q">5. %q</h3>
+<p>同 <code>%c</code> 类似，都是<code>Unicode</code> 码转字符，只是结果多了单引号。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%q&#34;</span><span class="p">,</span> <span class="mh">0x82d7</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="sc">&#39;苗&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>汉字对应表：<a href="https://link.zhihu.com/?target=http%3A//www.chi2ko.com/tool/CJK.htm" target="_blank" rel="noopener noreffer">http://www.chi2ko.com/tool/CJK.htm</a></p>
+<h3 id="6-xx">6. %x、%#x</h3>
+<p>十六进制表示，字母形式为小写 a-f，<code>%#x</code> 输出带 0x 开头。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%x, %#x&#34;</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="nx">d</span><span class="p">,</span> <span class="mh">0xd</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="7-xx">7. %X、%#X</h3>
+<p>十六进制表示，字母形式为小写 A-F，<code>%#X</code> 输出带 0X 开头。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%X, %#X&#34;</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="nx">D</span><span class="p">,</span> <span class="mh">0XD</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="8-uu">8. %U、%#U</h3>
+<p><strong>%U</strong>：转化为 Unicode 格式规范。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%U&#34;</span><span class="p">,</span> <span class="mh">0x82d7</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="nx">U</span><span class="o">+</span><span class="mi">82</span><span class="nx">D7</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>%#U</strong>：转化为 Unicode 格式并带上对应的字符。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%#U&#34;</span><span class="p">,</span> <span class="mh">0x82d7</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="nx">U</span><span class="o">+</span><span class="mi">82</span><span class="nx">D7</span> <span class="sc">&#39;苗&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="浮点数与复数httpswwwzhihucomsearchq复数search_sourceentityhybrid_search_sourceentityhybrid_search_extrasourcetype3aanswer2csourceid3a2148418575">浮点数与<a href="https://www.zhihu.com/search?q=%e5%a4%8d%e6%95%b0&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7b%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2148418575%7d" target="_blank" rel="noopener noreffer">复数</a></h2>
+<h3 id="1-b-1">1. %b</h3>
+<p>浮点数转化为 2 的幂的科学计数法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%b&#34;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mi">7205759403792794</span><span class="nx">p</span><span class="o">-</span><span class="mi">56</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2-ee">2. %e、%E</h3>
+<p>10 的幂的科学计数法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%e&#34;</span><span class="p">,</span> <span class="mf">10.2</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mf">1.020000e+01</span>
+
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%E&#34;</span><span class="p">,</span> <span class="mf">10.2</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mf">1.020000E+01</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>区别：<code>%e</code> 与 <code>%E</code> 输出时的大小写之分。</p>
+<h3 id="3-f2f-等等">3. %f、%.2f 等等</h3>
+<p>浮点数，<code>%.2f</code> 表示保留 2 位小数，<code>%f</code> 默认保留 6 位，<code>%f</code> 与 <code>%F</code> 等价。</p>
+<blockquote>
+<p>保留的规则我现在还没有搞清楚，有时候符合<a href="https://www.zhihu.com/search?q=%e5%9b%9b%e8%88%8d%e4%ba%94%e5%85%a5&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7b%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2148418575%7d" target="_blank" rel="noopener noreffer">四舍五入</a>，有时候不符合，容我下来研究下，再告诉大家。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%f&#34;</span><span class="p">,</span> <span class="mf">10.2</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mf">10.200000</span>
+
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%.2f|%.2f&#34;</span><span class="p">,</span> <span class="mf">10.232</span><span class="p">,</span> <span class="mf">10.235</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mf">10.23</span><span class="p">|</span><span class="mf">10.23</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>也可以加入最小宽度，如下：</p>
+<ul>
+<li><code>%9.2f</code> 宽度最小为 9，包含小数位再内，精度为 2。</li>
+<li><code>%9.f</code> 或 <code>%9f</code> 宽度最小为 9。</li>
+</ul>
+<h3 id="4-g3g">4. %g、%.3g</h3>
+<p>根据情况选择 <code>%e</code> 或 <code>%f</code> ，但末尾去除 0。</p>
+<p><code>%f</code> 情况如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%g|%g&#34;</span><span class="p">,</span> <span class="mf">10.20</span><span class="p">,</span> <span class="mf">1.200000</span><span class="o">+</span><span class="m">3.400000i</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mf">10.2</span><span class="p">|(</span><span class="mf">1.2</span><span class="o">+</span><span class="m">3.4i</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>%e</code> 情况如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%g|%g&#34;</span><span class="p">,</span> <span class="mf">2e2</span><span class="p">,</span> <span class="mf">2E2</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mi">200</span><span class="p">|</span><span class="mi">200</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>%.3g</code> 表示的不是<a href="https://www.zhihu.com/search?q=%e5%b0%8f%e6%95%b0&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7b%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A2148418575%7d" target="_blank" rel="noopener noreffer">小数</a>保留 3 位，而是只保留 3 个数字。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%.3g&#34;</span><span class="p">,</span> <span class="mf">12.34</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mf">12.3</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="字符串与字节切片">字符串与字节切片</h2>
+<h3 id="1-s">1. %s</h3>
+<p>字符串或字节切片。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%s|%s&#34;</span><span class="p">,</span> <span class="s">&#34;老苗&#34;</span><span class="p">,</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;嘿嘿嘿&#34;</span><span class="p">))</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="nx">老苗</span><span class="p">|</span><span class="nx">嘿嘿嘿</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2-q">2. %q</h3>
+<p>有 Go 语言安全转义，双引号包裹。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%q&#34;</span><span class="p">,</span> <span class="s">&#34;老苗&#34;</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="s">&#34;老苗&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3-xx">3. %x、%X</h3>
+<p>十六进制，<code>%x</code> 小写字母 a - f，<code>%X</code> 大写字母 A - F。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%x|%X&#34;</span><span class="p">,</span> <span class="s">&#34;苗&#34;</span><span class="p">,</span> <span class="s">&#34;苗&#34;</span><span class="p">)</span>
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="nx">e88b97</span><span class="p">|</span><span class="nx">E88B97</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="指针">指针</h2>
+<h3 id="pp">%p、%#p</h3>
+<p>地址，使用十六进制表示，<code>%p</code> 带 0x，<code>%#p</code> 不带。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">num</span> <span class="o">:=</span> <span class="mi">2</span>
+<span class="nx">s</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
+<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%p|%p&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">num</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span>
+
+<span class="c1">// 输出
+</span><span class="c1"></span><span class="mh">0xc00000a1d0</span><span class="p">|</span><span class="mh">0xc00000a1e0</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="参考">参考：</h3>
+<ul>
+<li><a href="https://pkg.go.dev/fmt">https://pkg.go.dev/fmt</a></li>
+<li><a href="https://www.zhihu.com/question/489996619">https://www.zhihu.com/question/489996619</a></li>
+<li><a href="https://docs.kilvn.com/The-Golang-Standard-Library-by-Example/chapter01/01.3.html">https://docs.kilvn.com/The-Golang-Standard-Library-by-Example/chapter01/01.3.html</a></li>
+</ul>
+</div>
+
+            <div class="post" style="padding-top: 0">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://www.longtermbook.com/posts/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6/"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-whatsapp" href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://www.longtermbook.com/posts/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6/" data-title="Golang占位符" data-web><span class="svg-social-icon icon-whatsapp"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-line" href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://www.longtermbook.com/posts/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6/" data-title="Golang占位符"><span data-svg-src="/lib/simple-icons/icons/line.min.svg"></span></a>
+</div><div class="share-link">
+        <a class="share-icon share-evernote" href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://www.longtermbook.com/posts/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6/" data-title="Golang占位符"><span class="svg-social-icon icon-evernote"></span></a>
+    </div></div>
+</div>
+        </div>
+    <div id="toc-final"></div>
+    </article></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://ublogger.netlify.app/?utm_source=http://www.longtermbook.com/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2018 - 2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/lunr/lunr.stemmer.support.min.js"></script><script src="/lib/lunr/lunr.zh.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js"></script></body>
+</html>

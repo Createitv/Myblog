@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Golang - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/golang/</link>
+        <description>Golang - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 20 Dec 2021 14:51:18 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/golang/" rel="self" type="application/rss+xml" /><item>
+    <title>Jwt认证</title>
+    <link>http://www.longtermbook.com/posts/jwt%E8%AE%A4%E8%AF%81/</link>
+    <pubDate>Mon, 20 Dec 2021 14:51:18 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/jwt%E8%AE%A4%E8%AF%81/</guid>
+    <description><![CDATA[JWT是什么？ JWT (JSON Web Token)是一个开放标准（RFC 7519），指基于JSON的、用于在网络上声明某种主张的令牌（token），以保证各方]]></description>
+</item><item>
+    <title>Golang占位符</title>
+    <link>http://www.longtermbook.com/posts/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6/</link>
+    <pubDate>Mon, 13 Dec 2021 13:02:51 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/golang%E5%8D%A0%E4%BD%8D%E7%AC%A6/</guid>
+    <description><![CDATA[概念 什么是占位符？你就从表面意思理解，就是占位置，只不过有很多不同种类的位置，而且这个位置不是谁都能坐，是有要求的，在程序层面用于格式化数据]]></description>
+</item></channel>
+</rss>
