@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/www.longtermbook.com\/posts\/jwt%E8%AE%A4%E8%AF%81\/"
-        },"genre": "posts","wordCount":  1862 ,
+        },"genre": "posts","wordCount":  1863 ,
         "url": "http:\/\/www.longtermbook.com\/posts\/jwt%E8%AE%A4%E8%AF%81\/","datePublished": "2021-12-20T14:51:18+08:00","dateModified": "2021-12-20T14:51:18+08:00","description": "Createitv"
     }
     </script><script type="application/ld+json">
@@ -151,7 +151,7 @@
                             </span><span class="post-meta-date">
                                 <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2021-12-20">2021-12-20</time>
                             </span><span class="post-meta-words">
-                                <i class="svg-icon icon-pencil"></i>约 1862 字
+                                <i class="svg-icon icon-pencil"></i>约 1863 字
                             </span>
                             <span class="post-meta-reading">
                                 <i class="svg-icon icon-stopwatch"></i>预计阅读 4 分钟
@@ -284,21 +284,15 @@
 </div><h2 id="如何使用jwt">如何使用JWT？</h2>
 <p>在之前的传统的方法时在服务端存储一个session，并给客户端返回一个cookie。而如果是使用jwt来做身份鉴定的话，当用户登录成功，会给用户一个token，前端只需要在本地保存该token即可(通常使用localStorage，也可以使用cookie)。</p>
 <p>当用户需要访问一个受保护的资源时，需要再Header中使用Bearer模式的Authorization头。其内容看起来是下面这样：</p>
-<table>
-<thead>
-<tr>
-<th><code>1 </code></th>
-<th><code>Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.OFHM3R8PSyHDT_vuzRF5fYkYWdhExM_9pE81kG05qAk </code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="jwt的优缺点">JWT的优缺点</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="s">`Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.OFHM3R8PSyHDT_vuzRF5fYkYWdhExM_9pE81kG05qAk `</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="jwt的优缺点">JWT的优缺点</h2>
 <p>优点：</p>
 <ul>
 <li>json具有通用性，所以可以跨语言。</li>
@@ -450,7 +444,7 @@
 
 </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.0">Hugo</a> 强力驱动 | 主题 - <a href="https://ublogger.netlify.app/?utm_source=http://www.longtermbook.com/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
-                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2018 - 2021</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2018 - 2022</span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
