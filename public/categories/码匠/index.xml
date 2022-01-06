@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>码匠 - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/%E7%A0%81%E5%8C%A0/</link>
+        <description>码匠 - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 06 Jan 2022 08:07:20 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/%E7%A0%81%E5%8C%A0/" rel="self" type="application/rss+xml" /><item>
+    <title>变量命名</title>
+    <link>http://www.longtermbook.com/posts/%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D/</link>
+    <pubDate>Thu, 06 Jan 2022 08:07:20 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D/</guid>
+    <description><![CDATA[道生一、一生二、二生三、三生万物 何为一：变量 The most obvious benefit to GoodVariableNames can reduce the need for extensive comments, producing SelfDocumentingCode. When reading code peppered with well thought out variable names it&rsquo;s like reading poetry or music. 好的命名能够让代码概念更加清晰，增]]></description>
+</item></channel>
+</rss>

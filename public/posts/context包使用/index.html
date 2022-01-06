@@ -29,7 +29,27 @@
         },"genre": "posts","wordCount":  2931 ,
         "url": "http:\/\/www.longtermbook.com\/posts\/context%E5%8C%85%E4%BD%BF%E7%94%A8\/","datePublished": "2022-01-02T10:33:43+08:00","dateModified": "2022-01-02T10:33:43+08:00","description": "Createitv"
     }
-    </script></head>
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "主页",
+            "item": "http:\/\/www.longtermbook.com\/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "golang",
+            "item": "http://www.longtermbook.com/categories/golang/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Context包使用"
+            }]
+    }
+</script></head>
     <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
@@ -122,11 +142,13 @@
                 <div class="post-all-meta">
                     <nav class="breadcrumbs">
     <ol>
-        <li><a href="/">主页 </a></li><li>Context包使用</li>
+        <li><a href="/">主页 </a></li><li><a href="/categories/golang/">golang </a></li><li>Context包使用</li>
     </ol>
 </nav>
                     <h1 class="single-title flipInX">Context包使用</h1><div class="post-meta">
-                        <div class="post-meta-line"><span class="post-meta-date">
+                        <div class="post-meta-line"><span class="post-category">
+                                <a href="/categories/golang/"><i class="svg-icon icon-folder"></i>golang</a>
+                            </span><span class="post-meta-date">
                                 <i class="svg-icon icon-clock"></i><time class="timeago" datetime="2022-01-02">2022-01-02</time>
                             </span><span class="post-meta-words">
                                 <i class="svg-icon icon-pencil"></i>约 2931 字
@@ -164,9 +186,9 @@
         <li><a href="#context-树"><strong>Context 树</strong></a></li>
         <li><a href="#context传值">Context传值</a></li>
         <li><a href="#context-使用原则"><strong>Context 使用原则</strong></a></li>
-        <li><a href="#总结"><strong>总结</strong></a></li>
       </ul>
     </li>
+    <li><a href="#总结"><strong>总结</strong></a></li>
   </ul>
 </nav></div>
             </div><h2 id="协程如何退出"><strong>协程如何退出</strong></h2>
@@ -645,7 +667,7 @@
 <li>Context 多协程安全，可以在多个协程中放心使用。</li>
 </ol>
 <p>以上原则是规范类的，Go 语言的编译器并不会做这些检查，要靠自己遵守。</p>
-<h3 id="总结"><strong>总结</strong></h3>
+<h2 id="总结"><strong>总结</strong></h2>
 <p>Context 通过 With 系列函数生成 Context 树，把相关的 Context 关联起来，这样就可以统一进行控制。一声令下，关联的 Context 都会发出取消信号，使用这些 Context 的协程就可以收到取消信号，然后清理退出。你在定义函数的时候，如果想让外部给你的函数发取消信号，就可以为这个函数增加一个 Context 参数，让外部的调用者可以通过 Context 进行控制，比如下载一个文件超时退出的需求。</p>
 </div>
 
