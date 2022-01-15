@@ -3,7 +3,14 @@
         <title>所有文章 - 且慢</title>
         <link>http://www.longtermbook.com/posts/</link>
         <description>所有文章 | 且慢</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 06 Jan 2022 08:07:20 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 15 Jan 2022 13:24:57 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>剑指offer 03数组中重复的数字</title>
+    <link>http://www.longtermbook.com/posts/%E5%89%91%E6%8C%87offer-03%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+    <pubDate>Sat, 15 Jan 2022 13:24:57 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E5%89%91%E6%8C%87offer-03%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+    <description><![CDATA[问题描述 找出数组中重复的数字。 在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也]]></description>
+</item><item>
     <title>变量命名</title>
     <link>http://www.longtermbook.com/posts/%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D/</link>
     <pubDate>Thu, 06 Jan 2022 08:07:20 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>Createitv</author>
     <guid>http://www.longtermbook.com/posts/10%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3pytorch/</guid>
     <description><![CDATA[什么是 Pytorch ？ 可以把 Pytorch 当做 Numpy 的替代方案使用，做科学计算，而且更强大。 做 AI 任务的模型建模、训练、部署等。这方面唯一能与其比肩的是 Google 家的 Tensor]]></description>
-</item><item>
-    <title>我的奋斗</title>
-    <link>http://www.longtermbook.com/posts/%E6%88%91%E7%9A%84%E5%A5%8B%E6%96%97/</link>
-    <pubDate>Tue, 05 Oct 2021 20:35:29 &#43;0800</pubDate>
-    <author>Createitv</author>
-    <guid>http://www.longtermbook.com/posts/%E6%88%91%E7%9A%84%E5%A5%8B%E6%96%97/</guid>
-    <description><![CDATA[有些鸟来到世间，是为了做它该做的事情的，而不是为了躲子弹的。 时至今天，对我影响最大的作家有两位，其一是路遥，其二罗永浩。后者不能称为严格意义]]></description>
 </item></channel>
 </rss>

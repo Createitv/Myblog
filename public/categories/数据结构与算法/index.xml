@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>数据结构与算法 - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
+        <description>数据结构与算法 - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 15 Jan 2022 13:24:57 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="self" type="application/rss+xml" /><item>
+    <title>剑指offer 03数组中重复的数字</title>
+    <link>http://www.longtermbook.com/posts/%E5%89%91%E6%8C%87offer-03%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</link>
+    <pubDate>Sat, 15 Jan 2022 13:24:57 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/%E5%89%91%E6%8C%87offer-03%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</guid>
+    <description><![CDATA[问题描述 找出数组中重复的数字。 在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也]]></description>
+</item></channel>
+</rss>
