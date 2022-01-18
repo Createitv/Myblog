@@ -55,7 +55,7 @@ images: [""]
 1. 二维数组一遍遍历，然后二分搜索，复杂度$O(nlogn)$
 2. 站在右上角看。这个矩阵其实就像是一个Binary Search Tree。从右上角开始比较，比它大就往下数一行，比它小就往左数一列。复杂度$O(m+n)$
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5371dfa8-53ab-4522-b170-0cb93ed0e1b9/Untitled.png)
+![Picture1.png](https://typora-1300715298.cos.ap-shanghai.myqcloud.com/uPic/6584ea93812d27112043d203ea90e4b0950117d45e0452d0c630fcb247fbc4af-Picture1.png)
 
 ## 解决代码
 
@@ -167,3 +167,4 @@ func findNumberIn2DArray(matrix [][]int, target int) bool {
 ### 一点想法
 
 好的数据结构配好的算法，如何能把这样一个二维数组抽象成一棵二叉搜索树这个过程还需要时间。
+
