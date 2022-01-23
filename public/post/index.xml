@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 且慢</title>
+    <link>http://www.longtermbook.com/post/</link>
+    <description>Recent content in Posts on 且慢</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 23 Jan 2022 22:18:32 +0800</lastBuildDate><atom:link href="http://www.longtermbook.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zap日志库</title>
+      <link>http://www.longtermbook.com/post/zap%E6%97%A5%E5%BF%97%E5%BA%93/</link>
+      <pubDate>Sun, 23 Jan 2022 22:18:32 +0800</pubDate>
+      
+      <guid>http://www.longtermbook.com/post/zap%E6%97%A5%E5%BF%97%E5%BA%93/</guid>
+      <description>Gin项目中的日志库管理 本文先介绍了Go语言原生的日志库的使用，然后详细介绍了非常流行的Uber开源的zap日志库，同时介绍了如何搭配Lum</description>
+    </item>
+    
+  </channel>
+</rss>

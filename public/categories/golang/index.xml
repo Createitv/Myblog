@@ -3,7 +3,14 @@
         <title>golang - 分类 - 且慢</title>
         <link>http://www.longtermbook.com/categories/golang/</link>
         <description>golang - 分类 - 且慢</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 02 Jan 2022 10:33:43 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/golang/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 23 Jan 2022 22:18:32 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/golang/" rel="self" type="application/rss+xml" /><item>
+    <title>Zap日志库</title>
+    <link>http://www.longtermbook.com/posts/zap%E6%97%A5%E5%BF%97%E5%BA%93/</link>
+    <pubDate>Sun, 23 Jan 2022 22:18:32 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/zap%E6%97%A5%E5%BF%97%E5%BA%93/</guid>
+    <description><![CDATA[Gin项目中的日志库管理 本文先介绍了Go语言原生的日志库的使用，然后详细介绍了非常流行的Uber开源的zap日志库，同时介绍了如何搭配Lum]]></description>
+</item><item>
     <title>Context包使用</title>
     <link>http://www.longtermbook.com/posts/context%E5%8C%85%E4%BD%BF%E7%94%A8/</link>
     <pubDate>Sun, 02 Jan 2022 10:33:43 &#43;0800</pubDate>
