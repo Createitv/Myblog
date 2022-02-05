@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>http - 分类 - 且慢</title>
+        <link>http://www.longtermbook.com/categories/http/</link>
+        <description>http - 分类 - 且慢</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 05 Feb 2022 18:28:08 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/categories/http/" rel="self" type="application/rss+xml" /><item>
+    <title>Http协议</title>
+    <link>http://www.longtermbook.com/posts/http%E5%8D%8F%E8%AE%AE/</link>
+    <pubDate>Sat, 05 Feb 2022 18:28:08 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/http%E5%8D%8F%E8%AE%AE/</guid>
+    <description><![CDATA[HTTP协议 1.HTTP协议基本认识 HTTP历史 TCP/IP协议簇 TCP/IP协议簇是一个****四层协议系统****，自顶向下分别是：应用]]></description>
+</item></channel>
+</rss>

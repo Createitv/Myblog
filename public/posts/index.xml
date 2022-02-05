@@ -3,7 +3,14 @@
         <title>所有文章 - 且慢</title>
         <link>http://www.longtermbook.com/posts/</link>
         <description>所有文章 | 且慢</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 23 Jan 2022 22:18:32 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 05 Feb 2022 18:28:08 &#43;0800</lastBuildDate><atom:link href="http://www.longtermbook.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Http协议</title>
+    <link>http://www.longtermbook.com/posts/http%E5%8D%8F%E8%AE%AE/</link>
+    <pubDate>Sat, 05 Feb 2022 18:28:08 &#43;0800</pubDate>
+    <author>Createitv</author>
+    <guid>http://www.longtermbook.com/posts/http%E5%8D%8F%E8%AE%AE/</guid>
+    <description><![CDATA[HTTP协议 1.HTTP协议基本认识 HTTP历史 TCP/IP协议簇 TCP/IP协议簇是一个****四层协议系统****，自顶向下分别是：应用]]></description>
+</item><item>
     <title>Zap日志库</title>
     <link>http://www.longtermbook.com/posts/zap%E6%97%A5%E5%BF%97%E5%BA%93/</link>
     <pubDate>Sun, 23 Jan 2022 22:18:32 &#43;0800</pubDate>
@@ -66,12 +73,5 @@
     <author>Createitv</author>
     <guid>http://www.longtermbook.com/posts/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B9%8B%E5%90%91%E9%87%8F/</guid>
     <description><![CDATA[什么是向量 向量 （英语：euclidean vector，物理、工程等也称作矢量 、欧几里得向量）是数学、物理学和工程科学等多个自然科学中的基本概]]></description>
-</item><item>
-    <title>数学简史</title>
-    <link>http://www.longtermbook.com/posts/%E6%95%B0%E5%AD%A6%E7%AE%80%E5%8F%B2/</link>
-    <pubDate>Tue, 19 Oct 2021 17:58:09 &#43;0800</pubDate>
-    <author>Createitv</author>
-    <guid>http://www.longtermbook.com/posts/%E6%95%B0%E5%AD%A6%E7%AE%80%E5%8F%B2/</guid>
-    <description><![CDATA[数学的发展过程 1. 数学的起源和早期发展 6 BC 埃及、美索不达米亚地区 2. 初等数学时期 BC6 — AD16 古希腊数学(公理化) 中世纪的中国数学(计算和代数) 印度和阿]]></description>
 </item></channel>
 </rss>
